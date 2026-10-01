@@ -181,22 +181,38 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* ═══ FLOATING WHATSAPP BUTTON ═══ */}
+      {/* ═══ FLOATING WHATSAPP BUTTON (LEFT) ═══ */}
       <a
         href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need CA services from TaxByCA.`}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-4 sm:right-6 z-40 flex items-center gap-2 bg-[#25d366] hover:bg-[#20b858] text-white px-3 sm:px-4 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 group"
+        className="fixed bottom-6 left-4 sm:left-6 z-40 group hidden sm:flex"
         aria-label="Chat on WhatsApp"
       >
-        <FaWhatsapp className="text-xl sm:text-2xl" />
-        <span className="hidden sm:inline font-bold text-sm">WhatsApp</span>
+        <span className="absolute inset-0 rounded-full bg-[#25d366] animate-ping opacity-40 scale-100 group-hover:opacity-0 transition-opacity" />
+        <span className="relative flex items-center gap-2.5 bg-[#25d366] hover:bg-[#20b858] text-white pl-4 pr-5 py-3 rounded-full shadow-xl shadow-green-900/30 font-bold text-sm transition-all duration-200 hover:-translate-y-0.5">
+          <FaWhatsapp className="text-xl" />
+          <span>WhatsApp Us</span>
+        </span>
+      </a>
+
+      {/* ═══ FLOATING CALL BUTTON (RIGHT) ═══ */}
+      <a
+        href={`tel:${BRAND.phone}`}
+        className="fixed bottom-6 right-4 sm:right-6 z-40 group hidden sm:flex"
+        aria-label={`Call ${BRAND.phone}`}
+      >
+        <span className="absolute inset-0 rounded-full bg-[#f4b942] animate-ping opacity-30 group-hover:opacity-0 transition-opacity" />
+        <span className="relative flex items-center gap-2.5 bg-[#f4b942] hover:bg-[#d9a230] text-[#0d1b2a] pl-4 pr-5 py-3 rounded-full shadow-xl shadow-yellow-900/20 font-bold text-sm transition-all duration-200 hover:-translate-y-0.5">
+          <FaPhone className="text-base" />
+          <span>Call Now</span>
+        </span>
       </a>
 
       {/* ═══ SCROLL TO TOP BUTTON ═══ */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className={`fixed bottom-[72px] right-4 sm:right-6 z-40 w-12 h-12 rounded-xl bg-[#f4b942] hover:bg-[#d9a230] text-[#0d1b2a] flex items-center justify-center shadow-lg transition-all duration-300 hover:-translate-y-0.5 ${
+        className={`fixed bottom-20 right-4 sm:right-6 z-40 w-11 h-11 rounded-full bg-[#162032] border border-[#1e3a54] hover:border-[#f4b942] text-white hover:text-[#f4b942] flex items-center justify-center shadow-lg transition-all duration-300 hover:-translate-y-0.5 ${
           showScrollTop ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-4'
         }`}
         aria-label="Scroll to top"

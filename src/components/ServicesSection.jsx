@@ -115,7 +115,7 @@ const ServicesSection = () => {
                 <ul className="space-y-1.5 mb-4">
                   {service.services.slice(0, 4).map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-[#94a3b8] text-xs sm:text-sm">
-                      <span className="text-[#f4b942] mt-0.5 flex-shrink-0">✓</span>
+                      <i className="ri-checkbox-circle-fill text-[#f4b942] flex-shrink-0 text-base mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}

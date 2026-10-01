@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaPhone } from 'react-icons/fa';
 import { BRAND } from '../utils/constants';
+import TaxByCALogo from '../assets/TaxByCALogo.png';
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -56,20 +57,11 @@ const Navbar = () => {
               className="flex items-center gap-2 z-50 flex-shrink-0"
               aria-label="TaxByCA - Home"
             >
-              {/* Gold icon */}
-              <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#f4b942] rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 sm:w-6 sm:h-6 text-[#0d1b2a]">
-                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/>
-                </svg>
-              </div>
-              <div className="leading-tight">
-                <div className="text-[#f4b942] font-extrabold text-base sm:text-lg tracking-tight leading-none">
-                  TaxByCA
-                </div>
-                <div className="text-white/80 font-normal text-[10px] sm:text-xs tracking-wide leading-none">
-                  Taxation Services
-                </div>
-              </div>
+              <img
+                src={TaxByCALogo}
+                alt="TaxByCA"
+                className="h-9 sm:h-11 w-auto object-contain"
+              />
             </Link>
 
             {/* Desktop Nav */}
@@ -132,17 +124,12 @@ const Navbar = () => {
         aria-modal="true"
         aria-label="Mobile navigation"
       >
-        {/* Sidebar Header */}
-        <div className="p-5 border-b border-[#1e3a54] flex items-center gap-3">
-          <div className="w-10 h-10 bg-[#f4b942] rounded-lg flex items-center justify-center flex-shrink-0">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-[#0d1b2a]">
-              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/>
-            </svg>
-          </div>
-          <div>
-            <div className="text-[#f4b942] font-extrabold text-lg leading-none">TaxByCA</div>
-            <div className="text-white/70 text-xs leading-none mt-0.5">Taxation Services</div>
-          </div>
+        <div className="p-4 border-b border-[#1e3a54] flex items-center gap-3">
+          <img
+            src={TaxByCALogo}
+            alt="TaxByCA"
+            className="h-10 w-auto object-contain"
+          />
         </div>
 
         {/* Sidebar Nav Links */}

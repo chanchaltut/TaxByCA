@@ -30,8 +30,16 @@ const CTABanner = () => {
 
         {/* Trust points */}
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-8 text-xs sm:text-sm text-[#94a3b8]">
-          {['✓ ICAI Registered', '✓ 100% Online', '✓ Fixed Pricing', '✓ Fast Turnaround'].map((item, i) => (
-            <span key={i} className="text-white/80">{item}</span>
+          {[
+            { icon: 'ri-shield-check-line', text: 'ICAI Registered' },
+            { icon: 'ri-global-line', text: '100% Online' },
+            { icon: 'ri-price-tag-3-line', text: 'Fixed Pricing' },
+            { icon: 'ri-flashlight-line', text: 'Fast Turnaround' },
+          ].map((item, i) => (
+            <span key={i} className="flex items-center gap-1.5 text-white/80">
+              <i className={`${item.icon} text-[#f4b942] text-sm`} />
+              {item.text}
+            </span>
           ))}
         </div>
 

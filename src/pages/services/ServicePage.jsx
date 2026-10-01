@@ -129,7 +129,7 @@ const ServicePage = ({ service }) => {
                 key={i}
                 className="flex items-start gap-3 bg-[#0d1b2a] border border-[#1e3a54] hover:border-[#f4b942]/40 rounded-xl p-3 sm:p-4 transition-colors"
               >
-                <span className="text-[#f4b942] font-extrabold flex-shrink-0 mt-0.5 text-lg">✓</span>
+                <i className="ri-checkbox-circle-fill text-[#f4b942] flex-shrink-0 text-xl mt-0.5" />
                 <span className="text-white text-sm sm:text-base leading-snug">{item}</span>
               </div>
             ))}
