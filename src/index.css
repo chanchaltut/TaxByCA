@@ -42,7 +42,7 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-navy-900);
+  background-color: #0f172a;
   color: var(--color-text);
   overflow-x: hidden;
   line-height: 1.6;
@@ -52,7 +52,7 @@ body {
 
 .App {
   min-height: 100vh;
-  background-color: var(--color-navy-900);
+  background-color: #0f172a;
 }
 
 /* ─── TOUCH TARGETS ──────────────────────────────────────── */
@@ -76,16 +76,16 @@ img {
 
 /* ─── CUSTOM SCROLLBAR ───────────────────────────────────── */
 ::-webkit-scrollbar        { width: 6px; }
-::-webkit-scrollbar-track  { background: var(--color-navy-700); }
-::-webkit-scrollbar-thumb  { background: var(--color-gold); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--color-gold-dark); }
+::-webkit-scrollbar-track  { background: #ffffff; }
+::-webkit-scrollbar-thumb  { background: #3b82f6; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #1e40af; }
 
 /* Firefox */
-* { scrollbar-width: thin; scrollbar-color: var(--color-gold) var(--color-navy-700); }
+* { scrollbar-width: thin; scrollbar-color: #3b82f6 #ffffff; }
 
 /* ─── FOCUS STYLES (accessibility) ──────────────────────── */
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid #3b82f6;
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -178,8 +178,8 @@ img {
 
 /* ─── CTA BUTTON ─────────────────────────────────────────── */
 .btn-primary {
-  background: var(--color-gold);
-  color: var(--color-navy-900);
+  background: #3b82f6;
+  color: #0f172a;
   font-weight: 700;
   padding: 0.75rem 1.75rem;
   border-radius: 9999px;
@@ -190,7 +190,7 @@ img {
   min-height: 48px;
 }
 .btn-primary:hover {
-  background: var(--color-gold-dark);
+  background: #1e40af;
   transform: translateY(-1px);
 }
 .btn-primary:active { transform: scale(0.97); }
@@ -209,8 +209,8 @@ img {
   min-height: 48px;
 }
 .btn-secondary:hover {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
+  border-color: #3b82f6;
+  color: #3b82f6;
 }
 
 /* ─── SHIMMER EFFECT (for buttons) ──────────────────────── */
@@ -238,15 +238,15 @@ img {
 }
 
 .service-card {
-  background: var(--color-navy-700);
-  border: 1px solid var(--color-navy-border);
+  background: #ffffff;
+  border: 1px solid #bfdbfe;
   border-radius: 1rem;
   transition: all 0.3s ease;
 }
 .service-card:hover {
-  border-color: var(--color-gold);
+  border-color: #3b82f6;
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(244, 185, 66, 0.15);
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
 }
 
 /* ─── FOOTER LINKS ───────────────────────────────────────── */
@@ -255,13 +255,13 @@ img {
   color: var(--color-muted);
   transition: color 0.3s ease, padding-left 0.3s ease;
 }
-.footer-link:hover { color: var(--color-gold); padding-left: 6px; }
+.footer-link:hover { color: #3b82f6; padding-left: 6px; }
 .footer-link::before {
   content: '';
   position: absolute;
   left: 0; bottom: -2px;
   width: 0; height: 2px;
-  background: var(--color-gold);
+  background: #3b82f6;
   transition: width 0.3s ease;
 }
 .footer-link:hover::before { width: 100%; }
@@ -272,7 +272,7 @@ img {
 }
 .social-icon:hover {
   transform: translateY(-4px) scale(1.1);
-  color: var(--color-gold);
+  color: #3b82f6;
 }
 
 /* ─── IMAGE ZOOM ─────────────────────────────────────────── */
@@ -282,7 +282,7 @@ img {
 
 /* ─── GRADIENT TEXT ──────────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-gold) 0%, #fff7e6 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #fff7e6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -297,8 +297,8 @@ img {
 /* ─── SECTION TITLES ─────────────────────────────────────── */
 .section-tag {
   display: inline-block;
-  background: rgba(244, 185, 66, 0.15);
-  color: var(--color-gold);
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
   border: 1px solid rgba(244, 185, 66, 0.3);
   padding: 0.25rem 1rem;
   border-radius: 9999px;

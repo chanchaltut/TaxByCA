@@ -119,7 +119,6 @@ const ServicesSection = () => {
                       <span>{item}</span>
                     </li>
                   ))}
-                  )}
                 </ul>
               </div>
 
