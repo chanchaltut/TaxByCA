@@ -14,22 +14,22 @@ const CTABanner = () => {
 
       <div className="max-w-3xl mx-auto text-center relative z-10">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-[#2563eb]/10 border border-blue-200 text-[#2563eb] text-xs font-bold px-4 py-1.5 rounded-full mb-6 tracking-wide">
+        <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 tracking-wide">
           <><i className="ri-thumb-up-line mr-2"></i> FREE CONSULTATION — NO OBLIGATION</>
         </div>
 
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-5">
           Ready to Simplify Your{' '}
-          <span className="text-[#2563eb]">CA Compliance?</span>
+          <span className="text-blue-200">CA Compliance?</span>
         </h2>
 
-        <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-8 max-w-xl mx-auto">
+        <p className="text-blue-100 text-sm sm:text-base leading-relaxed mb-8 max-w-xl mx-auto">
           Talk to an qualified CA today. We'll assess your requirements, explain the process, and give you a fixed quote — no surprises, no hidden charges.
         </p>
 
         {/* Trust points */}
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-8 text-xs sm:text-sm text-slate-600">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-8 text-xs sm:text-sm text-blue-100">
           {[
             { icon: 'ri-shield-check-line', text: 'Qualified CA Team' },
             { icon: 'ri-global-line', text: '100% Online' },
@@ -37,7 +37,7 @@ const CTABanner = () => {
             { icon: 'ri-flashlight-line', text: 'Fast Turnaround' },
           ].map((item, i) => (
             <span key={i} className="flex items-center gap-1.5 text-white/80">
-              <i className={`${item.icon} text-[#2563eb] text-sm`} />
+              <i className={`${item.icon} text-blue-200 text-sm`} />
               {item.text}
             </span>
           ))}

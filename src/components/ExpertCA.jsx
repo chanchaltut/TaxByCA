@@ -34,7 +34,7 @@ const ExpertCA = () => {
                   key={i}
                   className="flex items-start gap-3 bg-[#f8fafc] border border-blue-100 rounded-xl p-3 sm:p-4 text-left hover:border-[#2563eb]/40 transition-colors duration-200"
                 >
-                  <i className={`text-xl sm:text-2xl flex-shrink-0 mt-0.5 ${feature.icon}`}></i>
+                  <i className={`text-xl sm:text-2xl flex-shrink-0 mt-0.5 text-blue-600 ${feature.icon}`}></i>
                   <div>
                     <h4 className="text-[#0f172a] font-semibold text-sm mb-0.5">{feature.title}</h4>
                     <p className="text-slate-600 text-xs leading-relaxed">{feature.desc}</p>
@@ -79,7 +79,7 @@ const ExpertCA = () => {
             <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 bg-white/90 backdrop-blur-sm border border-blue-100 rounded-2xl p-4 sm:p-5">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-[#2563eb] rounded-xl flex items-center justify-center flex-shrink-0">
-                  <i className="ri-trophy-line text-2xl text-[#2563eb]"></i>
+                  <i className="ri-trophy-line text-2xl text-white"></i>
                 </div>
                 <div>
                   <p className="text-[#0f172a] font-bold text-sm sm:text-base">TaxByCA — Expert CA Services</p>

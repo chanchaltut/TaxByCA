@@ -23,8 +23,8 @@ export const BRAND = {
   website: 'https://taxbyca.in',
   yearEstablished: 2019,
   social: {
-    facebook:  'https://www.facebook.com/taxbyca',
-    instagram: 'https://www.instagram.com/taxbyca',
+    facebook:  'https://www.facebook.com/TaxByCAfb',
+    instagram: 'https://www.instagram.com/taxbyca_',
     whatsapp:  'https://wa.me/919424856409',
     linkedin:  'https://www.linkedin.com/company/taxbyca',
     twitter:   'https://twitter.com/taxbyca',

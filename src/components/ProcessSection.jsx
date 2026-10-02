@@ -39,7 +39,7 @@ const ProcessSection = () => {
                   <div className="flex items-center gap-3 mb-3">
                     <div className="absolute left-[-8px] w-4 h-4 bg-[#2563eb] rounded-full flex-shrink-0" aria-hidden="true" />
                     <span className="text-[#2563eb] font-extrabold text-sm tracking-widest">{step.step}</span>
-                    <i className={`text-2xl ${step.icon}`}></i>
+                    <i className={`text-2xl text-blue-600 ${step.icon}`}></i>
                   </div>
                   <h3 className="text-[#0f172a] font-bold text-lg mb-2">{step.title}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
@@ -49,7 +49,7 @@ const ProcessSection = () => {
                 <div className="hidden md:flex md:flex-col md:items-center">
                   {/* Icon circle */}
                   <div className="relative z-10 w-20 h-20 bg-white border-2 border-[#2563eb] rounded-full flex flex-col items-center justify-center mb-5 shadow-lg">
-                    <i className={`text-2xl mb-0.5 ${step.icon}`}></i>
+                    <i className={`text-2xl mb-0.5 text-blue-600 ${step.icon}`}></i>
                     <span className="text-[#2563eb] font-extrabold text-xs tracking-widest">{step.step}</span>
                   </div>
 
