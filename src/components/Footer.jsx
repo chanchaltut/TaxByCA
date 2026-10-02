@@ -38,16 +38,16 @@ const socialLinks = [
 const contactItems = [
   {
     icon: <FaMapMarkerAlt className="text-[#2563eb] text-base flex-shrink-0 mt-0.5" />,
-    content: <span className="text-[#94a3b8] text-sm leading-relaxed">{BRAND.address}</span>,
+    content: <span className="text-slate-600 text-sm leading-relaxed">{BRAND.address}</span>,
   },
   {
     icon: <i className="ri-time-line text-[#2563eb] text-base flex-shrink-0 mt-0.5" />,
-    content: <span className="text-[#94a3b8] text-sm leading-relaxed">{BRAND.timings}</span>,
+    content: <span className="text-slate-600 text-sm leading-relaxed">{BRAND.timings}</span>,
   },
   {
     icon: <FaPhone className="text-[#2563eb] text-sm flex-shrink-0 mt-0.5" />,
     content: (
-      <a href={`tel:${BRAND.phone}`} className="footer-link text-[#94a3b8] text-sm hover:text-[#2563eb] transition-colors">
+      <a href={`tel:${BRAND.phone}`} className="footer-link text-slate-600 text-sm hover:text-[#2563eb] transition-colors">
         +91 {BRAND.phone}
       </a>
     ),
@@ -55,7 +55,7 @@ const contactItems = [
   {
     icon: <FaEnvelope className="text-[#2563eb] text-sm flex-shrink-0 mt-0.5" />,
     content: (
-      <a href={`mailto:${BRAND.email}`} className="footer-link text-[#94a3b8] text-sm hover:text-[#2563eb] transition-colors break-all">
+      <a href={`mailto:${BRAND.email}`} className="footer-link text-slate-600 text-sm hover:text-[#2563eb] transition-colors break-all">
         {BRAND.email}
       </a>
     ),
@@ -72,7 +72,7 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="bg-[#070e16] border-t border-[#1d3557]">
+    <footer id="contact" className="bg-[#f8fafc] border-t border-blue-100">
 
       {/* Main Footer Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-12 sm:py-14 md:py-16">
@@ -88,13 +88,13 @@ const Footer = () => {
               />
             </Link>
 
-            <p className="text-[#94a3b8] text-sm leading-relaxed mb-5">
+            <p className="text-slate-600 text-sm leading-relaxed mb-5">
               <span className="text-[#2563eb] font-semibold">team of qualified CAs & professionals</span> providing
               GST, ITR, company registration &amp; all compliance services 100% online across India.
             </p>
 
             {/* ICAI Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#2563eb]/10 border border-[#2563eb]/30 rounded-full px-3 py-1.5 mb-5">
+            <div className="inline-flex items-center gap-2 bg-[#2563eb]/10 border border-blue-200 rounded-full px-3 py-1.5 mb-5">
               <i className="ri-award-line text-[#2563eb] text-sm" />
               <span className="text-[#2563eb] text-[10px] font-bold tracking-wider">Qualified CA Team</span>
             </div>
@@ -108,7 +108,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-9 h-9 rounded-full bg-[#112240] border border-[#1d3557] flex items-center justify-center text-[#94a3b8] hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] transition-all duration-200"
+                  className="w-9 h-9 rounded-full bg-[#f8fafc] border border-blue-100 flex items-center justify-center text-slate-600 hover:bg-[#2563eb] hover:text-[#0f172a] hover:border-[#2563eb] transition-all duration-200"
                 >
                   <s.icon className="text-xs" />
                 </a>
@@ -118,7 +118,7 @@ const Footer = () => {
 
           {/* ── Col 2: Quick Links ── */}
           <div>
-            <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-5 flex items-center gap-2">
+            <h3 className="text-[#0f172a] font-bold text-sm uppercase tracking-wider mb-5 flex items-center gap-2">
               <i className="ri-links-line text-[#2563eb]" />
               Quick Links
             </h3>
@@ -127,7 +127,7 @@ const Footer = () => {
                 <li key={i}>
                   <Link
                     to={link.href}
-                    className="flex items-center gap-2 text-[#94a3b8] text-sm hover:text-[#2563eb] transition-colors group"
+                    className="flex items-center gap-2 text-slate-600 text-sm hover:text-[#2563eb] transition-colors group"
                   >
                     <i className="ri-arrow-right-s-line text-[#2563eb] opacity-0 group-hover:opacity-100 transition-opacity -ml-1 flex-shrink-0" />
                     {link.name}
@@ -139,7 +139,7 @@ const Footer = () => {
 
           {/* ── Col 3: Services ── */}
           <div>
-            <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-5 flex items-center gap-2">
+            <h3 className="text-[#0f172a] font-bold text-sm uppercase tracking-wider mb-5 flex items-center gap-2">
               <i className="ri-briefcase-4-line text-[#2563eb]" />
               Our Services
             </h3>
@@ -148,7 +148,7 @@ const Footer = () => {
                 <li key={i}>
                   <Link
                     to={link.href}
-                    className="flex items-center gap-2 text-[#94a3b8] text-sm hover:text-[#2563eb] transition-colors group"
+                    className="flex items-center gap-2 text-slate-600 text-sm hover:text-[#2563eb] transition-colors group"
                   >
                     <i className="ri-arrow-right-s-line text-[#2563eb] opacity-0 group-hover:opacity-100 transition-opacity -ml-1 flex-shrink-0" />
                     {link.name}
@@ -160,7 +160,7 @@ const Footer = () => {
 
           {/* ── Col 4: Contact + Newsletter ── */}
           <div>
-            <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-5 flex items-center gap-2">
+            <h3 className="text-[#0f172a] font-bold text-sm uppercase tracking-wider mb-5 flex items-center gap-2">
               <i className="ri-contacts-line text-[#2563eb]" />
               Contact Us
             </h3>
@@ -175,8 +175,8 @@ const Footer = () => {
             </ul>
 
             {/* Newsletter */}
-            <div className="bg-[#112240] border border-[#1d3557] rounded-2xl p-4">
-              <h4 className="text-white font-semibold text-sm mb-3 flex items-center gap-2">
+            <div className="bg-[#f8fafc] border border-blue-100 rounded-2xl p-4">
+              <h4 className="text-[#0f172a] font-semibold text-sm mb-3 flex items-center gap-2">
                 <i className="ri-mail-send-line text-[#2563eb]" />
                 Tax Updates Newsletter
               </h4>
@@ -187,7 +187,7 @@ const Footer = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
                   required
-                  className="bg-[#0a1628] border border-[#1d3557] focus:border-[#2563eb] rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none transition-colors placeholder-[#475569]"
+                  className="bg-white border border-blue-100 focus:border-[#2563eb] rounded-lg px-3 py-2.5 text-[#0f172a] text-sm focus:outline-none transition-colors placeholder-[#475569]"
                 />
                 <button
                   type="submit"
@@ -204,17 +204,17 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-[#1d3557]">
+      <div className="border-t border-blue-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[#475569] text-xs sm:text-sm text-center sm:text-left">
+          <p className="text-slate-500 text-xs sm:text-sm text-center sm:text-left">
             © {new Date().getFullYear()} TaxByCA. All Rights Reserved. | We Issue Proper GST Invoice for Every Service
           </p>
           <div className="flex items-center gap-4 sm:gap-6">
-            <Link to="/privacy-policy" className="text-[#475569] hover:text-[#2563eb] text-xs sm:text-sm transition-colors">
+            <Link to="/privacy-policy" className="text-slate-500 hover:text-[#2563eb] text-xs sm:text-sm transition-colors">
               Privacy Policy
             </Link>
             <span className="text-[#1d3557]">|</span>
-            <Link to="/terms-conditions" className="text-[#475569] hover:text-[#2563eb] text-xs sm:text-sm transition-colors">
+            <Link to="/terms-conditions" className="text-slate-500 hover:text-[#2563eb] text-xs sm:text-sm transition-colors">
               Terms &amp; Conditions
             </Link>
           </div>

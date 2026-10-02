@@ -66,15 +66,15 @@ const StatsBar = () => {
               <div className="flex items-baseline justify-center gap-0.5">
                 <span
                   ref={(el) => (countersRef.current[i] = el)}
-                  className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tabular-nums"
+                  className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0f172a] tabular-nums"
                 >
                   0
                 </span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
+                <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0f172a]">
                   {stat.suffix}
                 </span>
               </div>
-              <p className="text-white/80 text-xs sm:text-sm font-semibold mt-1 leading-tight">
+              <p className="text-[#0f172a]/80 text-xs sm:text-sm font-semibold mt-1 leading-tight">
                 {stat.label}
               </p>
             </div>

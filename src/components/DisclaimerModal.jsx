@@ -58,7 +58,7 @@ const DisclaimerModal = () => {
 
       {/* Modal */}
       <div
-        className={`relative w-full max-w-lg bg-[#0f1e30] rounded-2xl overflow-hidden shadow-2xl border border-[#1d3557] transition-all duration-300 ${
+        className={`relative w-full max-w-lg bg-white rounded-2xl overflow-hidden shadow-2xl border border-blue-100 transition-all duration-300 ${
           animate ? 'scale-100 translate-y-0' : 'scale-95 translate-y-4'
         }`}
       >
@@ -66,11 +66,11 @@ const DisclaimerModal = () => {
         <div className="h-1 w-full bg-gradient-to-r from-[#2563eb] via-[#60a5fa] to-[#2563eb]" />
 
         {/* Header */}
-        <div className="px-6 pt-5 pb-4 flex items-center justify-between border-b border-[#1d3557]">
+        <div className="px-6 pt-5 pb-4 flex items-center justify-between border-b border-blue-100">
           <img src={TaxByCALogo} alt="TaxByCA" className="h-9 w-auto object-contain" />
           <button
             onClick={dismiss}
-            className="w-8 h-8 rounded-full bg-[#1d3557] hover:bg-[#2563eb]/20 flex items-center justify-center text-white/60 hover:text-white transition-all"
+            className="w-8 h-8 rounded-full bg-blue-50 hover:bg-[#2563eb]/20 flex items-center justify-center text-[#0f172a]/60 hover:text-[#0f172a] transition-all"
             aria-label="Close"
           >
             <i className="ri-close-line text-lg" />
@@ -79,21 +79,21 @@ const DisclaimerModal = () => {
 
         {/* Body */}
         <div className="px-6 pt-5 pb-4">
-          <h2 className="text-white font-bold text-2xl mb-1">
+          <h2 className="text-[#0f172a] font-bold text-2xl mb-1">
             Welcome to <span className="text-[#2563eb]">TaxByCA</span>
           </h2>
-          <p className="text-[#94a3b8] text-sm mb-5">Professional Tax, Compliance &amp; Business Support</p>
+          <p className="text-slate-600 text-sm mb-5">Professional Tax, Compliance &amp; Business Support</p>
 
           {/* Tagline card */}
-          <div className="flex items-start gap-3 bg-[#1d3557] rounded-xl p-4 mb-5 border border-[#2563eb]/30">
-            <div className="w-10 h-10 rounded-full bg-[#2563eb]/15 border border-[#2563eb]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <div className="flex items-start gap-3 bg-blue-50 rounded-xl p-4 mb-5 border border-blue-200">
+            <div className="w-10 h-10 rounded-full bg-[#2563eb]/15 border border-blue-200 flex items-center justify-center flex-shrink-0 mt-0.5">
               <i className="ri-briefcase-4-line text-[#2563eb] text-base" />
             </div>
             <div>
               <p className="text-[#2563eb] font-bold text-sm leading-snug mb-1">
                 Your Business. Your Compliance. One Professional Solution.
               </p>
-              <p className="text-[#94a3b8] text-xs leading-relaxed">
+              <p className="text-slate-600 text-xs leading-relaxed">
                 We provide support for Taxation, GST, Audit, Business Registration, Project Reports and Certificates.
               </p>
             </div>
@@ -104,10 +104,10 @@ const DisclaimerModal = () => {
             {serviceItems.map((item, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2.5 bg-[#1d3557] rounded-xl px-3.5 py-3 border border-[#2563eb]/20 hover:border-[#2563eb]/40 transition-colors"
+                className="flex items-center gap-2.5 bg-blue-50 rounded-xl px-3.5 py-3 border border-blue-100 hover:border-[#2563eb]/40 transition-colors"
               >
                 <i className={`${item.icon} text-[#2563eb] text-lg flex-shrink-0`} />
-                <span className="text-white font-semibold text-[13px]">{item.label}</span>
+                <span className="text-[#0f172a] font-semibold text-[13px]">{item.label}</span>
               </div>
             ))}
           </div>
@@ -135,7 +135,7 @@ const DisclaimerModal = () => {
         </div>
 
         {/* Tag strip at bottom */}
-        <div className="border-t border-[#1d3557] px-6 py-2.5 flex items-center justify-center gap-1.5 flex-wrap">
+        <div className="border-t border-blue-100 px-6 py-2.5 flex items-center justify-center gap-1.5 flex-wrap">
           {tagItems.map((tag, i) => (
             <React.Fragment key={i}>
               <span className="text-[#64748b] text-[11px] font-medium">{tag}</span>

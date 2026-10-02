@@ -41,37 +41,37 @@ const Contact = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="bg-[#0a1628] dot-bg pt-32 pb-16 sm:pt-40 sm:pb-24 border-b border-[#1d3557]">
+      <section className="bg-white dot-bg pt-32 pb-16 sm:pt-40 sm:pb-24 border-b border-blue-100">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#0f172a] mb-6">
             Contact <span className="text-[#2563eb]">Us</span>
           </h1>
-          <p className="text-[#94a3b8] text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-600 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
             Get in touch with our CA experts for any taxation or compliance assistance. We provide 100% online services across India.
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="bg-[#0f172a] py-16 sm:py-20 px-4 sm:px-6">
+      <section className="bg-white py-16 sm:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
           
           {/* Contact Info Cards */}
           <div className="lg:col-span-1 space-y-4">
             {contactInfo.map((info, i) => (
-              <div key={i} className="bg-[#112240] border border-[#1d3557] rounded-xl p-5 hover:border-[#2563eb]/50 transition-colors">
+              <div key={i} className="bg-[#f8fafc] border border-blue-100 rounded-xl p-5 hover:border-blue-300 transition-colors">
                 <div className="flex items-start gap-4">
                   <div className="text-[#2563eb] text-xl mt-1 flex-shrink-0">{info.icon}</div>
                   <div>
-                    <h3 className="text-white font-bold mb-1">{info.title}</h3>
+                    <h3 className="text-[#0f172a] font-bold mb-1">{info.title}</h3>
                     {info.details.map((detail, idx) => (
                       <div key={idx}>
                         {info.link ? (
-                          <a href={info.link} target={info.link.includes('wa.me') ? '_blank' : undefined} rel={info.link.includes('wa.me') ? 'noopener noreferrer' : undefined} className="text-[#94a3b8] hover:text-[#2563eb] text-sm transition-colors">
+                          <a href={info.link} target={info.link.includes('wa.me') ? '_blank' : undefined} rel={info.link.includes('wa.me') ? 'noopener noreferrer' : undefined} className="text-slate-600 hover:text-[#2563eb] text-sm transition-colors">
                             {detail}
                           </a>
                         ) : (
-                          <p className="text-[#94a3b8] text-sm">{detail}</p>
+                          <p className="text-slate-600 text-sm">{detail}</p>
                         )}
                       </div>
                     ))}
@@ -82,28 +82,28 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-2 bg-[#112240] border border-[#1d3557] rounded-2xl p-6 sm:p-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Send Us a Message</h2>
+          <div className="lg:col-span-2 bg-[#f8fafc] border border-blue-100 rounded-2xl p-6 sm:p-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#0f172a] mb-6">Send Us a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-[#94a3b8] text-sm font-semibold mb-2">Full Name *</label>
-                  <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full bg-[#0a1628] border border-[#1d3557] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#2563eb]" placeholder="Your Name" />
+                  <label className="block text-slate-600 text-sm font-semibold mb-2">Full Name *</label>
+                  <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full bg-white border border-blue-100 rounded-lg px-4 py-3 text-[#0f172a] focus:outline-none focus:border-[#2563eb]" placeholder="Your Name" />
                 </div>
                 <div>
-                  <label className="block text-[#94a3b8] text-sm font-semibold mb-2">Phone Number *</label>
-                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full bg-[#0a1628] border border-[#1d3557] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#2563eb]" placeholder="Phone Number" />
+                  <label className="block text-slate-600 text-sm font-semibold mb-2">Phone Number *</label>
+                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full bg-white border border-blue-100 rounded-lg px-4 py-3 text-[#0f172a] focus:outline-none focus:border-[#2563eb]" placeholder="Phone Number" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-[#94a3b8] text-sm font-semibold mb-2">Email Address *</label>
-                  <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full bg-[#0a1628] border border-[#1d3557] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#2563eb]" placeholder="Your Email" />
+                  <label className="block text-slate-600 text-sm font-semibold mb-2">Email Address *</label>
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full bg-white border border-blue-100 rounded-lg px-4 py-3 text-[#0f172a] focus:outline-none focus:border-[#2563eb]" placeholder="Your Email" />
                 </div>
                 <div>
-                  <label className="block text-[#94a3b8] text-sm font-semibold mb-2">Service Required</label>
-                  <select name="service" value={formData.service} onChange={handleChange} className="w-full bg-[#0a1628] border border-[#1d3557] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#2563eb]">
+                  <label className="block text-slate-600 text-sm font-semibold mb-2">Service Required</label>
+                  <select name="service" value={formData.service} onChange={handleChange} className="w-full bg-white border border-blue-100 rounded-lg px-4 py-3 text-[#0f172a] focus:outline-none focus:border-[#2563eb]">
                     <option value="">Select Service Area</option>
                     {SERVICE_CATEGORIES.map((cat, i) => (
                       <option key={i} value={cat}>{cat}</option>
@@ -113,8 +113,8 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="block text-[#94a3b8] text-sm font-semibold mb-2">Message *</label>
-                <textarea name="message" value={formData.message} onChange={handleChange} required rows="5" className="w-full bg-[#0a1628] border border-[#1d3557] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#2563eb] resize-none" placeholder="How can we help you?" />
+                <label className="block text-slate-600 text-sm font-semibold mb-2">Message *</label>
+                <textarea name="message" value={formData.message} onChange={handleChange} required rows="5" className="w-full bg-white border border-blue-100 rounded-lg px-4 py-3 text-[#0f172a] focus:outline-none focus:border-[#2563eb] resize-none" placeholder="How can we help you?" />
               </div>
 
               <button type="submit" disabled={isSubmitting} className="w-full sm:w-auto bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-8 py-3.5 rounded-full font-bold transition-colors flex items-center justify-center gap-2 disabled:opacity-70">

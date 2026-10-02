@@ -7,7 +7,7 @@ const Marquee = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-[100] bg-[#1d3557] border-b border-[#2563eb]/30 py-1 overflow-hidden"
+      className="fixed top-0 left-0 right-0 z-[100] bg-blue-50 border-b border-blue-200 py-1 overflow-hidden"
       aria-label="Services we offer"
       aria-hidden="true"
     >
@@ -16,9 +16,9 @@ const Marquee = () => {
           {items.map((item, i) => (
             <span
               key={i}
-              className="flex-shrink-0 flex items-center gap-2 px-4 text-white/80 text-[11px] font-medium whitespace-nowrap"
+              className="flex-shrink-0 flex items-center gap-2 px-4 text-[#0f172a]/80 text-[11px] font-medium whitespace-nowrap"
             >
-              <i className="ri-arrow-right-s-line text-[#60a5fa] text-xs" aria-hidden="true" />
+              <i className="ri-arrow-right-s-line text-blue-600 text-xs" aria-hidden="true" />
               {item}
             </span>
           ))}

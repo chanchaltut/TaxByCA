@@ -243,19 +243,19 @@ const Insights = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a1628] pt-[60px]">
+    <div className="min-h-screen bg-white pt-[60px]">
 
       {/* Hero */}
-      <section className="bg-gradient-to-b from-[#112240] to-[#0a1628] py-16 sm:py-20 px-4 sm:px-6 border-b border-[#1d3557]">
+      <section className="bg-gradient-to-b from-[#f0f9ff] to-white py-16 sm:py-20 px-4 sm:px-6 border-b border-blue-100">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1d3557] border border-[#2563eb]/30 rounded-full px-4 py-1.5 mb-5">
-            <i className="ri-article-line text-[#60a5fa] text-sm" />
-            <span className="text-[#60a5fa] text-xs font-semibold tracking-wider uppercase">Tax Knowledge Hub</span>
+          <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-full px-4 py-1.5 mb-5">
+            <i className="ri-article-line text-blue-600 text-sm" />
+            <span className="text-blue-600 text-xs font-semibold tracking-wider uppercase">Tax Knowledge Hub</span>
           </div>
-          <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
-            Tax & GST <span className="text-[#60a5fa]">Insights</span>
+          <h1 className="text-[#0f172a] text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
+            Tax & GST <span className="text-blue-600">Insights</span>
           </h1>
-          <p className="text-[#94a3b8] text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             Plain-English guides on Income Tax, GST, TDS, and Business Registration — written to answer the questions real taxpayers are searching for.
           </p>
         </div>
@@ -274,7 +274,7 @@ const Insights = () => {
                 className={`px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 min-h-[40px] ${
                   selectedCategory === cat
                     ? 'bg-[#2563eb] text-white shadow-lg shadow-[#2563eb]/30'
-                    : 'bg-[#112240] text-[#94a3b8] border border-[#1d3557] hover:border-[#2563eb]/50 hover:text-white'
+                    : 'bg-[#f8fafc] text-slate-600 border border-blue-100 hover:border-blue-300 hover:text-[#0f172a]'
                 }`}
               >
                 {cat}
@@ -290,8 +290,8 @@ const Insights = () => {
                 <article
                   id={`article-${article.id}`}
                   key={article.id}
-                  className={`bg-[#112240] rounded-2xl overflow-hidden border transition-all duration-300 ${
-                    isExpanded ? 'border-[#2563eb]/50' : 'border-[#1d3557] hover:border-[#2563eb]/30'
+                  className={`bg-[#f8fafc] rounded-2xl overflow-hidden border transition-all duration-300 ${
+                    isExpanded ? 'border-blue-300' : 'border-blue-100 hover:border-blue-200'
                   }`}
                 >
                   {/* Card Header (always visible) */}
@@ -318,27 +318,27 @@ const Insights = () => {
                       <div className="flex-1 p-5 sm:p-6 flex flex-col justify-between">
                         <div>
                           <div className="flex items-center gap-3 mb-3 flex-wrap">
-                            <span className={`px-2.5 py-1 rounded-full text-[11px] font-bold ${categoryColors[article.category] || 'bg-[#1d3557] text-[#94a3b8]'}`}>
+                            <span className={`px-2.5 py-1 rounded-full text-[11px] font-bold ${categoryColors[article.category] || 'bg-blue-50 text-slate-600'}`}>
                               {article.category}
                             </span>
-                            <span className="text-[#475569] text-xs flex items-center gap-1">
+                            <span className="text-slate-500 text-xs flex items-center gap-1">
                               <FaCalendarAlt className="text-[10px]" /> {article.date}
                             </span>
-                            <span className="text-[#475569] text-xs flex items-center gap-1">
+                            <span className="text-slate-500 text-xs flex items-center gap-1">
                               <FaUser className="text-[10px]" /> {article.author}
                             </span>
-                            <span className="text-[#475569] text-xs ml-auto hidden sm:block">{article.readTime}</span>
+                            <span className="text-slate-500 text-xs ml-auto hidden sm:block">{article.readTime}</span>
                           </div>
-                          <h2 className={`text-white font-bold text-lg sm:text-xl leading-snug mb-2 transition-colors ${isExpanded ? 'text-[#60a5fa]' : 'group-hover:text-[#60a5fa]'}`}>
+                          <h2 className={`text-[#0f172a] font-bold text-lg sm:text-xl leading-snug mb-2 transition-colors ${isExpanded ? 'text-blue-600' : 'group-hover:text-blue-600'}`}>
                             {article.title}
                           </h2>
-                          <p className="text-[#94a3b8] text-sm leading-relaxed line-clamp-2">
+                          <p className="text-slate-600 text-sm leading-relaxed line-clamp-2">
                             {article.excerpt}
                           </p>
                         </div>
                         <div className="flex items-center justify-between mt-4">
-                          <span className="text-[#475569] text-xs sm:hidden">{article.readTime}</span>
-                          <button className={`flex items-center gap-2 font-semibold text-sm transition-all ${isExpanded ? 'text-[#60a5fa]' : 'text-[#2563eb] hover:text-[#60a5fa]'}`}>
+                          <span className="text-slate-500 text-xs sm:hidden">{article.readTime}</span>
+                          <button className={`flex items-center gap-2 font-semibold text-sm transition-all ${isExpanded ? 'text-blue-600' : 'text-[#2563eb] hover:text-blue-600'}`}>
                             {isExpanded ? (
                               <><FaChevronUp className="text-xs" /> Read Less</>
                             ) : (
@@ -352,7 +352,7 @@ const Insights = () => {
 
                   {/* Full Article Content (expandable) */}
                   {isExpanded && (
-                    <div className="border-t border-[#1d3557] px-5 sm:px-8 py-6 bg-[#0d1e35]">
+                    <div className="border-t border-blue-100 px-5 sm:px-8 py-6 bg-slate-50">
                       <div className="max-w-3xl mx-auto prose prose-invert prose-sm sm:prose-base">
                         {article.content.map((para, i) => {
                           const lines = para.split('\n');
@@ -360,20 +360,20 @@ const Insights = () => {
                             <div key={i} className="mb-5">
                               {lines.map((line, j) => {
                                 if (line.startsWith('**') && line.endsWith('**')) {
-                                  return <h3 key={j} className="text-white font-bold text-base mb-2 mt-3">{line.replace(/\*\*/g, '')}</h3>;
+                                  return <h3 key={j} className="text-[#0f172a] font-bold text-base mb-2 mt-3">{line.replace(/\*\*/g, '')}</h3>;
                                 }
                                 if (line.startsWith('**') && line.includes('**')) {
                                   const parts = line.split('**');
                                   return (
-                                    <p key={j} className="text-[#cbd5e1] leading-relaxed mb-2 text-sm sm:text-[15px]">
+                                    <p key={j} className="text-slate-700 leading-relaxed mb-2 text-sm sm:text-[15px]">
                                       {parts.map((part, k) =>
-                                        k % 2 === 1 ? <strong key={k} className="text-white font-semibold">{part}</strong> : part
+                                        k % 2 === 1 ? <strong key={k} className="text-[#0f172a] font-semibold">{part}</strong> : part
                                       )}
                                     </p>
                                   );
                                 }
                                 return line ? (
-                                  <p key={j} className="text-[#cbd5e1] leading-relaxed mb-2 text-sm sm:text-[15px]">{line}</p>
+                                  <p key={j} className="text-slate-700 leading-relaxed mb-2 text-sm sm:text-[15px]">{line}</p>
                                 ) : null;
                               })}
                             </div>
@@ -381,8 +381,8 @@ const Insights = () => {
                         })}
 
                         {/* CTA at end of article */}
-                        <div className="mt-8 p-5 bg-[#112240] rounded-xl border border-[#2563eb]/30">
-                          <p className="text-white font-semibold mb-3">Need help with this? Talk to our team.</p>
+                        <div className="mt-8 p-5 bg-[#f8fafc] rounded-xl border border-blue-200">
+                          <p className="text-[#0f172a] font-semibold mb-3">Need help with this? Talk to our team.</p>
                           <a
                             href={`https://wa.me/919424856409?text=Hi! I read your article on "${article.title}" and need help.`}
                             target="_blank"
@@ -401,11 +401,11 @@ const Insights = () => {
           </div>
 
           {/* Newsletter */}
-          <div className="mt-14 bg-[#112240] rounded-2xl p-8 sm:p-10 border border-[#1d3557]">
+          <div className="mt-14 bg-[#f8fafc] rounded-2xl p-8 sm:p-10 border border-blue-100">
             <div className="max-w-xl mx-auto text-center">
-              <i className="ri-mail-send-line text-[#60a5fa] text-3xl mb-3 block" />
-              <h2 className="text-white text-2xl sm:text-3xl font-bold mb-3">Get Tax Updates in Your Inbox</h2>
-              <p className="text-[#94a3b8] mb-6 text-sm sm:text-base">
+              <i className="ri-mail-send-line text-blue-600 text-3xl mb-3 block" />
+              <h2 className="text-[#0f172a] text-2xl sm:text-3xl font-bold mb-3">Get Tax Updates in Your Inbox</h2>
+              <p className="text-slate-600 mb-6 text-sm sm:text-base">
                 Subscribe for Income Tax & GST updates, deadline reminders, and practical guides.
               </p>
               <form
@@ -416,7 +416,7 @@ const Insights = () => {
                   type="email"
                   placeholder="your@email.com"
                   required
-                  className="flex-1 bg-[#0a1628] border border-[#1d3557] focus:border-[#2563eb] rounded-lg px-4 py-3 text-white text-sm focus:outline-none transition-colors placeholder-[#475569]"
+                  className="flex-1 bg-white border border-blue-100 focus:border-[#2563eb] rounded-lg px-4 py-3 text-[#0f172a] text-sm focus:outline-none transition-colors placeholder-[#475569]"
                 />
                 <button
                   type="submit"

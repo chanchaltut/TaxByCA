@@ -35,17 +35,17 @@ const ServicesSection = () => {
     <section
       id="services"
       ref={sectionRef}
-      className="bg-[#0a1628] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
+      className="bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
       aria-label="CA Services"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12 md:mb-14">
           <div className="section-tag">Our Services</div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-3 mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0f172a] mt-3 mb-4 leading-tight">
             Complete CA Services
           </h2>
-          <p className="text-[#94a3b8] text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             All CA compliance services delivered 100% online across India.
             qualified Chartered Accountants. Transparent pricing. Fast turnaround.
           </p>
@@ -69,7 +69,7 @@ const ServicesSection = () => {
               className={`flex-shrink-0 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap min-h-[40px] ${
                 activeCategory === cat
                   ? 'bg-[#2563eb] text-white shadow-md'
-                  : 'bg-[#112240] text-white border border-[#1d3557] hover:border-[#2563eb] hover:text-[#2563eb]'
+                  : 'bg-[#f8fafc] text-[#0f172a] border border-blue-100 hover:border-[#2563eb] hover:text-[#2563eb]'
               }`}
             >
               {cat}
@@ -94,11 +94,11 @@ const ServicesSection = () => {
                       <i className={service.iconEmoji}></i>
                     </span>
                     <div>
-                      <h3 className="text-white font-bold text-base sm:text-lg leading-tight">
+                      <h3 className="text-[#0f172a] font-bold text-base sm:text-lg leading-tight">
                         {service.title}
                       </h3>
                       {service.isPopular && (
-                        <span className="inline-block mt-1 bg-[#2563eb]/15 text-[#2563eb] border border-[#2563eb]/30 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                        <span className="inline-block mt-1 bg-[#2563eb]/15 text-[#2563eb] border border-blue-200 text-[10px] font-bold px-2 py-0.5 rounded-full">
                           <><i className="ri-fire-line mr-1"></i> {service.badge}</>
                         </span>
                       )}
@@ -107,14 +107,14 @@ const ServicesSection = () => {
                 </div>
 
                 {/* Short Description */}
-                <p className="text-[#94a3b8] text-sm leading-relaxed mb-4">
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
                   {service.shortDesc}
                 </p>
 
                 {/* Service List (first 4) */}
                 <ul className="space-y-1.5 mb-4">
                   {service.services.slice(0, 4).map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-[#94a3b8] text-xs sm:text-sm">
+                    <li key={i} className="flex items-start gap-2 text-slate-600 text-xs sm:text-sm">
                       <i className="ri-checkbox-circle-fill text-[#2563eb] flex-shrink-0 text-base mt-0.5" />
                       <span>{item}</span>
                     </li>
@@ -124,9 +124,9 @@ const ServicesSection = () => {
               </div>
 
               {/* Card Footer */}
-              <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-[#1d3557] pt-4 flex items-center justify-between gap-3">
+              <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-blue-100 pt-4 flex items-center justify-between gap-3">
                 <div>
-                  <p className="text-[#94a3b8] text-[10px] uppercase tracking-wide font-semibold">Starting from</p>
+                  <p className="text-slate-600 text-[10px] uppercase tracking-wide font-semibold">Starting from</p>
                   <p className="text-[#2563eb] font-extrabold text-base sm:text-lg">{service.startingPrice}</p>
                 </div>
                 <a
@@ -148,12 +148,12 @@ const ServicesSection = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-10 sm:mt-12">
-          <p className="text-[#94a3b8] text-sm mb-4">Not sure which service you need?</p>
+          <p className="text-slate-600 text-sm mb-4">Not sure which service you need?</p>
           <a
             href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need help choosing the right CA service from TaxByCA.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#112240] hover:bg-[#1d3557] border border-[#2563eb]/40 text-[#2563eb] px-6 py-3 rounded-full font-semibold text-sm transition-all duration-200 min-h-[48px]"
+            className="inline-flex items-center gap-2 bg-[#f8fafc] hover:bg-blue-50 border border-[#2563eb]/40 text-[#2563eb] px-6 py-3 rounded-full font-semibold text-sm transition-all duration-200 min-h-[48px]"
           >
             <i className="ri-chat-3-line mr-2"></i> Ask Our CA Expert
           </a>

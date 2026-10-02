@@ -13,7 +13,7 @@ const StickyMobileCTA = () => {
           href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need CA services from TaxByCA.`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 bg-[#25d366] text-white font-bold text-sm active:bg-[#20b858] transition-colors min-h-[56px]"
+          className="flex items-center justify-center gap-2 bg-[#25d366] text-[#0f172a] font-bold text-sm active:bg-[#20b858] transition-colors min-h-[56px]"
           aria-label="Chat on WhatsApp"
         >
           <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 flex-shrink-0">

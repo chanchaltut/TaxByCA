@@ -25,7 +25,7 @@ const AboutSection = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="bg-[#0f172a] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
+      className="bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
       aria-label="About TaxByCA"
     >
       <div className="max-w-7xl mx-auto">
@@ -46,13 +46,13 @@ const AboutSection = () => {
 
               {/* Stats overlay card */}
               <div className="relative lg:absolute lg:bottom-[-24px] lg:left-0 lg:right-0 mt-4 lg:mt-0 mx-0 lg:mx-4 bg-[#2563eb] rounded-2xl p-5 sm:p-6 shadow-xl">
-                <div className="grid grid-cols-3 gap-4 divide-x divide-[#0a1628]/20">
+                <div className="grid grid-cols-3 gap-4 divide-x divide-slate-200">
                   {statsThree.map((stat, i) => (
                     <div key={i} className="text-center px-2">
-                      <div className="text-white font-extrabold text-2xl sm:text-3xl leading-none">
+                      <div className="text-[#0f172a] font-extrabold text-2xl sm:text-3xl leading-none">
                         {stat.number}{stat.suffix}
                       </div>
-                      <div className="text-white/70 text-[10px] sm:text-xs font-semibold mt-1 leading-tight">
+                      <div className="text-[#0f172a]/70 text-[10px] sm:text-xs font-semibold mt-1 leading-tight">
                         {stat.label}
                       </div>
                     </div>
@@ -66,25 +66,25 @@ const AboutSection = () => {
           <div className="order-1 lg:order-2 text-center lg:text-left">
             <div className="reveal">
               <div className="section-tag">About Us</div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-5 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0f172a] mt-3 mb-5 leading-tight">
                 About TaxByCA{' '}
                 <span className="text-[#2563eb]">Taxation Services</span>
               </h2>
             </div>
 
             <div className="reveal animation-delay-200">
-              <p className="text-[#94a3b8] text-sm sm:text-base leading-relaxed mb-3">
-                TaxByCA is an <strong className="text-white">team of qualified Chartered Accountants & professionals</strong> committed to providing accurate, reliable, and client-focused CA services across India.
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-3">
+                TaxByCA is an <strong className="text-[#0f172a]">team of qualified Chartered Accountants & professionals</strong> committed to providing accurate, reliable, and client-focused CA services across India.
               </p>
-              <p className="text-[#94a3b8] text-sm sm:text-base leading-relaxed mb-6">
-                We provide all CA services <strong className="text-white">100% online</strong> — GST registration & returns, income tax filing, company incorporation, TDS compliance, ROC filings, bookkeeping, MSME registration, trademark, FSSAI, and more. Transparent pricing. Fast turnaround. Dedicated WhatsApp support.
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                We provide all CA services <strong className="text-[#0f172a]">100% online</strong> — GST registration & returns, income tax filing, company incorporation, TDS compliance, ROC filings, bookkeeping, MSME registration, trademark, FSSAI, and more. Transparent pricing. Fast turnaround. Dedicated WhatsApp support.
               </p>
             </div>
 
             {/* Highlights */}
             <ul className="reveal animation-delay-300 space-y-3 mb-8 text-left max-w-md mx-auto lg:mx-0">
               {ABOUT.highlights.map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-white text-sm sm:text-base">
+                <li key={i} className="flex items-center gap-3 text-[#0f172a] text-sm sm:text-base">
                   <FaCheckCircle className="text-[#2563eb] flex-shrink-0 text-lg" />
                   <span>{item}</span>
                 </li>
@@ -103,7 +103,7 @@ const AboutSection = () => {
               </a>
               <a
                 href={`tel:${BRAND.phone}`}
-                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#1d3557] hover:border-[#2563eb] text-white hover:text-[#2563eb] px-6 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 min-h-[48px]"
+                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-blue-100 hover:border-[#2563eb] text-[#0f172a] hover:text-[#2563eb] px-6 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 min-h-[48px]"
               >
                 <><i className="ri-phone-line mr-2"></i> Call Us</>
               </a>

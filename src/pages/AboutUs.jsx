@@ -17,12 +17,12 @@ const AboutUs = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="bg-[#0a1628] dot-bg pt-32 pb-16 sm:pt-40 sm:pb-24 border-b border-[#1d3557]">
+      <section className="bg-white dot-bg pt-32 pb-16 sm:pt-40 sm:pb-24 border-b border-blue-100">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#0f172a] mb-6">
             About <span className="text-[#2563eb]">TaxByCA</span>
           </h1>
-          <p className="text-[#94a3b8] text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-600 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
             We are an team of qualified CAs & professionals dedicated to making taxation, compliance, and corporate registrations seamless, 100% online, and accessible across India.
           </p>
         </div>

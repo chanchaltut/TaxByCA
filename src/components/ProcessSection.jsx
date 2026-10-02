@@ -4,18 +4,18 @@ import { PROCESS_STEPS } from '../utils/constants';
 const ProcessSection = () => {
   return (
     <section
-      className="bg-[#112240] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
+      className="bg-[#f8fafc] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
       aria-label="How it works"
     >
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-14">
           <div className="section-tag">How It Works</div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0f172a] mt-3 mb-4 leading-tight">
             Get Your CA Service in{' '}
             <span className="text-[#2563eb]">4 Simple Steps</span>
           </h2>
-          <p className="text-[#94a3b8] text-sm sm:text-base max-w-xl mx-auto">
+          <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
             We've made it simple to get professional CA services from anywhere in India.
           </p>
         </div>
@@ -41,20 +41,20 @@ const ProcessSection = () => {
                     <span className="text-[#2563eb] font-extrabold text-sm tracking-widest">{step.step}</span>
                     <i className={`text-2xl ${step.icon}`}></i>
                   </div>
-                  <h3 className="text-white font-bold text-lg mb-2">{step.title}</h3>
-                  <p className="text-[#94a3b8] text-sm leading-relaxed">{step.desc}</p>
+                  <h3 className="text-[#0f172a] font-bold text-lg mb-2">{step.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
                 </div>
 
                 {/* Desktop layout */}
                 <div className="hidden md:flex md:flex-col md:items-center">
                   {/* Icon circle */}
-                  <div className="relative z-10 w-20 h-20 bg-[#0a1628] border-2 border-[#2563eb] rounded-full flex flex-col items-center justify-center mb-5 shadow-lg">
+                  <div className="relative z-10 w-20 h-20 bg-white border-2 border-[#2563eb] rounded-full flex flex-col items-center justify-center mb-5 shadow-lg">
                     <i className={`text-2xl mb-0.5 ${step.icon}`}></i>
                     <span className="text-[#2563eb] font-extrabold text-xs tracking-widest">{step.step}</span>
                   </div>
 
-                  <h3 className="text-white font-bold text-base sm:text-lg mb-2">{step.title}</h3>
-                  <p className="text-[#94a3b8] text-xs sm:text-sm leading-relaxed">{step.desc}</p>
+                  <h3 className="text-[#0f172a] font-bold text-base sm:text-lg mb-2">{step.title}</h3>
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -63,10 +63,10 @@ const ProcessSection = () => {
 
         {/* Bottom note */}
         <div className="text-center mt-10 sm:mt-12">
-          <div className="inline-flex items-center gap-2 bg-[#2563eb]/10 border border-[#2563eb]/20 rounded-2xl px-6 py-4">
+          <div className="inline-flex items-center gap-2 bg-[#2563eb]/10 border border-blue-100 rounded-2xl px-6 py-4">
             <i className="ri-flashlight-line text-2xl text-[#2563eb]"></i>
-            <p className="text-[#94a3b8] text-sm">
-              <strong className="text-white">Most services completed in 24–72 hours.</strong>{' '}
+            <p className="text-slate-600 text-sm">
+              <strong className="text-[#0f172a]">Most services completed in 24–72 hours.</strong>{' '}
               No office visit needed.
             </p>
           </div>

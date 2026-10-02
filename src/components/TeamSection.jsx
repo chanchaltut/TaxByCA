@@ -5,17 +5,17 @@ import { TEAM, BRAND } from '../utils/constants';
 const TeamSection = () => {
   return (
     <section
-      className="bg-[#112240] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
+      className="bg-[#f8fafc] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
       aria-label="Our CA Team"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-14">
           <div className="section-tag">Our Team</div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0f172a] mt-3 mb-4 leading-tight">
             Meet Our <span className="text-[#2563eb]">CA Experts</span>
           </h2>
-          <p className="text-[#94a3b8] text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
             qualified Chartered Accountants with deep expertise across all areas of taxation, compliance, and corporate law.
           </p>
         </div>
@@ -25,10 +25,10 @@ const TeamSection = () => {
           {TEAM.map((member, i) => (
             <article
               key={member.id}
-              className="bg-[#0a1628] border border-[#1d3557] rounded-2xl overflow-hidden hover:border-[#2563eb]/40 transition-all duration-300 card-hover group"
+              className="bg-white border border-blue-100 rounded-2xl overflow-hidden hover:border-[#2563eb]/40 transition-all duration-300 card-hover group"
             >
               {/* Photo placeholder / actual image */}
-              <div className="relative h-52 sm:h-60 bg-gradient-to-br from-[#1a3a5c] to-[#0a1628] overflow-hidden">
+              <div className="relative h-52 sm:h-60 bg-gradient-to-br from-[#1a3a5c] to-white overflow-hidden">
                 {member.image ? (
                   <img
                     src={member.image}
@@ -47,19 +47,19 @@ const TeamSection = () => {
 
               {/* Info */}
               <div className="p-5 sm:p-6 border-t-2 border-[#2563eb]">
-                <h3 className="text-white font-bold text-lg sm:text-xl mb-1">{member.name}</h3>
+                <h3 className="text-[#0f172a] font-bold text-lg sm:text-xl mb-1">{member.name}</h3>
                 <p className="text-[#2563eb] text-xs sm:text-sm font-semibold tracking-wide mb-2">{member.role}</p>
-                <p className="text-[#94a3b8] text-xs sm:text-sm leading-relaxed mb-4">{member.expertise}</p>
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">{member.expertise}</p>
 
                 {/* Qualifications */}
                 <div className="flex flex-wrap gap-2 mb-5">
                   {member.qualification && (
-                    <span className="bg-[#112240] border border-[#1d3557] text-[#94a3b8] text-[10px] px-2.5 py-1 rounded-full">
+                    <span className="bg-[#f8fafc] border border-blue-100 text-slate-600 text-[10px] px-2.5 py-1 rounded-full">
                       {member.qualification}
                     </span>
                   )}
                   {member.experience && (
-                    <span className="bg-[#112240] border border-[#1d3557] text-[#2563eb] text-[10px] px-2.5 py-1 rounded-full">
+                    <span className="bg-[#f8fafc] border border-blue-100 text-[#2563eb] text-[10px] px-2.5 py-1 rounded-full">
                       {member.experience}
                     </span>
                   )}
@@ -69,14 +69,14 @@ const TeamSection = () => {
                 <div className="space-y-2 mb-5">
                   <a
                     href={`tel:${member.phone}`}
-                    className="flex items-center gap-2 text-[#94a3b8] hover:text-[#2563eb] text-xs sm:text-sm transition-colors smooth-hover-fast min-h-[36px]"
+                    className="flex items-center gap-2 text-slate-600 hover:text-[#2563eb] text-xs sm:text-sm transition-colors smooth-hover-fast min-h-[36px]"
                   >
                     <FaPhone className="text-[#2563eb] text-xs flex-shrink-0" />
                     <span>{member.phone}</span>
                   </a>
                   <a
                     href={`mailto:${member.email}`}
-                    className="flex items-center gap-2 text-[#94a3b8] hover:text-[#2563eb] text-xs sm:text-sm transition-colors smooth-hover-fast min-h-[36px] break-all"
+                    className="flex items-center gap-2 text-slate-600 hover:text-[#2563eb] text-xs sm:text-sm transition-colors smooth-hover-fast min-h-[36px] break-all"
                   >
                     <FaEnvelope className="text-[#2563eb] text-xs flex-shrink-0" />
                     <span>{member.email}</span>

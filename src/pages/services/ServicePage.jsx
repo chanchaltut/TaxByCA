@@ -11,8 +11,8 @@ import FAQSection from '../../components/FAQSection';
 
 const ServicePage = ({ service }) => {
   if (!service) return (
-    <div className="min-h-screen bg-[#0a1628] flex items-center justify-center">
-      <p className="text-[#94a3b8]">Service not found.</p>
+    <div className="min-h-screen bg-white flex items-center justify-center">
+      <p className="text-slate-600">Service not found.</p>
     </div>
   );
 
@@ -57,7 +57,7 @@ const ServicePage = ({ service }) => {
       </Helmet>
 
       {/* Breadcrumb */}
-      <nav className="bg-[#0a1628] border-b border-[#1d3557] pt-20 px-4 sm:px-6">
+      <nav className="bg-white border-b border-blue-100 pt-20 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto py-3">
           <ol className="flex items-center gap-2 text-xs text-[#64748b]" aria-label="Breadcrumb">
             <li><Link to="/" className="hover:text-[#2563eb] transition-colors">Home</Link></li>
@@ -70,14 +70,14 @@ const ServicePage = ({ service }) => {
       </nav>
 
       {/* Hero */}
-      <div className="bg-[#0a1628] dot-bg pb-16 sm:pb-20 px-4 sm:px-6">
+      <div className="bg-white dot-bg pb-16 sm:pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center pt-10 sm:pt-12">
           <div className="section-tag">{service.category}</div>
           <div className="text-5xl sm:text-6xl mb-4 mt-4" aria-hidden="true"><i className={service.iconEmoji}></i></div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0f172a] mb-5 leading-tight">
             {service.title}
           </h1>
-          <p className="text-[#94a3b8] text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-8">
             {service.overview}
           </p>
 
@@ -89,7 +89,7 @@ const ServicePage = ({ service }) => {
               { label: 'Mode', value: '100% Online' },
               { label: 'By', value: 'ICAI CA' },
             ].map((stat, i) => (
-              <div key={i} className="bg-[#112240] border border-[#1d3557] rounded-xl px-4 py-2.5 text-center">
+              <div key={i} className="bg-[#f8fafc] border border-blue-100 rounded-xl px-4 py-2.5 text-center">
                 <p className="text-[#2563eb] font-bold text-sm sm:text-base">{stat.value}</p>
                 <p className="text-[#64748b] text-[10px] sm:text-xs mt-0.5">{stat.label}</p>
               </div>
@@ -118,19 +118,19 @@ const ServicePage = ({ service }) => {
       </div>
 
       {/* Service Details */}
-      <section className="bg-[#112240] py-14 sm:py-20 px-4 sm:px-6">
+      <section className="bg-[#f8fafc] py-14 sm:py-20 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#0f172a] mb-8 text-center">
             What's Included in {service.title}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {service.services.map((item, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 bg-[#0a1628] border border-[#1d3557] hover:border-[#2563eb]/40 rounded-xl p-3 sm:p-4 transition-colors"
+                className="flex items-start gap-3 bg-white border border-blue-100 hover:border-[#2563eb]/40 rounded-xl p-3 sm:p-4 transition-colors"
               >
                 <i className="ri-checkbox-circle-fill text-[#2563eb] flex-shrink-0 text-xl mt-0.5" />
-                <span className="text-white text-sm sm:text-base leading-snug">{item}</span>
+                <span className="text-[#0f172a] text-sm sm:text-base leading-snug">{item}</span>
               </div>
             ))}
           </div>
@@ -138,10 +138,10 @@ const ServicePage = ({ service }) => {
       </section>
 
       {/* Contact CTA */}
-      <section className="bg-[#0a1628] py-10 sm:py-12 px-4 sm:px-6 text-center border-t border-[#1d3557]">
+      <section className="bg-white py-10 sm:py-12 px-4 sm:px-6 text-center border-t border-blue-100">
         <div className="max-w-xl mx-auto">
-          <p className="text-[#94a3b8] text-sm mb-2">Ready to get started?</p>
-          <p className="text-white font-semibold text-lg mb-5">
+          <p className="text-slate-600 text-sm mb-2">Ready to get started?</p>
+          <p className="text-[#0f172a] font-semibold text-lg mb-5">
             Message us on WhatsApp for a free quote on {service.title}
           </p>
           <a
