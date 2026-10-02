@@ -40,11 +40,11 @@ const Navbar = () => {
     <>
       {/* ─── MAIN NAVBAR ─── */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-[22px] left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#0d1b2a]/98 backdrop-blur-sm shadow-lg'
-            : 'bg-[#0d1b2a]'
-        } border-b border-[#1e3a54]`}
+            ? 'bg-[#0a1628]/98 backdrop-blur-sm shadow-lg'
+            : 'bg-[#0a1628]'
+        } border-b border-[#1d3557]`}
         role="navigation"
         aria-label="Main navigation"
       >
@@ -73,8 +73,8 @@ const Navbar = () => {
                       to={link.href}
                       className={`transition-colors duration-200 ${
                         isActive(link.href)
-                          ? 'text-[#f4b942]'
-                          : 'text-white hover:text-[#f4b942]'
+                          ? 'text-[#2563eb]'
+                          : 'text-white hover:text-[#2563eb]'
                       }`}
                     >
                       {link.name.toUpperCase()}
@@ -86,7 +86,7 @@ const Navbar = () => {
               {/* Desktop CTA */}
               <a
                 href={`tel:${BRAND.phone}`}
-                className="flex items-center gap-2 bg-[#f4b942] hover:bg-[#d9a230] text-[#0d1b2a] px-5 py-2.5 rounded-full font-bold text-[13px] transition-all duration-200 hover:shadow-lg whitespace-nowrap"
+                className="flex items-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-5 py-2.5 rounded-full font-bold text-[13px] transition-all duration-200 hover:shadow-lg whitespace-nowrap"
               >
                 <FaPhone className="text-xs" />
                 FREE CONSULTATION
@@ -95,7 +95,7 @@ const Navbar = () => {
 
             {/* Mobile Hamburger */}
             <button
-              className="lg:hidden text-white text-2xl p-2 z-50 hover:text-[#f4b942] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="lg:hidden text-white text-2xl p-2 z-50 hover:text-[#2563eb] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
               aria-label={isSidebarOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isSidebarOpen}
@@ -117,14 +117,14 @@ const Navbar = () => {
 
       {/* ─── MOBILE SIDEBAR ─── */}
       <div
-        className={`fixed top-0 left-0 h-full w-[75%] max-w-[320px] bg-[#0d1b2a] z-50 transform transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto border-r border-[#1e3a54] ${
+        className={`fixed top-0 left-0 h-full w-[75%] max-w-[320px] bg-[#0a1628] z-50 transform transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto border-r border-[#1d3557] ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
       >
-        <div className="p-4 border-b border-[#1e3a54] flex items-center gap-3">
+        <div className="p-4 border-b border-[#1d3557] flex items-center gap-3">
           <img
             src={TaxByCALogo}
             alt="TaxByCA"
@@ -142,8 +142,8 @@ const Navbar = () => {
                   onClick={closeSidebar}
                   className={`block py-3 px-4 rounded-xl text-[15px] font-semibold transition-all duration-200 ${
                     isActive(link.href)
-                      ? 'bg-[#f4b942]/15 text-[#f4b942] border border-[#f4b942]/30'
-                      : 'text-white hover:bg-[#162032] hover:text-[#f4b942]'
+                      ? 'bg-[#2563eb]/15 text-[#2563eb] border border-[#2563eb]/30'
+                      : 'text-white hover:bg-[#112240] hover:text-[#2563eb]'
                   }`}
                 >
                   {link.name}
@@ -169,7 +169,7 @@ const Navbar = () => {
             <a
               href={`tel:${BRAND.phone}`}
               onClick={closeSidebar}
-              className="w-full flex items-center justify-center gap-2 bg-[#f4b942] text-[#0d1b2a] py-3.5 px-6 rounded-full font-bold text-[14px] transition-all hover:bg-[#d9a230]"
+              className="w-full flex items-center justify-center gap-2 bg-[#2563eb] text-white py-3.5 px-6 rounded-full font-bold text-[14px] transition-all hover:bg-[#1d4ed8]"
             >
               <FaPhone className="text-sm" />
               Call Now
@@ -178,11 +178,11 @@ const Navbar = () => {
         </nav>
 
         {/* Sidebar Footer */}
-        <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-[#1e3a54]">
+        <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-[#1d3557]">
           <p className="text-[#94a3b8] text-[11px] text-center">
             © {new Date().getFullYear()} TaxByCA
           </p>
-          <p className="text-[#f4b942] text-[10px] text-center mt-1">ICAI Registered CA Firm</p>
+          <p className="text-[#2563eb] text-[10px] text-center mt-1">TaxByCA — Expert CA Services</p>
         </div>
       </div>
     </>

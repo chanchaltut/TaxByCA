@@ -11,19 +11,19 @@ const AboutUs = () => {
     <>
       <Helmet>
         <title>About Us | TaxByCA</title>
-        <meta name="description" content="TaxByCA is an ICAI-registered Chartered Accountant firm providing 100% online CA services across India." />
+        <meta name="description" content="TaxByCA is an team of qualified Chartered Accountants & professionals providing 100% online CA services across India." />
         <meta property="og:title" content="About Us | TaxByCA" />
         <link rel="canonical" href="https://taxbyca.in/about" />
       </Helmet>
 
       {/* Hero Section */}
-      <section className="bg-[#0d1b2a] dot-bg pt-32 pb-16 sm:pt-40 sm:pb-24 border-b border-[#1e3a54]">
+      <section className="bg-[#0a1628] dot-bg pt-32 pb-16 sm:pt-40 sm:pb-24 border-b border-[#1d3557]">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6">
-            About <span className="text-[#f4b942]">TaxByCA</span>
+            About <span className="text-[#2563eb]">TaxByCA</span>
           </h1>
           <p className="text-[#94a3b8] text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-            We are an ICAI-registered CA firm dedicated to making taxation, compliance, and corporate registrations seamless, 100% online, and accessible across India.
+            We are an team of qualified CAs & professionals dedicated to making taxation, compliance, and corporate registrations seamless, 100% online, and accessible across India.
           </p>
         </div>
       </section>

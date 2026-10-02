@@ -4,7 +4,7 @@ import { FaWhatsapp, FaChevronLeft, FaChevronRight, FaArrowUp, FaPhone } from 'r
 import { HERO_SLIDES, BRAND } from '../utils/constants';
 
 const trustBadges = [
-  { icon: 'ri-trophy-line', text: 'ICAI Registered' },
+  { icon: 'ri-trophy-line', text: 'Qualified CA Team' },
   { icon: 'ri-star-smile-line', text: '10000+ Clients' },
   { icon: 'ri-flashlight-line', text: '10+ Years' },
   { icon: 'ri-global-line', text: '100% Online' },
@@ -80,14 +80,14 @@ const Hero = () => {
       {/* ═══ HERO SECTION ═══ */}
       <section
         id="home"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0d1b2a] dot-bg"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a1628] dot-bg"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
         aria-label="Hero section"
       >
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0d1b2a] via-[#162032]/80 to-[#0d1b2a] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2a]/90 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628] via-[#112240]/80 to-[#0a1628] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/90 via-transparent to-transparent pointer-events-none" />
 
         {/* Background image (blurred, grayscale overlay) */}
         <div className="absolute inset-0 opacity-10">
@@ -101,17 +101,17 @@ const Hero = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 pt-24 pb-20 sm:pt-28 sm:pb-24 text-center">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 pt-32 pb-20 sm:pt-36 sm:pb-24 text-center">
 
           {/* Trust badge pill */}
-          <div className="inline-flex items-center gap-2 bg-[#f4b942]/10 border border-[#f4b942]/30 text-[#f4b942] text-xs sm:text-sm font-semibold px-4 py-2 rounded-full mb-6 sm:mb-8 animate-fadeInUp">
+          <div className="inline-flex items-center gap-2 bg-[#2563eb]/10 border border-[#2563eb]/30 text-[#2563eb] text-xs sm:text-sm font-semibold px-4 py-2 rounded-full mb-6 sm:mb-8 animate-fadeInUp">
             <><i className="ri-trophy-line mr-2"></i> {slide.badge}</>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-4 sm:mb-6 animate-fadeInUp animation-delay-100">
             {slide.heading}{' '}
-            <span className="text-[#f4b942]">{slide.subHeading}</span>
+            <span className="text-[#2563eb]">{slide.subHeading}</span>
           </h1>
 
           {/* Description */}
@@ -130,7 +130,7 @@ const Hero = () => {
             </button>
             <button
               onClick={() => handleCTA(slide.ctaSecondaryLink)}
-              className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-transparent border-2 border-[#f4b942] text-[#f4b942] hover:bg-[#f4b942] hover:text-[#0d1b2a] px-7 sm:px-8 py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-200 hover:-translate-y-0.5 min-h-[52px]"
+              className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-transparent border-2 border-[#2563eb] text-[#2563eb] hover:bg-[#2563eb] hover:text-white px-7 sm:px-8 py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-200 hover:-translate-y-0.5 min-h-[52px]"
             >
               {slide.ctaSecondary}
             </button>
@@ -141,9 +141,9 @@ const Hero = () => {
             {trustBadges.map((badge, i) => (
               <div
                 key={i}
-                className="flex items-center gap-1.5 bg-[#162032]/80 border border-[#1e3a54] rounded-full px-3 sm:px-4 py-1.5 sm:py-2"
+                className="flex items-center gap-1.5 bg-[#112240]/80 border border-[#1d3557] rounded-full px-3 sm:px-4 py-1.5 sm:py-2"
               >
-                <i className={`text-sm sm:text-base text-[#f4b942] ${badge.icon}`}></i>
+                <i className={`text-sm sm:text-base text-[#2563eb] ${badge.icon}`}></i>
                 <span className="text-white text-[11px] sm:text-xs font-semibold whitespace-nowrap">{badge.text}</span>
               </div>
             ))}
@@ -153,14 +153,14 @@ const Hero = () => {
         {/* Slide Navigation Arrows (desktop only) */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 hidden sm:flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#162032]/70 border border-[#1e3a54] text-white hover:bg-[#f4b942] hover:text-[#0d1b2a] hover:border-[#f4b942] transition-all duration-200"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 hidden sm:flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#112240]/70 border border-[#1d3557] text-white hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] transition-all duration-200"
           aria-label="Previous slide"
         >
           <FaChevronLeft />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 hidden sm:flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#162032]/70 border border-[#1e3a54] text-white hover:bg-[#f4b942] hover:text-[#0d1b2a] hover:border-[#f4b942] transition-all duration-200"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 hidden sm:flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#112240]/70 border border-[#1d3557] text-white hover:bg-[#2563eb] hover:text-white hover:border-[#2563eb] transition-all duration-200"
           aria-label="Next slide"
         >
           <FaChevronRight />
@@ -173,7 +173,7 @@ const Hero = () => {
               key={i}
               onClick={() => goToSlide(i)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                i === currentSlide ? 'bg-[#f4b942] w-8' : 'bg-white/30 w-2 hover:bg-white/60'
+                i === currentSlide ? 'bg-[#2563eb] w-8' : 'bg-white/30 w-2 hover:bg-white/60'
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />
@@ -212,7 +212,7 @@ const Hero = () => {
       {/* ═══ SCROLL TO TOP BUTTON ═══ */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className={`fixed bottom-20 right-4 sm:right-6 z-40 w-11 h-11 rounded-full bg-[#162032] border border-[#1e3a54] hover:border-[#f4b942] text-white hover:text-[#f4b942] flex items-center justify-center shadow-lg transition-all duration-300 hover:-translate-y-0.5 ${
+        className={`fixed bottom-20 right-4 sm:right-6 z-40 w-11 h-11 rounded-full bg-[#112240] border border-[#1d3557] hover:border-[#2563eb] text-white hover:text-[#2563eb] flex items-center justify-center shadow-lg transition-all duration-300 hover:-translate-y-0.5 ${
           showScrollTop ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-4'
         }`}
         aria-label="Scroll to top"

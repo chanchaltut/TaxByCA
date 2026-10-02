@@ -9,22 +9,23 @@ export const BRAND = {
   name: 'TaxByCA',
   shortName: 'TaxByCA',
   legalName: 'TaxByCA',
-  tagline: 'Accurate. Reliable. Trusted CA Services',
-  subTagline: "India's Trusted CA Partner for GST, ITR, Company Registration & More",
+  tagline: 'One-Stop Solution for Every Business & Professional',
+  subTagline: 'Expert CA Services — Tax, Audit, Project Reports & Certificates',
   description:
-    'ICAI-registered CA firm providing GST registration & returns, ITR filing, company registration, TDS compliance, ROC filings, bookkeeping, and all CA services 100% online across India.',
-  phone: '9424856409',          // ← replace with actual
-  whatsapp: '919424856409',     // ← replace with actual (no +, no spaces)
-  email: 'taxbyca1@gmail.com',
+    'TaxByCA is a team of qualified CAs & professionals providing GST, ITR filing, company registration, TDS compliance, ROC filings, Tax Audit, Project Reports, Certificates and all CA services 100% online across India.',
+  phone: '9424856409',
+  whatsapp: '919424856409',
+  email: 'TaxByCAinfo@gmail.com',
   address: 'India',
   timings: '8 AM to 10 PM (Monday to Monday)',
+  since: 2019,
   city: 'India',
   website: 'https://taxbyca.in',
-  icai: 'ICAI Registered',
   yearEstablished: 2019,
   social: {
     facebook:  'https://www.facebook.com/taxbyca',
     instagram: 'https://www.instagram.com/taxbyca',
+    whatsapp:  'https://wa.me/919424856409',
     linkedin:  'https://www.linkedin.com/company/taxbyca',
     twitter:   'https://twitter.com/taxbyca',
     youtube:   'https://www.youtube.com/@taxbyca',
@@ -77,10 +78,13 @@ export const SERVICES = [
     "overview": "File your income tax return accurately and on time with TaxByCA. We handle ITR-1 through ITR-7, reconcile your AIS/26AS, maximise deductions under 80C, 80D, HRA, and provide expert tax planning strategies.",
     "services": [
       "ITR Filing for Salaried & Business",
+      "Old Pending ITR Filing",
       "Capital Gains & Crypto Tax",
+      "NRI Return Filing",
+      "Income Tax Notice, Assessment & Proceeding",
+      "Tax Planning on Refund & Tax Saving",
       "AIS/26AS Reconciliation",
-      "Tax Planning & Advance Tax",
-      "Income Tax Notice Handling"
+      "Advance Tax Computation"
     ],
     "startingPrice": "₹499",
     "timeline": "1-3 working days",
@@ -103,6 +107,8 @@ export const SERVICES = [
       "New GST Registration",
       "GSTR-1 & GSTR-3B Filing",
       "GSTR-9 Annual Return",
+      "GST Reconciliation (GSTR-2A/2B)",
+      "GST Audit",
       "LUT Application",
       "GST Notice Reply"
     ],
@@ -126,6 +132,8 @@ export const SERVICES = [
     "services": [
       "Tax Audit u/s 44AB",
       "Statutory Audit of Companies",
+      "NGO, Trust & Society Audit",
+      "ADT-1 — Auditor Appointment",
       "Form 3CA/3CB & 3CD",
       "Internal Audit",
       "Audit Report Preparation"
@@ -169,14 +177,17 @@ export const SERVICES = [
     "category": "Business",
     "isPopular": true,
     "badge": "High Demand",
-    "shortDesc": "Company incorporation, LLP, Partnership, and MSME registration.",
-    "overview": "Start your business smoothly with TaxByCA. We help you choose the right business structure and handle all registrations including Pvt Ltd, LLP, Partnership, and MSME/Udyam.",
+    "shortDesc": "One-stop business setup — Proprietorship to Private Limited, FSSAI, IEC & NGO registrations.",
+    "overview": "Start your business the right way with TaxByCA. We help you choose the right structure and handle all registrations — from simple Proprietorships to Private Limited Companies, FSSAI food licenses, IEC for export-import, and NGO/Trust/Society formation.",
     "services": [
-      "Private Limited Company Registration",
-      "LLP & Partnership Firm Registration",
-      "MSME / Udyam Registration",
-      "Startup India Registration",
-      "PAN & TAN Application"
+      "Proprietorship Registration",
+      "Partnership Firm Registration",
+      "Private Limited Company (Pvt Ltd)",
+      "One Person Company (OPC)",
+      "FSSAI Food License",
+      "IEC — Import Export Code",
+      "NGO / Trust / Society Registration",
+      "MSME / Udyam Registration"
     ],
     "startingPrice": "₹4,999",
     "timeline": "7-15 working days",
@@ -198,9 +209,10 @@ export const SERVICES = [
     "services": [
       "AOC-4 & MGT-7 Annual Returns",
       "Director KYC (DIR-3)",
+      "ADT-1 — Auditor Appointment",
       "Board Resolution Drafting",
-      "Change in Directors/Address",
-      "Strike Off Company"
+      "Change in Directors / Address",
+      "Strike Off / Company Closure"
     ],
     "startingPrice": "₹3,999",
     "timeline": "Before due dates",
@@ -221,6 +233,7 @@ export const SERVICES = [
     "overview": "TaxByCA prepares detailed project reports with financial projections and CMA (Credit Monitoring Arrangement) data essential for bank loan sanctions and government scheme applications.",
     "services": [
       "Bank Loan Project Reports",
+      "Certified Project Report",
       "CMA Data for CC/OD Limits",
       "Financial Projections (5-year)",
       "MSME Subsidy Reports",
@@ -234,15 +247,15 @@ export const SERVICES = [
   {
     "id": 8,
     "slug": "ca-certificates",
-    "title": "CA Certificates",
-    "shortTitle": "CA Certificates",
+    "title": "Certificates",
+    "shortTitle": "Certificates",
     "icon": "fa-certificate",
-    "iconEmoji": "📜",
+    "iconEmoji": "ri-award-line",
     "category": "Compliance",
     "isPopular": false,
     "badge": "",
-    "shortDesc": "Net worth certificates, turnover certificates, and foreign remittance forms.",
-    "overview": "We provide various CA certifications required for visa applications, bank loans, and statutory authorities. TaxByCA issues Net Worth, Turnover, and Form 15CA/15CB certificates promptly.",
+    "shortDesc": "Net worth, turnover, and foreign remittance certificates — issued promptly.",
+    "overview": "TaxByCA issues various certifications required for visa applications, bank loans, government schemes, and statutory authorities. We provide Net Worth, Turnover, Form 15CA/15CB, and all required certificates with proper GST invoice.",
     "services": [
       "Net Worth Certificate",
       "Turnover Certificate",
@@ -312,12 +325,11 @@ export const SERVICE_CATEGORIES = ['All', 'Tax Filing', 'Business', 'Compliance'
 export const TEAM = [
   {
     id: 1,
-    name: 'CA [Name]',                         // ← Replace with actual CA name
-    role: 'Founder & Principal Chartered Accountant',
-    image: null,                                // ← Replace with actual image import
+    name: 'TaxByCA Founder',
+    role: 'Principal Chartered Accountant',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format&fit=crop',
     expertise: 'GST, Income Tax, Company Law & ROC Compliance',
-    qualification: 'B.Com, ACA (ICAI)',
-    icai: 'MXXXXXX',                           // ← Replace with actual ICAI no.
+    qualification: 'Chartered Accountant',
     experience: '10+ years',
     phone: BRAND.phone,
     email: BRAND.email,
@@ -325,12 +337,11 @@ export const TEAM = [
   },
   {
     id: 2,
-    name: 'CA [Name]',
+    name: 'Senior Partner',
     role: 'Senior Tax Consultant',
-    image: null,
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop',
     expertise: 'Tax Audit, Corporate Tax, International Taxation',
-    qualification: 'B.Com, ACA (ICAI)',
-    icai: 'MXXXXXX',
+    qualification: 'Chartered Accountant',
     experience: '8+ years',
     phone: BRAND.phone,
     email: BRAND.email,
@@ -338,12 +349,11 @@ export const TEAM = [
   },
   {
     id: 3,
-    name: '[Name]',
+    name: 'Compliance Head',
     role: 'GST & Compliance Specialist',
-    image: null,
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80&auto=format&fit=crop',
     expertise: 'GST, ROC, FSSAI, Trademark, Startup Services',
-    qualification: 'B.Com, Semi-qualified CA',
-    icai: '',
+    qualification: 'Chartered Accountant',
     experience: '5+ years',
     phone: BRAND.phone,
     email: BRAND.email,
@@ -407,12 +417,12 @@ export const FAQS = [
 
 // ─── WHY CHOOSE US ────────────────────────────────────────────
 export const WHY_CHOOSE_US = [
-  { icon: 'ri-trophy-line', title: 'ICAI Registered CAs', desc: 'All our Chartered Accountants are ICAI-registered with valid Certificate of Practice.' },
-  { icon: 'ri-global-line', title: 'Pan-India Services', desc: '100% online — we serve clients in all 28 states and 8 UTs of India.' },
+  { icon: 'ri-group-line', title: 'Qualified CAs & Professionals', desc: 'Our team of qualified Chartered Accountants and professionals has been serving businesses and individuals for 10+ years.' },
+  { icon: 'ri-global-line', title: 'Pan-India Services', desc: '100% online — we serve clients in all 28 states and 8 UTs of India, without you needing to visit any office.' },
   { icon: 'ri-money-dollar-circle-line', title: 'Transparent Pricing', desc: 'Fixed professional fees quoted upfront. Government fees shown separately at actuals. No hidden charges.' },
   { icon: 'ri-flashlight-line', title: 'Fast Turnaround', desc: 'ITR in 24 hours. GST registration in 3 days. Timely filing — always before due dates.' },
-  { icon: 'ri-lock-line', title: 'Secure & Confidential', desc: 'Your financial data is handled with complete confidentiality and shared only via secure channels.' },
-  { icon: 'ri-phone-line', title: 'Dedicated Support', desc: 'Dedicated relationship manager reachable on WhatsApp for real-time status updates.' },
+  { icon: 'ri-file-text-line', title: 'Proper GST Invoice', desc: 'We issue a proper GST-compliant tax invoice for every service. You always have documentation for your records.' },
+  { icon: 'ri-phone-line', title: 'Dedicated Support', desc: 'Dedicated relationship manager reachable on WhatsApp for real-time updates and document guidance.' },
 ]
 
 // ─── PROCESS STEPS ───────────────────────────────────────────
@@ -439,7 +449,7 @@ export const PROCESS_STEPS = [
     step: '04',
     icon: 'ri-checkbox-circle-line',
     title: 'Done — Acknowledgment',
-    desc: 'Receive your certificate / acknowledgment. We provide post-filing support too.',
+    desc: 'Receive your certificate / acknowledgment along with a proper GST invoice.',
   },
 ]
 
@@ -447,11 +457,11 @@ export const PROCESS_STEPS = [
 export const HERO_SLIDES = [
   {
     id: 1,
-    badge: 'ICAI Registered CA Firm',
+    badge: 'One-Stop CA Services — 10+ Years',
     heading: 'Expert CA Services',
     subHeading: 'Across India — Online & Fast',
     description:
-      'GST registration, ITR filing, company incorporation & all compliance services delivered 100% online. 10000+ clients. 10+ years experience.',
+      'GST, ITR filing, company registration, Tax Audit, Project Reports & Certificates — all delivered 100% online. 10,000+ clients served.',
     ctaText: 'WhatsApp Us Now',
     ctaLink: `https://wa.me/${BRAND.whatsapp}?text=Hi! I need CA services from TaxByCA.`,
     ctaSecondary: 'Explore Services',
@@ -460,11 +470,11 @@ export const HERO_SLIDES = [
   },
   {
     id: 2,
-    badge: 'GST • ITR • Company Registration',
+    badge: 'GST • ITR • Audit • Certificates',
     heading: 'All CA Services',
     subHeading: 'One Firm. Every Need.',
     description:
-      'From GST returns to company incorporation, TDS compliance to trademark registration — complete CA solutions with transparent pricing.',
+      'From GST returns to company registration, TDS compliance to project reports — complete solutions for every business & professional.',
     ctaText: 'View Our Services',
     ctaLink: '/#services',
     ctaSecondary: 'Call Now',
@@ -473,11 +483,11 @@ export const HERO_SLIDES = [
   },
   {
     id: 3,
-    badge: 'Free Consultation',
+    badge: 'Free Consultation — No Obligation',
     heading: 'Book a Free',
     subHeading: 'Tax Consultation Today',
     description:
-      'Talk to an ICAI-registered CA about your GST, income tax, or business registration needs. No obligation, no charges.',
+      'Talk to our qualified CAs about your GST, income tax, or business registration needs. No obligation, no hidden charges.',
     ctaText: 'Book Free Consultation',
     ctaLink: '/contact',
     ctaSecondary: 'Know More',
@@ -549,18 +559,26 @@ export const TESTIMONIALS = [
 
 // ─── ABOUT SECTION ────────────────────────────────────────────
 export const ABOUT = {
-  title: 'About TaxByCA Services',
-  subtitle: 'Your Trusted CA Partner Across India',
-  description: `TaxByCA Services is an ICAI-registered Chartered Accountant firm committed to providing accurate, reliable, and client-focused CA services across India. Founded by experienced ICAI-qualified CAs, we have served 10000+ clients with 15,000+ tax returns filed over 10+ years.
+  title: 'About TaxByCA',
+  subtitle: 'One-Stop Solution for Every Business & Professional',
+  description: `TaxByCA is a team of qualified Chartered Accountants and professionals, serving businesses and individuals across India for 10+ years. We provide expert services in Taxation, Audit, Project Reports, and Certificates — all 100% online.
 
-We provide all CA services 100% online — GST registration and returns, income tax filing, company incorporation, TDS compliance, ROC filings, bookkeeping, MSME registration, trademark, FSSAI, and more. Our approach is simple: transparent pricing, fast turnaround, and proactive communication via WhatsApp.`,
+We have proudly served 10,000+ clients across every business category — from sole proprietors and salaried employees to private limited companies, NGOs, traders, exporters, and startups. Our approach is simple: honest advice, transparent pricing, and fast turnaround — delivered right to your WhatsApp.
+
+We issue a proper GST-compliant tax invoice for every service.`,
   highlights: [
-    'ICAI Registered Chartered Accountants',
+    'Qualified CAs & Professionals — 10+ Years',
     '100% Online Services — Pan-India',
-    'Transparent, Fixed Pricing',
-    '10000+ Happy Clients Served',
-    'Fast Turnaround — Always Before Due Dates',
+    'Transparent, Fixed Pricing — No Hidden Charges',
+    'We Issue Proper GST Invoice for Every Service',
+    '10,000+ Happy Clients Served',
     'Dedicated WhatsApp Support',
   ],
-  image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80&auto=format&fit=crop',
+  clientCategories: [
+    'Salaried Employees', 'Freelancers & Consultants', 'Traders & Shopkeepers',
+    'Manufacturers', 'Importers & Exporters', 'Doctors & Professionals',
+    'Startups & New Businesses', 'Private Limited Companies',
+    'NGOs, Trusts & Societies', 'Real Estate & Builders',
+  ],
+  image: 'https://images.unsplash.com/photo-1664575602554-2087b04935a5?w=800&q=80&auto=format&fit=crop',
 }

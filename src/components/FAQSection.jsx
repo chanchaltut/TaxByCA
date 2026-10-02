@@ -10,7 +10,7 @@ const FAQSection = () => {
   return (
     <section
       id="faq"
-      className="bg-[#0d1b2a] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
+      className="bg-[#0a1628] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
       aria-label="Frequently asked questions about CA services"
     >
       {/* FAQPage JSON-LD (inline for AEO — also in index.html globally) */}
@@ -32,7 +32,7 @@ const FAQSection = () => {
           <div className="section-tag">FAQ</div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-4 leading-tight">
             Frequently Asked{' '}
-            <span className="text-[#f4b942]">Questions</span>
+            <span className="text-[#2563eb]">Questions</span>
           </h2>
           <p className="text-[#94a3b8] text-sm sm:text-base max-w-xl mx-auto">
             Everything you need to know about our CA services, pricing, and process.
@@ -46,8 +46,8 @@ const FAQSection = () => {
             return (
               <div
                 key={faq.id}
-                className={`bg-[#162032] border rounded-2xl overflow-hidden transition-all duration-200 ${
-                  isOpen ? 'border-[#f4b942]/50' : 'border-[#1e3a54] hover:border-[#f4b942]/20'
+                className={`bg-[#112240] border rounded-2xl overflow-hidden transition-all duration-200 ${
+                  isOpen ? 'border-[#2563eb]/50' : 'border-[#1d3557] hover:border-[#2563eb]/20'
                 }`}
                 role="listitem"
               >
@@ -58,12 +58,12 @@ const FAQSection = () => {
                   aria-controls={`faq-answer-${faq.id}`}
                 >
                   <span className={`font-semibold text-sm sm:text-base leading-snug transition-colors ${
-                    isOpen ? 'text-[#f4b942]' : 'text-white'
+                    isOpen ? 'text-[#2563eb]' : 'text-white'
                   }`}>
                     {faq.q}
                   </span>
                   <span className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-200 ${
-                    isOpen ? 'bg-[#f4b942] text-[#0d1b2a]' : 'bg-[#0d1b2a] text-[#94a3b8]'
+                    isOpen ? 'bg-[#2563eb] text-white' : 'bg-[#0a1628] text-[#94a3b8]'
                   }`}>
                     {isOpen
                       ? <FaChevronUp className="text-xs" />
@@ -78,7 +78,7 @@ const FAQSection = () => {
                   className={`faq-answer ${isOpen ? 'open' : ''}`}
                   aria-hidden={!isOpen}
                 >
-                  <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6 border-t border-[#1e3a54]">
+                  <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6 border-t border-[#1d3557]">
                     <p className="text-[#94a3b8] text-sm sm:text-base leading-relaxed pt-4">
                       {faq.a}
                     </p>
@@ -96,7 +96,7 @@ const FAQSection = () => {
             href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I have a question about CA services.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#f4b942] hover:bg-[#d9a230] text-[#0d1b2a] px-6 py-3.5 rounded-full font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 min-h-[48px]"
+            className="inline-flex items-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-6 py-3.5 rounded-full font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 min-h-[48px]"
           >
             <i className="ri-whatsapp-line mr-2"></i> Ask on WhatsApp
           </a>

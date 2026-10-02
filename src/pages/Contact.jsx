@@ -36,15 +36,15 @@ const Contact = () => {
     <>
       <Helmet>
         <title>Contact Us | TaxByCA</title>
-        <meta name="description" content="Contact TaxByCA for GST, ITR, and company registration queries. ICAI-registered CAs available online." />
+        <meta name="description" content="Contact TaxByCA for GST, ITR, and company registration queries. qualified CAs & professionals available online." />
         <link rel="canonical" href="https://taxbyca.in/contact" />
       </Helmet>
 
       {/* Hero Section */}
-      <section className="bg-[#0d1b2a] dot-bg pt-32 pb-16 sm:pt-40 sm:pb-24 border-b border-[#1e3a54]">
+      <section className="bg-[#0a1628] dot-bg pt-32 pb-16 sm:pt-40 sm:pb-24 border-b border-[#1d3557]">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6">
-            Contact <span className="text-[#f4b942]">Us</span>
+            Contact <span className="text-[#2563eb]">Us</span>
           </h1>
           <p className="text-[#94a3b8] text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
             Get in touch with our CA experts for any taxation or compliance assistance. We provide 100% online services across India.
@@ -59,15 +59,15 @@ const Contact = () => {
           {/* Contact Info Cards */}
           <div className="lg:col-span-1 space-y-4">
             {contactInfo.map((info, i) => (
-              <div key={i} className="bg-[#162032] border border-[#1e3a54] rounded-xl p-5 hover:border-[#f4b942]/50 transition-colors">
+              <div key={i} className="bg-[#112240] border border-[#1d3557] rounded-xl p-5 hover:border-[#2563eb]/50 transition-colors">
                 <div className="flex items-start gap-4">
-                  <div className="text-[#f4b942] text-xl mt-1 flex-shrink-0">{info.icon}</div>
+                  <div className="text-[#2563eb] text-xl mt-1 flex-shrink-0">{info.icon}</div>
                   <div>
                     <h3 className="text-white font-bold mb-1">{info.title}</h3>
                     {info.details.map((detail, idx) => (
                       <div key={idx}>
                         {info.link ? (
-                          <a href={info.link} target={info.link.includes('wa.me') ? '_blank' : undefined} rel={info.link.includes('wa.me') ? 'noopener noreferrer' : undefined} className="text-[#94a3b8] hover:text-[#f4b942] text-sm transition-colors">
+                          <a href={info.link} target={info.link.includes('wa.me') ? '_blank' : undefined} rel={info.link.includes('wa.me') ? 'noopener noreferrer' : undefined} className="text-[#94a3b8] hover:text-[#2563eb] text-sm transition-colors">
                             {detail}
                           </a>
                         ) : (
@@ -82,28 +82,28 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-2 bg-[#162032] border border-[#1e3a54] rounded-2xl p-6 sm:p-10">
+          <div className="lg:col-span-2 bg-[#112240] border border-[#1d3557] rounded-2xl p-6 sm:p-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Send Us a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-[#94a3b8] text-sm font-semibold mb-2">Full Name *</label>
-                  <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full bg-[#0d1b2a] border border-[#1e3a54] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#f4b942]" placeholder="Your Name" />
+                  <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full bg-[#0a1628] border border-[#1d3557] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#2563eb]" placeholder="Your Name" />
                 </div>
                 <div>
                   <label className="block text-[#94a3b8] text-sm font-semibold mb-2">Phone Number *</label>
-                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full bg-[#0d1b2a] border border-[#1e3a54] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#f4b942]" placeholder="Phone Number" />
+                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full bg-[#0a1628] border border-[#1d3557] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#2563eb]" placeholder="Phone Number" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-[#94a3b8] text-sm font-semibold mb-2">Email Address *</label>
-                  <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full bg-[#0d1b2a] border border-[#1e3a54] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#f4b942]" placeholder="Your Email" />
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full bg-[#0a1628] border border-[#1d3557] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#2563eb]" placeholder="Your Email" />
                 </div>
                 <div>
                   <label className="block text-[#94a3b8] text-sm font-semibold mb-2">Service Required</label>
-                  <select name="service" value={formData.service} onChange={handleChange} className="w-full bg-[#0d1b2a] border border-[#1e3a54] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#f4b942]">
+                  <select name="service" value={formData.service} onChange={handleChange} className="w-full bg-[#0a1628] border border-[#1d3557] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#2563eb]">
                     <option value="">Select Service Area</option>
                     {SERVICE_CATEGORIES.map((cat, i) => (
                       <option key={i} value={cat}>{cat}</option>
@@ -114,10 +114,10 @@ const Contact = () => {
 
               <div>
                 <label className="block text-[#94a3b8] text-sm font-semibold mb-2">Message *</label>
-                <textarea name="message" value={formData.message} onChange={handleChange} required rows="5" className="w-full bg-[#0d1b2a] border border-[#1e3a54] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#f4b942] resize-none" placeholder="How can we help you?" />
+                <textarea name="message" value={formData.message} onChange={handleChange} required rows="5" className="w-full bg-[#0a1628] border border-[#1d3557] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#2563eb] resize-none" placeholder="How can we help you?" />
               </div>
 
-              <button type="submit" disabled={isSubmitting} className="w-full sm:w-auto bg-[#f4b942] hover:bg-[#d9a230] text-[#0d1b2a] px-8 py-3.5 rounded-full font-bold transition-colors flex items-center justify-center gap-2 disabled:opacity-70">
+              <button type="submit" disabled={isSubmitting} className="w-full sm:w-auto bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-8 py-3.5 rounded-full font-bold transition-colors flex items-center justify-center gap-2 disabled:opacity-70">
                 {isSubmitting ? 'Sending...' : <><FaPaperPlane /> Send Message</>}
               </button>
             </form>

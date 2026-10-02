@@ -5,39 +5,39 @@ import { BRAND } from '../utils/constants';
 const CTABanner = () => {
   return (
     <section
-      className="relative bg-gradient-to-br from-[#1a3a5c] via-[#162032] to-[#0d1b2a] py-14 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 overflow-hidden"
+      className="relative bg-gradient-to-br from-[#1a3a5c] via-[#112240] to-[#0a1628] py-14 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 overflow-hidden"
       aria-label="Call to action"
     >
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-[#f4b942]/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" aria-hidden="true" />
-      <div className="absolute bottom-0 left-0 w-48 sm:w-72 h-48 sm:h-72 bg-[#f4b942]/5 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-[#2563eb]/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-0 left-0 w-48 sm:w-72 h-48 sm:h-72 bg-[#2563eb]/5 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-3xl mx-auto text-center relative z-10">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-[#f4b942]/10 border border-[#f4b942]/30 text-[#f4b942] text-xs font-bold px-4 py-1.5 rounded-full mb-6 tracking-wide">
+        <div className="inline-flex items-center gap-2 bg-[#2563eb]/10 border border-[#2563eb]/30 text-[#2563eb] text-xs font-bold px-4 py-1.5 rounded-full mb-6 tracking-wide">
           <><i className="ri-thumb-up-line mr-2"></i> FREE CONSULTATION — NO OBLIGATION</>
         </div>
 
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-5">
           Ready to Simplify Your{' '}
-          <span className="text-[#f4b942]">CA Compliance?</span>
+          <span className="text-[#2563eb]">CA Compliance?</span>
         </h2>
 
         <p className="text-[#94a3b8] text-sm sm:text-base leading-relaxed mb-8 max-w-xl mx-auto">
-          Talk to an ICAI-registered CA today. We'll assess your requirements, explain the process, and give you a fixed quote — no surprises, no hidden charges.
+          Talk to an qualified CA today. We'll assess your requirements, explain the process, and give you a fixed quote — no surprises, no hidden charges.
         </p>
 
         {/* Trust points */}
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-8 text-xs sm:text-sm text-[#94a3b8]">
           {[
-            { icon: 'ri-shield-check-line', text: 'ICAI Registered' },
+            { icon: 'ri-shield-check-line', text: 'Qualified CA Team' },
             { icon: 'ri-global-line', text: '100% Online' },
             { icon: 'ri-price-tag-3-line', text: 'Fixed Pricing' },
             { icon: 'ri-flashlight-line', text: 'Fast Turnaround' },
           ].map((item, i) => (
             <span key={i} className="flex items-center gap-1.5 text-white/80">
-              <i className={`${item.icon} text-[#f4b942] text-sm`} />
+              <i className={`${item.icon} text-[#2563eb] text-sm`} />
               {item.text}
             </span>
           ))}
@@ -58,7 +58,7 @@ const CTABanner = () => {
           </a>
           <a
             href={`tel:${BRAND.phone}`}
-            className="inline-flex items-center justify-center gap-2.5 bg-[#f4b942] hover:bg-[#d9a230] text-[#0d1b2a] px-8 py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg group min-h-[52px]"
+            className="inline-flex items-center justify-center gap-2.5 bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-8 py-4 rounded-full font-bold text-sm sm:text-base transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg group min-h-[52px]"
           >
             <FaPhone className="text-sm" />
             Call Now: {BRAND.phone}

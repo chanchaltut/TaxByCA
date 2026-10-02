@@ -35,7 +35,7 @@ const ServicesSection = () => {
     <section
       id="services"
       ref={sectionRef}
-      className="bg-[#0d1b2a] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
+      className="bg-[#0a1628] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
       aria-label="CA Services"
     >
       <div className="max-w-7xl mx-auto">
@@ -47,7 +47,7 @@ const ServicesSection = () => {
           </h2>
           <p className="text-[#94a3b8] text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             All CA compliance services delivered 100% online across India.
-            ICAI-registered Chartered Accountants. Transparent pricing. Fast turnaround.
+            qualified Chartered Accountants. Transparent pricing. Fast turnaround.
           </p>
         </div>
 
@@ -68,8 +68,8 @@ const ServicesSection = () => {
               aria-selected={activeCategory === cat}
               className={`flex-shrink-0 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap min-h-[40px] ${
                 activeCategory === cat
-                  ? 'bg-[#f4b942] text-[#0d1b2a] shadow-md'
-                  : 'bg-[#162032] text-white border border-[#1e3a54] hover:border-[#f4b942] hover:text-[#f4b942]'
+                  ? 'bg-[#2563eb] text-white shadow-md'
+                  : 'bg-[#112240] text-white border border-[#1d3557] hover:border-[#2563eb] hover:text-[#2563eb]'
               }`}
             >
               {cat}
@@ -98,7 +98,7 @@ const ServicesSection = () => {
                         {service.title}
                       </h3>
                       {service.isPopular && (
-                        <span className="inline-block mt-1 bg-[#f4b942]/15 text-[#f4b942] border border-[#f4b942]/30 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                        <span className="inline-block mt-1 bg-[#2563eb]/15 text-[#2563eb] border border-[#2563eb]/30 text-[10px] font-bold px-2 py-0.5 rounded-full">
                           <><i className="ri-fire-line mr-1"></i> {service.badge}</>
                         </span>
                       )}
@@ -115,29 +115,25 @@ const ServicesSection = () => {
                 <ul className="space-y-1.5 mb-4">
                   {service.services.slice(0, 4).map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-[#94a3b8] text-xs sm:text-sm">
-                      <i className="ri-checkbox-circle-fill text-[#f4b942] flex-shrink-0 text-base mt-0.5" />
+                      <i className="ri-checkbox-circle-fill text-[#2563eb] flex-shrink-0 text-base mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
-                  {service.services.length > 4 && (
-                    <li className="text-[#f4b942] text-xs font-semibold pl-5">
-                      +{service.services.length - 4} more services
-                    </li>
                   )}
                 </ul>
               </div>
 
               {/* Card Footer */}
-              <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-[#1e3a54] pt-4 flex items-center justify-between gap-3">
+              <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-[#1d3557] pt-4 flex items-center justify-between gap-3">
                 <div>
                   <p className="text-[#94a3b8] text-[10px] uppercase tracking-wide font-semibold">Starting from</p>
-                  <p className="text-[#f4b942] font-extrabold text-base sm:text-lg">{service.startingPrice}</p>
+                  <p className="text-[#2563eb] font-extrabold text-base sm:text-lg">{service.startingPrice}</p>
                 </div>
                 <a
                   href={`https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent(service.whatsappMsg)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 bg-[#f4b942] hover:bg-[#d9a230] text-[#0d1b2a] px-4 py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-200 whitespace-nowrap min-h-[40px]"
+                  className="flex items-center gap-1.5 bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-4 py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-200 whitespace-nowrap min-h-[40px]"
                   aria-label={`Get ${service.title} via WhatsApp`}
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 flex-shrink-0">
@@ -157,7 +153,7 @@ const ServicesSection = () => {
             href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need help choosing the right CA service from TaxByCA.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#162032] hover:bg-[#1e3a54] border border-[#f4b942]/40 text-[#f4b942] px-6 py-3 rounded-full font-semibold text-sm transition-all duration-200 min-h-[48px]"
+            className="inline-flex items-center gap-2 bg-[#112240] hover:bg-[#1d3557] border border-[#2563eb]/40 text-[#2563eb] px-6 py-3 rounded-full font-semibold text-sm transition-all duration-200 min-h-[48px]"
           >
             <i className="ri-chat-3-line mr-2"></i> Ask Our CA Expert
           </a>

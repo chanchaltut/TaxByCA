@@ -7,7 +7,7 @@ const whyFeatures = WHY_CHOOSE_US;
 const ExpertCA = () => {
   return (
     <section
-      className="bg-[#0d1b2a] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 overflow-hidden"
+      className="bg-[#0a1628] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 overflow-hidden"
       aria-label="Why choose TaxByCA"
     >
       <div className="max-w-7xl mx-auto">
@@ -18,7 +18,7 @@ const ExpertCA = () => {
             <div className="section-tag">Why Choose Us</div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3 mb-5 leading-tight">
               Why{' '}
-              <span className="text-[#f4b942]">TaxByCA</span>{' '}
+              <span className="text-[#2563eb]">TaxByCA</span>{' '}
               is India's Trusted CA Partner
             </h2>
 
@@ -32,7 +32,7 @@ const ExpertCA = () => {
               {whyFeatures.map((feature, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-3 bg-[#162032] border border-[#1e3a54] rounded-xl p-3 sm:p-4 text-left hover:border-[#f4b942]/40 transition-colors duration-200"
+                  className="flex items-start gap-3 bg-[#112240] border border-[#1d3557] rounded-xl p-3 sm:p-4 text-left hover:border-[#2563eb]/40 transition-colors duration-200"
                 >
                   <i className={`text-xl sm:text-2xl flex-shrink-0 mt-0.5 ${feature.icon}`}></i>
                   <div>
@@ -49,14 +49,14 @@ const ExpertCA = () => {
                 href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I want to get started with TaxByCA.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#f4b942] hover:bg-[#d9a230] text-[#0d1b2a] px-6 py-3.5 rounded-full font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 group min-h-[48px]"
+                className="inline-flex items-center justify-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-6 py-3.5 rounded-full font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 group min-h-[48px]"
               >
                 GET STARTED
                 <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="/about"
-                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#1e3a54] hover:border-[#f4b942] text-white hover:text-[#f4b942] px-6 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 min-h-[48px]"
+                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#1d3557] hover:border-[#2563eb] text-white hover:text-[#2563eb] px-6 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 min-h-[48px]"
               >
                 Learn More About Us
               </a>
@@ -72,17 +72,17 @@ const ExpertCA = () => {
                 className="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-cover image-zoom"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2a]/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 to-transparent" />
             </div>
 
             {/* Floating badge */}
-            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 bg-[#0d1b2a]/90 backdrop-blur-sm border border-[#1e3a54] rounded-2xl p-4 sm:p-5">
+            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 bg-[#0a1628]/90 backdrop-blur-sm border border-[#1d3557] rounded-2xl p-4 sm:p-5">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-[#f4b942] rounded-xl flex items-center justify-center flex-shrink-0">
-                  <i className="ri-trophy-line text-2xl text-[#f4b942]"></i>
+                <div className="w-12 h-12 bg-[#2563eb] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <i className="ri-trophy-line text-2xl text-[#2563eb]"></i>
                 </div>
                 <div>
-                  <p className="text-white font-bold text-sm sm:text-base">ICAI Registered CA Firm</p>
+                  <p className="text-white font-bold text-sm sm:text-base">TaxByCA — Expert CA Services</p>
                   <p className="text-[#94a3b8] text-xs mt-0.5">Serving 10000+ clients across India</p>
                 </div>
               </div>

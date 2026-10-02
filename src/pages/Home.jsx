@@ -17,7 +17,7 @@ const Home = () => {
     <>
       <Helmet>
         <title>TaxByCA | GST, ITR Filing, Company Registration — CA India</title>
-        <meta name="description" content="ICAI-registered CA firm — GST registration & returns, ITR filing, company registration, TDS compliance, ROC filings & all CA services 100% online across India. 10000+ clients. Transparent pricing." />
+        <meta name="description" content="team of qualified CAs & professionals — GST registration & returns, ITR filing, company registration, TDS compliance, ROC filings & all CA services 100% online across India. 10000+ clients. Transparent pricing." />
         <meta property="og:title" content="TaxByCA | Expert CA Services Online India" />
         <meta property="og:description" content="GST, ITR filing, company registration, TDS compliance & all CA services online. ICAI registered. 10000+ clients. 10+ years." />
         <link rel="canonical" href="https://taxbyca.in/" />

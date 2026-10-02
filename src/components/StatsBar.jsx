@@ -51,7 +51,7 @@ const StatsBar = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#f4b942] py-8 sm:py-10 md:py-12"
+      className="bg-[#2563eb] py-8 sm:py-10 md:py-12"
       aria-label="Company statistics"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
@@ -60,21 +60,21 @@ const StatsBar = () => {
             <div
               key={i}
               className={`text-center px-2 ${
-                i < STATS.length - 1 ? 'md:border-r md:border-[#0d1b2a]/20' : ''
+                i < STATS.length - 1 ? 'md:border-r md:border-[#0a1628]/20' : ''
               }`}
             >
               <div className="flex items-baseline justify-center gap-0.5">
                 <span
                   ref={(el) => (countersRef.current[i] = el)}
-                  className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0d1b2a] tabular-nums"
+                  className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tabular-nums"
                 >
                   0
                 </span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0d1b2a]">
+                <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
                   {stat.suffix}
                 </span>
               </div>
-              <p className="text-[#0d1b2a]/80 text-xs sm:text-sm font-semibold mt-1 leading-tight">
+              <p className="text-white/80 text-xs sm:text-sm font-semibold mt-1 leading-tight">
                 {stat.label}
               </p>
             </div>

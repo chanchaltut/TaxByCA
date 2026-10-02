@@ -1,14 +1,14 @@
 import React from 'react';
 import { MARQUEE_ITEMS } from '../utils/constants';
 
+// Thin top marquee strip — services only, no chunky elements
 const Marquee = () => {
-  // Double items for seamless loop
   const items = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
 
   return (
     <div
-      className="bg-[#f4b942] py-3 sm:py-4 overflow-hidden"
-      aria-label="Services marquee"
+      className="fixed top-0 left-0 right-0 z-[100] bg-[#1d3557] border-b border-[#2563eb]/30 py-1 overflow-hidden"
+      aria-label="Services we offer"
       aria-hidden="true"
     >
       <div className="marquee-container">
@@ -16,9 +16,9 @@ const Marquee = () => {
           {items.map((item, i) => (
             <span
               key={i}
-              className="flex-shrink-0 flex items-center gap-3 px-4 sm:px-6 text-[#0d1b2a] font-semibold text-xs sm:text-sm whitespace-nowrap"
+              className="flex-shrink-0 flex items-center gap-2 px-4 text-white/80 text-[11px] font-medium whitespace-nowrap"
             >
-              <span className="text-[#0d1b2a]/50 text-lg leading-none" aria-hidden="true">◆</span>
+              <i className="ri-arrow-right-s-line text-[#60a5fa] text-xs" aria-hidden="true" />
               {item}
             </span>
           ))}

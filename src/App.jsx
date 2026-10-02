@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import DisclaimerModal from './components/DisclaimerModal';
 import StickyMobileCTA from './components/StickyMobileCTA';
+import TopMarquee from './components/Marquee';
 import Home from './pages/Home';
 
 // Lazy load non-critical pages
@@ -27,9 +28,9 @@ const LoanDocumentation    = lazy(() => import('./pages/services/LoanDocumentati
 const FNOCapitalGain       = lazy(() => import('./pages/services/FNOCapitalGain'));
 // Fallback for lazy-loaded routes
 const PageLoader = () => (
-  <div className="min-h-screen bg-[#0d1b2a] flex items-center justify-center">
+  <div className="min-h-screen bg-[#0a1628] flex items-center justify-center">
     <div className="flex flex-col items-center gap-4">
-      <div className="w-12 h-12 border-4 border-[#f4b942] border-t-transparent rounded-full animate-spin" />
+      <div className="w-12 h-12 border-4 border-[#2563eb] border-t-transparent rounded-full animate-spin" />
       <p className="text-[#94a3b8] text-sm">Loading...</p>
     </div>
   </div>
@@ -38,6 +39,7 @@ const PageLoader = () => (
 function App() {
   return (
     <div className="App">
+      <TopMarquee />
       <DisclaimerModal />
       <ScrollToTop />
       <Navbar />
@@ -69,11 +71,11 @@ function App() {
 
           {/* ─── FALLBACK (404) ─── */}
           <Route path="*" element={
-            <div className="min-h-screen bg-[#0d1b2a] flex flex-col items-center justify-center px-4 text-center">
-              <h1 className="text-[#f4b942] text-8xl font-extrabold mb-4">404</h1>
+            <div className="min-h-screen bg-[#0a1628] flex flex-col items-center justify-center px-4 text-center">
+              <h1 className="text-[#2563eb] text-8xl font-extrabold mb-4">404</h1>
               <p className="text-white text-xl font-semibold mb-3">Page Not Found</p>
               <p className="text-[#94a3b8] text-sm mb-6">The page you're looking for doesn't exist.</p>
-              <a href="/" className="bg-[#f4b942] text-[#0d1b2a] px-6 py-3 rounded-full font-bold hover:bg-[#d9a230] transition-colors">Go Home</a>
+              <a href="/" className="bg-[#2563eb] text-white px-6 py-3 rounded-full font-bold hover:bg-[#1d4ed8] transition-colors">Go Home</a>
             </div>
           } />
         </Routes>

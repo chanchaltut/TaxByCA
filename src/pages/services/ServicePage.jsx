@@ -11,7 +11,7 @@ import FAQSection from '../../components/FAQSection';
 
 const ServicePage = ({ service }) => {
   if (!service) return (
-    <div className="min-h-screen bg-[#0d1b2a] flex items-center justify-center">
+    <div className="min-h-screen bg-[#0a1628] flex items-center justify-center">
       <p className="text-[#94a3b8]">Service not found.</p>
     </div>
   );
@@ -22,7 +22,7 @@ const ServicePage = ({ service }) => {
     <>
       <Helmet>
         <title>{service.title} — {service.shortDesc.slice(0, 50)} | TaxByCA</title>
-        <meta name="description" content={`${service.shortDesc} ICAI-registered CAs. 100% online across India. Starting ${service.startingPrice}.`} />
+        <meta name="description" content={`${service.shortDesc} qualified CAs & professionals. 100% online across India. Starting ${service.startingPrice}.`} />
         <meta property="og:title" content={`${service.title} | TaxByCA`} />
         <meta property="og:description" content={service.shortDesc} />
         <link rel="canonical" href={pageUrl} />
@@ -57,20 +57,20 @@ const ServicePage = ({ service }) => {
       </Helmet>
 
       {/* Breadcrumb */}
-      <nav className="bg-[#0d1b2a] border-b border-[#1e3a54] pt-20 px-4 sm:px-6">
+      <nav className="bg-[#0a1628] border-b border-[#1d3557] pt-20 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto py-3">
           <ol className="flex items-center gap-2 text-xs text-[#64748b]" aria-label="Breadcrumb">
-            <li><Link to="/" className="hover:text-[#f4b942] transition-colors">Home</Link></li>
+            <li><Link to="/" className="hover:text-[#2563eb] transition-colors">Home</Link></li>
             <li aria-hidden="true">/</li>
-            <li><a href="/#services" className="hover:text-[#f4b942] transition-colors">Services</a></li>
+            <li><a href="/#services" className="hover:text-[#2563eb] transition-colors">Services</a></li>
             <li aria-hidden="true">/</li>
-            <li className="text-[#f4b942] font-semibold" aria-current="page">{service.title}</li>
+            <li className="text-[#2563eb] font-semibold" aria-current="page">{service.title}</li>
           </ol>
         </div>
       </nav>
 
       {/* Hero */}
-      <div className="bg-[#0d1b2a] dot-bg pb-16 sm:pb-20 px-4 sm:px-6">
+      <div className="bg-[#0a1628] dot-bg pb-16 sm:pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center pt-10 sm:pt-12">
           <div className="section-tag">{service.category}</div>
           <div className="text-5xl sm:text-6xl mb-4 mt-4" aria-hidden="true"><i className={service.iconEmoji}></i></div>
@@ -89,8 +89,8 @@ const ServicePage = ({ service }) => {
               { label: 'Mode', value: '100% Online' },
               { label: 'By', value: 'ICAI CA' },
             ].map((stat, i) => (
-              <div key={i} className="bg-[#162032] border border-[#1e3a54] rounded-xl px-4 py-2.5 text-center">
-                <p className="text-[#f4b942] font-bold text-sm sm:text-base">{stat.value}</p>
+              <div key={i} className="bg-[#112240] border border-[#1d3557] rounded-xl px-4 py-2.5 text-center">
+                <p className="text-[#2563eb] font-bold text-sm sm:text-base">{stat.value}</p>
                 <p className="text-[#64748b] text-[10px] sm:text-xs mt-0.5">{stat.label}</p>
               </div>
             ))}
@@ -109,7 +109,7 @@ const ServicePage = ({ service }) => {
             </a>
             <a
               href={`tel:${BRAND.phone}`}
-              className="inline-flex items-center justify-center gap-2 bg-[#f4b942] hover:bg-[#d9a230] text-[#0d1b2a] px-7 py-4 rounded-full font-bold text-sm sm:text-base transition-all hover:-translate-y-0.5 min-h-[52px]"
+              className="inline-flex items-center justify-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-7 py-4 rounded-full font-bold text-sm sm:text-base transition-all hover:-translate-y-0.5 min-h-[52px]"
             >
               <><i className="ri-phone-line mr-2"></i> Call Now</>
             </a>
@@ -118,7 +118,7 @@ const ServicePage = ({ service }) => {
       </div>
 
       {/* Service Details */}
-      <section className="bg-[#162032] py-14 sm:py-20 px-4 sm:px-6">
+      <section className="bg-[#112240] py-14 sm:py-20 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
             What's Included in {service.title}
@@ -127,9 +127,9 @@ const ServicePage = ({ service }) => {
             {service.services.map((item, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 bg-[#0d1b2a] border border-[#1e3a54] hover:border-[#f4b942]/40 rounded-xl p-3 sm:p-4 transition-colors"
+                className="flex items-start gap-3 bg-[#0a1628] border border-[#1d3557] hover:border-[#2563eb]/40 rounded-xl p-3 sm:p-4 transition-colors"
               >
-                <i className="ri-checkbox-circle-fill text-[#f4b942] flex-shrink-0 text-xl mt-0.5" />
+                <i className="ri-checkbox-circle-fill text-[#2563eb] flex-shrink-0 text-xl mt-0.5" />
                 <span className="text-white text-sm sm:text-base leading-snug">{item}</span>
               </div>
             ))}
@@ -138,7 +138,7 @@ const ServicePage = ({ service }) => {
       </section>
 
       {/* Contact CTA */}
-      <section className="bg-[#0d1b2a] py-10 sm:py-12 px-4 sm:px-6 text-center border-t border-[#1e3a54]">
+      <section className="bg-[#0a1628] py-10 sm:py-12 px-4 sm:px-6 text-center border-t border-[#1d3557]">
         <div className="max-w-xl mx-auto">
           <p className="text-[#94a3b8] text-sm mb-2">Ready to get started?</p>
           <p className="text-white font-semibold text-lg mb-5">
@@ -147,7 +147,7 @@ const ServicePage = ({ service }) => {
           <a
             href={`https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent(service.whatsappMsg)}`}
             target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#f4b942] hover:bg-[#d9a230] text-[#0d1b2a] px-7 py-3.5 rounded-full font-bold text-sm transition-all hover:-translate-y-0.5 min-h-[48px]"
+            className="inline-flex items-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-7 py-3.5 rounded-full font-bold text-sm transition-all hover:-translate-y-0.5 min-h-[48px]"
           >
             <><i className="ri-chat-3-line mr-2"></i> Get Free Quote</>
           </a>
