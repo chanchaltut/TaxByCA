@@ -40,7 +40,7 @@ const Navbar = () => {
     <>
       {/* ─── MAIN NAVBAR ─── */}
       <nav
-        className={`fixed top-[22px] left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-[26px] left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
             ? 'bg-white shadow-lg'
             : 'bg-white'
@@ -108,7 +108,7 @@ const Navbar = () => {
 
       {/* ─── MOBILE BACKDROP ─── */}
       <div
-        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 top-[26px] bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden ${
           isSidebarOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
         onClick={closeSidebar}
@@ -117,7 +117,7 @@ const Navbar = () => {
 
       {/* ─── MOBILE SIDEBAR ─── */}
       <div
-        className={`fixed top-0 left-0 h-full w-[75%] max-w-[320px] bg-white z-50 transform transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto border-r border-blue-100 ${
+        className={`fixed top-[26px] left-0 h-[calc(100%-26px)] w-[75%] max-w-[320px] bg-white z-50 transform transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto border-r border-blue-100 ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         role="dialog"
