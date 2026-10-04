@@ -1,9 +1,16 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { SOCIAL_LINKS } from '../utils/constants';
 
 const TermsConditions = () => {
   return (
     <div className="min-h-screen bg-[#f8fafc] pt-24">
+      <Helmet>
+        <title>Terms & Conditions | TaxByCA</title>
+        <meta name="description" content="Terms and Conditions for using TaxByCA services." />
+        <meta name="robots" content="noindex, follow" />
+        <link rel="canonical" href="https://taxbyca.in/terms-conditions" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-[#1a1a1a] to-[#0f0f0f] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
         <div className="max-w-[1400px] mx-auto">

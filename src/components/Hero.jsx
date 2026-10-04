@@ -4,7 +4,7 @@ import { FaWhatsapp, FaChevronLeft, FaChevronRight, FaArrowUp, FaPhone } from 'r
 import { HERO_SLIDES, BRAND } from '../utils/constants';
 
 const trustBadges = [
-  { icon: 'ri-trophy-line', text: 'Qualified CA Team' },
+  { icon: 'ri-trophy-line', text: 'Qualified Professionals' },
   { icon: 'ri-star-smile-line', text: '10000+ Clients' },
   { icon: 'ri-flashlight-line', text: '10+ Years' },
   { icon: 'ri-global-line', text: '100% Online' },
@@ -183,7 +183,7 @@ const Hero = () => {
 
       {/* ═══ FLOATING WHATSAPP BUTTON (LEFT) ═══ */}
       <a
-        href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need CA services from TaxByCA.`}
+        href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need professional services from TaxByCA.`}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 left-4 sm:left-6 z-40 group hidden sm:flex"

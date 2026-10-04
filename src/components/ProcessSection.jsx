@@ -12,11 +12,11 @@ const ProcessSection = () => {
         <div className="text-center mb-12 sm:mb-14">
           <div className="section-tag">How It Works</div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0f172a] mt-3 mb-4 leading-tight">
-            Get Your CA Service in{' '}
+            Get Your Professional Service in{' '}
             <span className="text-[#2563eb]">4 Simple Steps</span>
           </h2>
           <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
-            We've made it simple to get professional CA services from anywhere in India.
+            We've made it simple to get professional professional services from anywhere in India.
           </p>
         </div>
 

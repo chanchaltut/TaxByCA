@@ -1,0 +1,1 @@
+import{n as s,j as o}from"./index-01eQgWYs.js";import"./router-8H30XJJE.js";import{S as r}from"./ServicePage-G417wex0.js";import"./vendor-DEQ385Nk.js";import"./seo-B3HPo2F4.js";import"./icons-COrbLGlB.js";const e=()=>{const e=s.find(s=>"tds-compliance"===s.slug);return o.jsx(r,{service:e})};export{e as default};

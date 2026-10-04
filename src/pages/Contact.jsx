@@ -34,9 +34,12 @@ const Contact = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Contact Us | TaxByCA</title>
-        <meta name="description" content="Contact TaxByCA for GST, ITR, and company registration queries. qualified CAs & professionals available online." />
+            <Helmet>
+        <title>Contact Us | TaxByCA — Free CA Consultation</title>
+        <meta name="description" content="Contact TaxByCA for GST, ITR, and company registration queries. Call 9424856409 or WhatsApp for a free consultation with our qualified professional professionals." />
+        <meta name="keywords" content="Contact CA online, TaxByCA contact number, CA phone number, WhatsApp CA consultation, CA email" />
+        <meta property="og:title" content="Contact TaxByCA | Free Online Consultation" />
+        <meta property="og:description" content="Need expert tax advice? Contact TaxByCA today. 100% online professional services across India." />
         <link rel="canonical" href="https://taxbyca.in/contact" />
       </Helmet>
 
@@ -47,7 +50,7 @@ const Contact = () => {
             Contact <span className="text-[#2563eb]">Us</span>
           </h1>
           <p className="text-slate-600 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-            Get in touch with our CA experts for any taxation or compliance assistance. We provide 100% online services across India.
+            Get in touch with our qualified professional experts for any taxation or compliance assistance. We provide 100% online services across India.
           </p>
         </div>
       </section>

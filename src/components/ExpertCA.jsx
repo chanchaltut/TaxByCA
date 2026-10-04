@@ -19,12 +19,12 @@ const ExpertCA = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0f172a] mt-3 mb-5 leading-tight">
               Why{' '}
               <span className="text-[#2563eb]">TaxByCA</span>{' '}
-              is India's Trusted CA Partner
+              is India's Trusted Trusted Partner
             </h2>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 max-w-lg mx-auto lg:mx-0">
               We combine ICAI-qualified expertise with a completely online, hassle-free delivery model.
-              No office visits. No hidden fees. Just accurate, fast CA services — delivered where you are.
+              No office visits. No hidden fees. Just accurate, fast professional services — delivered where you are.
             </p>
 
             {/* Feature cards */}
@@ -68,7 +68,7 @@ const ExpertCA = () => {
             <div className="rounded-3xl overflow-hidden image-zoom-container shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80&auto=format&fit=crop"
-                alt="CA professional working on tax documents"
+                alt="qualified professional working on tax documents"
                 className="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-cover image-zoom"
                 loading="lazy"
               />
@@ -82,7 +82,7 @@ const ExpertCA = () => {
                   <i className="ri-trophy-line text-2xl text-white"></i>
                 </div>
                 <div>
-                  <p className="text-[#0f172a] font-bold text-sm sm:text-base">TaxByCA — Expert CA Services</p>
+                  <p className="text-[#0f172a] font-bold text-sm sm:text-base">TaxByCA — Expert Professional Services</p>
                   <p className="text-slate-600 text-xs mt-0.5">Serving 10000+ clients across India</p>
                 </div>
               </div>

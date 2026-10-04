@@ -21,17 +21,17 @@ const CTABanner = () => {
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-5">
           Ready to Simplify Your{' '}
-          <span className="text-blue-200">CA Compliance?</span>
+          <span className="text-blue-200">Tax Compliance?</span>
         </h2>
 
         <p className="text-blue-100 text-sm sm:text-base leading-relaxed mb-8 max-w-xl mx-auto">
-          Talk to an qualified CA today. We'll assess your requirements, explain the process, and give you a fixed quote — no surprises, no hidden charges.
+          Talk to an qualified professional today. We'll assess your requirements, explain the process, and give you a fixed quote — no surprises, no hidden charges.
         </p>
 
         {/* Trust points */}
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-8 text-xs sm:text-sm text-blue-100">
           {[
-            { icon: 'ri-shield-check-line', text: 'Qualified CA Team' },
+            { icon: 'ri-shield-check-line', text: 'Qualified Professionals' },
             { icon: 'ri-global-line', text: '100% Online' },
             { icon: 'ri-price-tag-3-line', text: 'Fixed Pricing' },
             { icon: 'ri-flashlight-line', text: 'Fast Turnaround' },

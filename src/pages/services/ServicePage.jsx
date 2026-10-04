@@ -22,7 +22,7 @@ const ServicePage = ({ service }) => {
     <>
       <Helmet>
         <title>{service.title} — {service.shortDesc.slice(0, 50)} | TaxByCA</title>
-        <meta name="description" content={`${service.shortDesc} qualified CAs & professionals. 100% online across India. Starting ${service.startingPrice}.`} />
+        <meta name="description" content={`${service.shortDesc} qualified qualified professionals & professionals. 100% online across India. Starting ${service.startingPrice}.`} />
         <meta property="og:title" content={`${service.title} | TaxByCA`} />
         <meta property="og:description" content={service.shortDesc} />
         <link rel="canonical" href={pageUrl} />

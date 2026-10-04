@@ -38,7 +38,7 @@ const AboutSection = () => {
               <div className="rounded-3xl overflow-hidden image-zoom-container card-hover shadow-2xl">
                 <img
                   src={ABOUT.image}
-                  alt="TaxByCA CA Team at work"
+                  alt="TaxByCA Professional Team at work"
                   className="w-full h-[300px] sm:h-[380px] md:h-[420px] lg:h-[460px] object-cover image-zoom"
                   loading="lazy"
                 />
@@ -74,10 +74,10 @@ const AboutSection = () => {
 
             <div className="reveal animation-delay-200">
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-3">
-                TaxByCA is an <strong className="text-[#0f172a]">team of qualified Chartered Accountants & professionals</strong> committed to providing accurate, reliable, and client-focused CA services across India.
+                TaxByCA is an <strong className="text-[#0f172a]">team of qualified Chartered Accountants & professionals</strong> committed to providing accurate, reliable, and client-focused professional services across India.
               </p>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
-                We provide all CA services <strong className="text-[#0f172a]">100% online</strong> — GST registration & returns, income tax filing, company incorporation, TDS compliance, ROC filings, bookkeeping, MSME registration, trademark, FSSAI, and more. Transparent pricing. Fast turnaround. Dedicated WhatsApp support.
+                We provide all professional services <strong className="text-[#0f172a]">100% online</strong> — GST registration & returns, income tax filing, company incorporation, TDS compliance, ROC filings, bookkeeping, MSME registration, trademark, FSSAI, and more. Transparent pricing. Fast turnaround. Dedicated WhatsApp support.
               </p>
             </div>
 

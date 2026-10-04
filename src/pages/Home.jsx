@@ -15,11 +15,21 @@ import CTABanner from '../components/CTABanner';
 const Home = () => {
   return (
     <>
-      <Helmet>
-        <title>TaxByCA | GST, ITR Filing, Company Registration — CA India</title>
-        <meta name="description" content="team of qualified CAs & professionals — GST registration & returns, ITR filing, company registration, TDS compliance, ROC filings & all CA services 100% online across India. 10000+ clients. Transparent pricing." />
-        <meta property="og:title" content="TaxByCA | Expert CA Services Online India" />
-        <meta property="og:description" content="GST, ITR filing, company registration, TDS compliance & all CA services online. ICAI registered. 10000+ clients. 10+ years." />
+            <Helmet>
+        <title>TaxByCA | Expert Professional Services Online — GST, ITR, Company Registration</title>
+        <meta name="description" content="TaxByCA is a leading team of qualified Chartered Accountants & professionals in India. We offer 100% online professional services: GST Registration, Income Tax Return (ITR) Filing, Company Registration, Tax Audit, Project Reports, and TDS Compliance." />
+        <meta name="keywords" content="CA near me, Online professional services, GST registration online, ITR filing online, Income Tax Return filing, Company Registration India, Private Limited Company registration, Tax Audit CA, TDS return filing, CA Certificates, Project Report for Bank Loan, CMA Data preparation, TaxByCA" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="TaxByCA | Expert Professional Services Online India" />
+        <meta property="og:description" content="Get expert professional services 100% online. GST, ITR filing, company registration, tax audit, and TDS compliance by qualified professionals. Serving 10000+ clients across India." />
+        <meta property="og:url" content="https://taxbyca.in/" />
+        <meta property="og:site_name" content="TaxByCA" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="TaxByCA | Expert Professional Services Online" />
+        <meta name="twitter:description" content="Expert professional services 100% online. GST, ITR, company registration, and more by qualified professionals." />
+        
         <link rel="canonical" href="https://taxbyca.in/" />
       </Helmet>
 

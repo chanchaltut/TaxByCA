@@ -89,14 +89,14 @@ const Footer = () => {
             </Link>
 
             <p className="text-slate-600 text-sm leading-relaxed mb-5">
-              <span className="text-[#2563eb] font-semibold">team of qualified CAs & professionals</span> providing
+              <span className="text-[#2563eb] font-semibold">team of qualified qualified professionals & professionals</span> providing
               GST, ITR, company registration &amp; all compliance services 100% online across India.
             </p>
 
             {/* ICAI Badge */}
             <div className="inline-flex items-center gap-2 bg-[#2563eb]/10 border border-blue-200 rounded-full px-3 py-1.5 mb-5">
               <i className="ri-award-line text-[#2563eb] text-sm" />
-              <span className="text-[#2563eb] text-[10px] font-bold tracking-wider">Qualified CA Team</span>
+              <span className="text-[#2563eb] text-[10px] font-bold tracking-wider">Qualified Professionals</span>
             </div>
 
             {/* Social Icons */}

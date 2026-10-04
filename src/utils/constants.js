@@ -10,9 +10,9 @@ export const BRAND = {
   shortName: 'TaxByCA',
   legalName: 'TaxByCA',
   tagline: 'One-Stop Solution for Every Business & Professional',
-  subTagline: 'Expert CA Services — Tax, Audit, Project Reports & Certificates',
+  subTagline: 'Expert Professional Services — Tax, Audit, Project Reports & Certificates',
   description:
-    'TaxByCA is a team of qualified CAs & professionals providing GST, ITR filing, company registration, TDS compliance, ROC filings, Tax Audit, Project Reports, Certificates and all CA services 100% online across India.',
+    'TaxByCA is a team of qualified qualified professionals & professionals providing GST, ITR filing, company registration, TDS compliance, ROC filings, Tax Audit, Project Reports, Certificates and all professional services 100% online across India.',
   phone: '9424856409',
   whatsapp: '919424856409',
   email: 'TaxByCAinfo@gmail.com',
@@ -62,7 +62,7 @@ export const NAV_ITEMS = [
   { name: 'Contact',  href: '/contact',  icon: 'fa-phone' },
 ]
 
-// ─── SERVICES (14 CA services) ───────────────────────────────
+// ─── SERVICES (14 professional services) ───────────────────────────────
 export const SERVICES = [
   {
     "id": 1,
@@ -265,7 +265,7 @@ export const SERVICES = [
     ],
     "startingPrice": "₹999",
     "timeline": "1-2 working days",
-    "whatsappMsg": "Hi! I need a CA Certificate from TaxByCA.",
+    "whatsappMsg": "Hi! I need a qualified professional Certificate from TaxByCA.",
     "image": "https://images.unsplash.com/photo-1589330694653-efa64753baaa?w=700&q=80&auto=format&fit=crop"
   },
   {
@@ -326,35 +326,11 @@ export const TEAM = [
   {
     id: 1,
     name: 'TaxByCA Founder',
-    role: 'Principal Chartered Accountant',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format&fit=crop',
+    role: 'Qualified Chartered Accountant',
+    illustration: true,
     expertise: 'GST, Income Tax, Company Law & ROC Compliance',
-    qualification: 'Chartered Accountant',
+    qualification: 'Qualified Chartered Accountant',
     experience: '10+ years',
-    phone: BRAND.phone,
-    email: BRAND.email,
-    featured: true,
-  },
-  {
-    id: 2,
-    name: 'Senior Partner',
-    role: 'Senior Tax Consultant',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop',
-    expertise: 'Tax Audit, Corporate Tax, International Taxation',
-    qualification: 'Chartered Accountant',
-    experience: '8+ years',
-    phone: BRAND.phone,
-    email: BRAND.email,
-    featured: true,
-  },
-  {
-    id: 3,
-    name: 'Compliance Head',
-    role: 'GST & Compliance Specialist',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80&auto=format&fit=crop',
-    expertise: 'GST, ROC, FSSAI, Trademark, Startup Services',
-    qualification: 'Chartered Accountant',
-    experience: '5+ years',
     phone: BRAND.phone,
     email: BRAND.email,
     featured: true,
@@ -380,8 +356,8 @@ export const FAQS = [
   },
   {
     id: 4,
-    q: 'Do I need a CA to file my income tax return?',
-    a: 'Legally, individuals can file ITR-1/ITR-4 without a CA. However, a CA is mandatory for: tax audit u/s 44AB (business turnover > ₹1 crore / professional receipts > ₹50 lakh), statutory audit under Companies Act, and GSTR-9C. A CA also helps maximise deductions and avoid tax notices.',
+    q: 'Do I need a qualified professional to file my income tax return?',
+    a: 'Legally, individuals can file ITR-1/ITR-4 without a qualified professional. However, a qualified professional is mandatory for: tax audit u/s 44AB (business turnover > ₹1 crore / professional receipts > ₹50 lakh), statutory audit under Companies Act, and GSTR-9C. A qualified professional also helps maximise deductions and avoid tax notices.',
   },
   {
     id: 5,
@@ -405,19 +381,19 @@ export const FAQS = [
   },
   {
     id: 9,
-    q: 'Are your CA services 100% online? Do I need to visit your office?',
+    q: 'Are your professional services 100% online? Do I need to visit your office?',
     a: 'Yes, all services are 100% online. You share documents via WhatsApp, email, or our secure upload link. We prepare and file on your behalf and send acknowledgments digitally. No office visit is required for routine ITR, GST, TDS, registrations, or compliance filings.',
   },
   {
     id: 10,
-    q: 'What are the fees for online CA services at TaxByCA?',
+    q: 'What are the fees for online professional services at TaxByCA?',
     a: 'Starting prices: GST Registration ₹999 | ITR Filing ₹499 | Company Registration ₹6,999 | TDS Return ₹1,499/qtr | Bookkeeping ₹2,499/mo | ROC Compliance ₹3,999/yr | MSME Registration ₹499. Government fees (MCA, stamp duty, etc.) are shown separately at actuals. We issue GST-compliant tax invoices.',
   },
 ]
 
 // ─── WHY CHOOSE US ────────────────────────────────────────────
 export const WHY_CHOOSE_US = [
-  { icon: 'ri-group-line', title: 'Qualified CAs & Professionals', desc: 'Our team of qualified Chartered Accountants and professionals has been serving businesses and individuals for 10+ years.' },
+  { icon: 'ri-group-line', title: 'Qualified qualified professionals & Professionals', desc: 'Our team of qualified Chartered Accountants and professionals has been serving businesses and individuals for 10+ years.' },
   { icon: 'ri-global-line', title: 'Pan-India Services', desc: '100% online — we serve clients in all 28 states and 8 UTs of India, without you needing to visit any office.' },
   { icon: 'ri-money-dollar-circle-line', title: 'Transparent Pricing', desc: 'Fixed professional fees quoted upfront. Government fees shown separately at actuals. No hidden charges.' },
   { icon: 'ri-flashlight-line', title: 'Fast Turnaround', desc: 'ITR in 24 hours. GST registration in 3 days. Timely filing — always before due dates.' },
@@ -443,7 +419,7 @@ export const PROCESS_STEPS = [
     step: '03',
     icon: 'ri-flashlight-line',
     title: 'We Handle Everything',
-    desc: 'Our CA prepares, verifies, and files on your behalf on government portals.',
+    desc: 'Our professional prepares, verifies, and files on your behalf on government portals.',
   },
   {
     step: '04',
@@ -457,13 +433,13 @@ export const PROCESS_STEPS = [
 export const HERO_SLIDES = [
   {
     id: 1,
-    badge: 'One-Stop CA Services — 10+ Years',
-    heading: 'Expert CA Services',
+    badge: 'One-Stop Professional Services — 10+ Years',
+    heading: 'Expert Professional Services',
     subHeading: 'Across India — Online & Fast',
     description:
       'GST, ITR filing, company registration, Tax Audit, Project Reports & Certificates — all delivered 100% online. 10,000+ clients served.',
     ctaText: 'WhatsApp Us Now',
-    ctaLink: `https://wa.me/${BRAND.whatsapp}?text=Hi! I need CA services from TaxByCA.`,
+    ctaLink: `https://wa.me/${BRAND.whatsapp}?text=Hi! I need professional services from TaxByCA.`,
     ctaSecondary: 'Explore Services',
     ctaSecondaryLink: '/#services',
     backgroundImage: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1920&q=80&auto=format&fit=crop',
@@ -471,7 +447,7 @@ export const HERO_SLIDES = [
   {
     id: 2,
     badge: 'GST • ITR • Audit • Certificates',
-    heading: 'All CA Services',
+    heading: 'All Professional Services',
     subHeading: 'One Firm. Every Need.',
     description:
       'From GST returns to company registration, TDS compliance to project reports — complete solutions for every business & professional.',
@@ -487,7 +463,7 @@ export const HERO_SLIDES = [
     heading: 'Book a Free',
     subHeading: 'Tax Consultation Today',
     description:
-      'Talk to our qualified CAs about your GST, income tax, or business registration needs. No obligation, no hidden charges.',
+      'Talk to our qualified qualified professionals about your GST, income tax, or business registration needs. No obligation, no hidden charges.',
     ctaText: 'Book Free Consultation',
     ctaLink: '/contact',
     ctaSecondary: 'Know More',
@@ -529,7 +505,7 @@ export const TESTIMONIALS = [
     role: 'Startup Founder',
     city: 'Bangalore',
     rating: 5,
-    text: 'From company registration to DPIIT recognition to 80-IAC application — TaxByCA handled everything. They\'re our go-to CA firm now.',
+    text: 'From company registration to DPIIT recognition to 80-IAC application — TaxByCA handled everything. They\'re our go-to professional firm now.',
   },
   {
     id: 4,
@@ -567,7 +543,7 @@ We have proudly served 10,000+ clients across every business category — from s
 
 We issue a proper GST-compliant tax invoice for every service.`,
   highlights: [
-    'Qualified CAs & Professionals — 10+ Years',
+    'Qualified qualified professionals & Professionals — 10+ Years',
     '100% Online Services — Pan-India',
     'Transparent, Fixed Pricing — No Hidden Charges',
     'We Issue Proper GST Invoice for Every Service',

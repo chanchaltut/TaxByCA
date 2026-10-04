@@ -36,17 +36,17 @@ const ServicesSection = () => {
       id="services"
       ref={sectionRef}
       className="bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
-      aria-label="CA Services"
+      aria-label="Professional Services"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12 md:mb-14">
           <div className="section-tag">Our Services</div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0f172a] mt-3 mb-4 leading-tight">
-            Complete CA Services
+            Complete Professional Services
           </h2>
           <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            All CA compliance services delivered 100% online across India.
+            All tax compliance services delivered 100% online across India.
             qualified Chartered Accountants. Transparent pricing. Fast turnaround.
           </p>
         </div>
@@ -149,12 +149,12 @@ const ServicesSection = () => {
         <div className="text-center mt-10 sm:mt-12">
           <p className="text-slate-600 text-sm mb-4">Not sure which service you need?</p>
           <a
-            href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need help choosing the right CA service from TaxByCA.`}
+            href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need help choosing the right professional service from TaxByCA.`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#f8fafc] hover:bg-blue-50 border border-[#2563eb]/40 text-[#2563eb] px-6 py-3 rounded-full font-semibold text-sm transition-all duration-200 min-h-[48px]"
           >
-            <i className="ri-chat-3-line mr-2"></i> Ask Our CA Expert
+            <i className="ri-chat-3-line mr-2"></i> Ask Our Tax Expert
           </a>
         </div>
       </div>

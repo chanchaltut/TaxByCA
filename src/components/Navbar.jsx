@@ -155,7 +155,7 @@ const Navbar = () => {
           {/* Sidebar CTA */}
           <div className="mt-6 space-y-3">
             <a
-              href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need CA services from TaxByCA.`}
+              href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need professional services from TaxByCA.`}
               onClick={closeSidebar}
               target="_blank"
               rel="noopener noreferrer"
@@ -182,7 +182,7 @@ const Navbar = () => {
           <p className="text-slate-600 text-[11px] text-center">
             © {new Date().getFullYear()} TaxByCA
           </p>
-          <p className="text-[#2563eb] text-[10px] text-center mt-1">TaxByCA — Expert CA Services</p>
+          <p className="text-[#2563eb] text-[10px] text-center mt-1">TaxByCA — Expert Professional Services</p>
         </div>
       </div>
     </>

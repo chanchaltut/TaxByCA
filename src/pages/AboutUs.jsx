@@ -9,10 +9,12 @@ import CTABanner from '../components/CTABanner';
 const AboutUs = () => {
   return (
     <>
-      <Helmet>
-        <title>About Us | TaxByCA</title>
-        <meta name="description" content="TaxByCA is an team of qualified Chartered Accountants & professionals providing 100% online CA services across India." />
-        <meta property="og:title" content="About Us | TaxByCA" />
+            <Helmet>
+        <title>About Us | TaxByCA — Trusted Professional Firm in India</title>
+        <meta name="description" content="Learn about TaxByCA. We are a dedicated team of Chartered Accountants and tax professionals serving over 10000+ clients across India for 10+ years." />
+        <meta name="keywords" content="About TaxByCA, professional firm India, Online qualified professionals, Tax experts India, Business compliance team" />
+        <meta property="og:title" content="About TaxByCA | Trusted Tax Professionals" />
+        <meta property="og:description" content="Discover TaxByCA. A dedicated team of qualified qualified professionals offering 100% online taxation and compliance services across India." />
         <link rel="canonical" href="https://taxbyca.in/about" />
       </Helmet>
 
@@ -23,7 +25,7 @@ const AboutUs = () => {
             About <span className="text-[#2563eb]">TaxByCA</span>
           </h1>
           <p className="text-slate-600 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-            We are an team of qualified CAs & professionals dedicated to making taxation, compliance, and corporate registrations seamless, 100% online, and accessible across India.
+            We are an team of qualified qualified professionals & professionals dedicated to making taxation, compliance, and corporate registrations seamless, 100% online, and accessible across India.
           </p>
         </div>
       </section>

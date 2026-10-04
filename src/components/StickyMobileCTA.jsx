@@ -10,7 +10,7 @@ const StickyMobileCTA = () => {
       <div className="grid grid-cols-2 h-[56px] shadow-2xl">
         {/* WhatsApp */}
         <a
-          href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need CA services from TaxByCA.`}
+          href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need professional services from TaxByCA.`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 bg-[#25d366] text-[#0f172a] font-bold text-sm active:bg-[#20b858] transition-colors min-h-[56px]"

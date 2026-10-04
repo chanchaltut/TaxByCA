@@ -11,7 +11,7 @@ const FAQSection = () => {
     <section
       id="faq"
       className="bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
-      aria-label="Frequently asked questions about CA services"
+      aria-label="Frequently asked questions about professional services"
     >
       {/* FAQPage JSON-LD (inline for AEO — also in index.html globally) */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{
@@ -35,7 +35,7 @@ const FAQSection = () => {
             <span className="text-[#2563eb]">Questions</span>
           </h2>
           <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
-            Everything you need to know about our CA services, pricing, and process.
+            Everything you need to know about our professional services, pricing, and process.
           </p>
         </div>
 
@@ -91,9 +91,9 @@ const FAQSection = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-10 sm:mt-12">
-          <p className="text-slate-600 text-sm mb-4">Have more questions? Our CA team is ready to help.</p>
+          <p className="text-slate-600 text-sm mb-4">Have more questions? Our professional team is ready to help.</p>
           <a
-            href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I have a question about CA services.`}
+            href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I have a question about professional services.`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-6 py-3.5 rounded-full font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 min-h-[48px]"

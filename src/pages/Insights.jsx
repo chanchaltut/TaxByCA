@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FaCalendarAlt, FaUser, FaArrowRight, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 // ─── BLOG ARTICLES ─────────────────────────────────────────────
@@ -29,7 +30,7 @@ const articles = [
 
       `**Pro tip:** Always download and cross-check your AIS before filing. Many clients get notices simply because they forgot to report a fixed deposit interest or mutual fund redemption that already appears in the AIS.`,
 
-      `If you have capital gains, NRI income, foreign assets, or received a tax notice — it's best to get professional help. The cost of getting it wrong is always higher than the CA fees.`,
+      `If you have capital gains, NRI income, foreign assets, or received a tax notice — it's best to get professional help. The cost of getting it wrong is always higher than the professional fees.`,
     ],
   },
   {
@@ -79,7 +80,7 @@ const articles = [
 
       `**The default trap:** From FY 2023-24, the new regime became the default. If you don't explicitly choose the old regime, you'll automatically be put in the new one. To choose the old regime, you must file Form 10-IE (for business income) or select it when filing your ITR.`,
 
-      `**Our advice:** Do a rough calculation both ways before filing. For most salaried people with home loans and HRA, the old regime often wins if income is between ₹10-20 lakh. For simpler earners without big deductions, the new regime is usually better. When in doubt, consult a CA — the right choice can save you tens of thousands of rupees.`,
+      `**Our advice:** Do a rough calculation both ways before filing. For most salaried people with home loans and HRA, the old regime often wins if income is between ₹10-20 lakh. For simpler earners without big deductions, the new regime is usually better. When in doubt, consult a qualified professional — the right choice can save you tens of thousands of rupees.`,
     ],
   },
   {
@@ -104,7 +105,7 @@ const articles = [
 
       `**What happens if you don't deduct TDS?**\nThe entire expense becomes disallowed — meaning you can't claim it as a business deduction. You also owe interest at 1% per month (failure to deduct) or 1.5% per month (failure to deposit), plus a penalty of ₹10,000 to ₹1 lakh under Section 271H. The income tax department does scrutiny assessments specifically for TDS defaults, especially on rent and contractor payments.`,
 
-      `TDS compliance might seem tedious, but it's one of the areas where businesses get caught most often. Keeping a simple TDS calendar and working with a CA for quarterly filing is the smartest investment for any business paying more than a few lakh rupees a year.`,
+      `TDS compliance might seem tedious, but it's one of the areas where businesses get caught most often. Keeping a simple TDS calendar and working with a qualified professional for quarterly filing is the smartest investment for any business paying more than a few lakh rupees a year.`,
     ],
   },
   {
@@ -127,11 +128,11 @@ const articles = [
 
       `Notice u/s 143(2): Scrutiny notice. The department wants to verify specific claims in your return. This triggers a full assessment proceeding and requires detailed documentation.`,
 
-      `**What to do immediately after receiving a notice:**\nDon't ignore it — there are strict response deadlines. Log in to incometax.gov.in and find the notice under "Pending Actions" or "e-Proceedings". Read it carefully to understand the specific reason. Gather your relevant documents — bank statements, investment proofs, AIS, Form 16. If it's a simple mismatch, you can respond directly online. For anything beyond a 143(1) intimation, consult a CA.`,
+      `**What to do immediately after receiving a notice:**\nDon't ignore it — there are strict response deadlines. Log in to incometax.gov.in and find the notice under "Pending Actions" or "e-Proceedings". Read it carefully to understand the specific reason. Gather your relevant documents — bank statements, investment proofs, AIS, Form 16. If it's a simple mismatch, you can respond directly online. For anything beyond a 143(1) intimation, consult a qualified professional.`,
 
       `**Documents to always keep ready:**\nSave your ITR acknowledgment (ITR-V) for at least 6 years. Keep Form 26AS / AIS printouts for the year. Retain investment receipts, rent agreements, loan certificates, and salary slips. Anything you claimed as a deduction or exemption should have supporting documentation.`,
 
-      `**Never miss the deadline.** Most notices give you 15-30 days to respond. Missing the deadline converts a simple issue into a contested assessment. If you're unsure about a notice, the safest approach is to call your CA the same day you receive it — most issues are sorted within a week when handled promptly.`,
+      `**Never miss the deadline.** Most notices give you 15-30 days to respond. Missing the deadline converts a simple issue into a contested assessment. If you're unsure about a notice, the safest approach is to call your professional the same day you receive it — most issues are sorted within a week when handled promptly.`,
     ],
   },
   {
@@ -152,7 +153,7 @@ const articles = [
 
       `**GSTR-9 — Annual Return**\nFiled once a year, GSTR-9 consolidates all your monthly returns for the financial year. It reconciles your outward supplies and ITC — any differences from your monthly returns need to be explained. Mandatory for taxpayers with annual turnover > ₹2 crore. Optional for those below ₹2 crore.\n\nDue date: December 31 of the following financial year.`,
 
-      `**GSTR-2A and GSTR-2B — ITC Tracking**\nThese are not returns you file — they're auto-generated statements showing you the ITC available based on your suppliers' GSTR-1 filings. GSTR-2A is dynamic (updates as suppliers file). GSTR-2B is static (generated on the 14th of each month and doesn't change). Most CA firms now use GSTR-2B for reconciliation as it's more reliable.`,
+      `**GSTR-2A and GSTR-2B — ITC Tracking**\nThese are not returns you file — they're auto-generated statements showing you the ITC available based on your suppliers' GSTR-1 filings. GSTR-2A is dynamic (updates as suppliers file). GSTR-2B is static (generated on the 14th of each month and doesn't change). Most professional firms now use GSTR-2B for reconciliation as it's more reliable.`,
 
       `**Common GST compliance mistakes:**\nNot filing GSTR-1 on time (your buyers can't claim ITC), claiming more ITC than what appears in GSTR-2B, not reversing ITC on exempt supplies or personal-use goods, forgetting reverse charge liability (RCM), and missing the annual return deadline.`,
 
@@ -177,7 +178,7 @@ const articles = [
 
       `**Private Limited Company (Pvt Ltd)**\nThe most credible and investor-friendly structure. A separate legal entity from its shareholders — your personal assets are protected (limited liability). Minimum 2 directors and 2 shareholders (can be the same people).\n\nAdvantages: Limited liability, easy to raise funding, high credibility with clients and vendors, can issue ESOPs, best for B2B businesses. Disadvantages: Higher compliance cost (ROC filings, statutory audit mandatory, MCA forms), minimum ₹15,000-₹20,000/year in compliance costs, more paperwork to close or exit.`,
 
-      `**Limited Liability Partnership (LLP)**\nThe best of both worlds for professional service firms (CA firms, consultants, architects). Partners have limited liability, but compliance is lighter than a Pvt Ltd. Minimum 2 partners.\n\nAdvantages: Limited liability, flexible profit sharing, no mandatory statutory audit (below ₹40L turnover), lighter compliance than Pvt Ltd. Disadvantages: Cannot issue equity shares (can't raise venture capital), less preferred by investors.`,
+      `**Limited Liability Partnership (LLP)**\nThe best of both worlds for professional service firms (professional firms, consultants, architects). Partners have limited liability, but compliance is lighter than a Pvt Ltd. Minimum 2 partners.\n\nAdvantages: Limited liability, flexible profit sharing, no mandatory statutory audit (below ₹40L turnover), lighter compliance than Pvt Ltd. Disadvantages: Cannot issue equity shares (can't raise venture capital), less preferred by investors.`,
 
       `**Which one should you choose?**\n\nChoose Sole Proprietorship if: You're just starting, turnover is under ₹40 lakh, you have no partners, and you want zero compliance burden.\n\nChoose LLP if: You're in a professional service business (consulting, accounting, architecture), have 2+ partners, and want liability protection without heavy compliance.\n\nChoose Private Limited if: You're a startup seeking investment, you need high credibility with large clients (especially corporates or government), you plan to hire employees on a large scale, or you want to list on a stock exchange someday.`,
 
@@ -210,7 +211,7 @@ const articles = [
 
       `**Reverse Charge Mechanism (RCM)**\nSome services trigger RCM — where the recipient (not the supplier) pays GST. As a freelancer, you may be liable to pay GST under RCM on services received from unregistered vendors above ₹5,000/day (legal services, certain transportation, etc.). This is a common area of non-compliance for consultants.`,
 
-      `**Our recommendation:** If you're a freelancer earning between ₹15-30 lakh per year and working with a mix of Indian and foreign clients, a GST-registered setup with quarterly filings managed by a CA is the most tax-efficient approach. The ITC alone often offsets 80-90% of your GST burden.`,
+      `**Our recommendation:** If you're a freelancer earning between ₹15-30 lakh per year and working with a mix of Indian and foreign clients, a GST-registered setup with quarterly filings managed by a qualified professional is the most tax-efficient approach. The ITC alone often offsets 80-90% of your GST burden.`,
     ],
   },
 ];
@@ -244,6 +245,15 @@ const Insights = () => {
 
   return (
     <div className="min-h-screen bg-white pt-[60px]">
+      <Helmet>
+        <title>Tax & GST Insights | TaxByCA Knowledge Hub</title>
+        <meta name="description" content="Expert insights on Income Tax, GST, TDS, and Company Registration. Read practical guides and updates written by our qualified professional team for Indian businesses and individuals." />
+        <meta name="keywords" content="Income Tax blog, GST updates, CA advice, Tax saving tips, TDS guidelines, Startup compliance, TaxByCA blog, Tax return guide" />
+        <meta property="og:title" content="Tax & GST Insights | TaxByCA" />
+        <meta property="og:description" content="Expert insights on Income Tax, GST, TDS, and Company Registration in India." />
+        <link rel="canonical" href="https://taxbyca.in/insights" />
+      </Helmet>
+
 
       {/* Hero */}
       <section className="bg-gradient-to-b from-[#f0f9ff] to-white py-16 sm:py-20 px-4 sm:px-6 border-b border-blue-100">
