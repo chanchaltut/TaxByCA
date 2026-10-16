@@ -33,7 +33,7 @@ const Home = () => {
           content="Get expert tax & business compliance services 100% online across India. GST registration, ITR filing, company registration, audits & project reports with dedicated WhatsApp support. 10,000+ satisfied clients."
         />
         <meta property="og:url" content="https://taxbyca.in/" />
-        <meta property="og:image" content="https://taxbyca.in/og-image.jpg" />
+        <meta property="og:image" content="https://taxbyca.in/og-image-v2.jpg" />
         <meta property="og:locale" content="en_IN" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -42,7 +42,7 @@ const Home = () => {
           name="twitter:description"
           content="Expert tax & compliance services 100% online across India. GST, ITR, company registration, and audit by qualified professionals."
         />
-        <meta name="twitter:image" content="https://taxbyca.in/og-image.jpg" />
+        <meta name="twitter:image" content="https://taxbyca.in/og-image-v2.jpg" />
 
         <link rel="canonical" href="https://taxbyca.in/" />
       </Helmet>

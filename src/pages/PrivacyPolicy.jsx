@@ -14,7 +14,9 @@ const PrivacyPolicy = () => {
         <meta property="og:title" content="Privacy Policy | TaxByCA" />
         <meta property="og:description" content="Privacy Policy of TaxByCA. Learn how we safeguard your personal data, tax documents, and financial information." />
         <meta property="og:url" content="https://taxbyca.in/privacy-policy" />
-        <meta property="og:image" content="https://taxbyca.in/og-image.jpg" />
+        <meta property="og:image" content="https://taxbyca.in/og-image-v2.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://taxbyca.in/og-image-v2.jpg" />
         <link rel="canonical" href="https://taxbyca.in/privacy-policy" />
       </Helmet>
 

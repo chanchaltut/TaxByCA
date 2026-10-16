@@ -27,7 +27,7 @@ const AboutUs = () => {
           content="Discover TaxByCA. A dedicated team of qualified professionals offering 100% online taxation, GST, company registration, and compliance services across India."
         />
         <meta property="og:url" content="https://taxbyca.in/about" />
-        <meta property="og:image" content="https://taxbyca.in/og-image.jpg" />
+        <meta property="og:image" content="https://taxbyca.in/og-image-v2.jpg" />
         <meta property="og:locale" content="en_IN" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -36,7 +36,7 @@ const AboutUs = () => {
           name="twitter:description"
           content="Discover TaxByCA. A dedicated team of qualified professionals offering 100% online taxation and compliance services across India."
         />
-        <meta name="twitter:image" content="https://taxbyca.in/og-image.jpg" />
+        <meta name="twitter:image" content="https://taxbyca.in/og-image-v2.jpg" />
 
         <link rel="canonical" href="https://taxbyca.in/about" />
       </Helmet>

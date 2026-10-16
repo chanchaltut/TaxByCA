@@ -264,7 +264,7 @@ const Insights = () => {
           content="Expert insights and practical guides on Income Tax, GST, TDS, and Company Registration in India by TaxByCA."
         />
         <meta property="og:url" content="https://taxbyca.in/blog" />
-        <meta property="og:image" content="https://taxbyca.in/og-image.jpg" />
+        <meta property="og:image" content="https://taxbyca.in/og-image-v2.jpg" />
         <meta property="og:locale" content="en_IN" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -273,7 +273,7 @@ const Insights = () => {
           name="twitter:description"
           content="Expert insights on Income Tax, GST, TDS, and Company Registration in India by TaxByCA."
         />
-        <meta name="twitter:image" content="https://taxbyca.in/og-image.jpg" />
+        <meta name="twitter:image" content="https://taxbyca.in/og-image-v2.jpg" />
 
         <link rel="canonical" href="https://taxbyca.in/blog" />
       </Helmet>

@@ -77,11 +77,11 @@ const Contact = () => {
         <meta property="og:title" content="Contact TaxByCA | Free Online Tax Consultation" />
         <meta property="og:description" content="Need expert tax advice? Contact TaxByCA today. 100% online professional services across India with dedicated WhatsApp support." />
         <meta property="og:url" content="https://taxbyca.in/contact" />
-        <meta property="og:image" content="https://taxbyca.in/og-image.jpg" />
+        <meta property="og:image" content="https://taxbyca.in/og-image-v2.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contact TaxByCA | Free Online Consultation" />
         <meta name="twitter:description" content="Contact TaxByCA for GST, ITR, company registration, and audit services. 100% online across India." />
-        <meta name="twitter:image" content="https://taxbyca.in/og-image.jpg" />
+        <meta name="twitter:image" content="https://taxbyca.in/og-image-v2.jpg" />
         <link rel="canonical" href="https://taxbyca.in/contact" />
       </Helmet>
 
