@@ -216,18 +216,30 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-blue-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-slate-500 text-xs sm:text-sm text-center sm:text-left">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
+          <p className="text-slate-500 text-center md:text-left">
             © {new Date().getFullYear()} TaxByCA. All Rights Reserved. | We Issue Proper GST Invoice for Every Service
           </p>
-          <div className="flex items-center gap-4 sm:gap-6">
-            <Link to="/privacy-policy" className="text-slate-500 hover:text-[#2563eb] text-xs sm:text-sm transition-colors">
+          <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center text-slate-500">
+            <Link to="/privacy-policy" className="hover:text-[#2563eb] transition-colors">
               Privacy Policy
             </Link>
-            <span className="text-[#1d3557]">|</span>
-            <Link to="/terms-conditions" className="text-slate-500 hover:text-[#2563eb] text-xs sm:text-sm transition-colors">
+            <span className="text-slate-300">|</span>
+            <Link to="/terms-conditions" className="hover:text-[#2563eb] transition-colors">
               Terms &amp; Conditions
             </Link>
+            <span className="text-slate-300">|</span>
+            <span className="text-slate-400">
+              Developed by{' '}
+              <a
+                href="https://codehyphen.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-500 hover:text-[#2563eb] font-medium transition-colors"
+              >
+                Code Hyphen
+              </a>
+            </span>
           </div>
         </div>
       </div>

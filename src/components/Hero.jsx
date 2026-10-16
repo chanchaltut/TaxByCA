@@ -166,58 +166,36 @@ const Hero = () => {
           <FaChevronRight />
         </button>
 
-        {/* Slide Dots */}
-        <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {/* Slide Pagination Dots */}
+        <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-2.5 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-blue-100/80 shadow-xs">
           {HERO_SLIDES.map((_, i) => (
             <button
               key={i}
               onClick={() => goToSlide(i)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                i === currentSlide ? 'bg-[#2563eb] w-8' : 'bg-white/30 w-2 hover:bg-white/60'
+              className={`rounded-full transition-all duration-300 cursor-pointer ${
+                i === currentSlide
+                  ? 'w-7 sm:w-8 h-3 bg-white border-[1.5px] border-[#2563eb] p-[2px] flex items-center justify-center shadow-xs'
+                  : 'w-3 h-3 bg-white border-[1.5px] border-[#2563eb] hover:bg-blue-50'
               }`}
               aria-label={`Go to slide ${i + 1}`}
-            />
+            >
+              {i === currentSlide && (
+                <span className="w-full h-full bg-[#2563eb] rounded-full block animate-fadeIn" />
+              )}
+            </button>
           ))}
         </div>
       </section>
 
-      {/* ═══ FLOATING WHATSAPP BUTTON (LEFT) ═══ */}
-      <a
-        href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need professional services from TaxByCA.`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 left-4 sm:left-6 z-40 group hidden sm:flex"
-        aria-label="Chat on WhatsApp"
-      >
-        <span className="absolute inset-0 rounded-full bg-[#25d366] animate-ping opacity-40 scale-100 group-hover:opacity-0 transition-opacity" />
-        <span className="relative flex items-center gap-2.5 bg-[#25d366] hover:bg-[#20b858] text-white pl-4 pr-5 py-3 rounded-full shadow-xl shadow-green-900/30 font-bold text-sm transition-all duration-200 hover:-translate-y-0.5">
-          <FaWhatsapp className="text-xl" />
-          <span>WhatsApp Us</span>
-        </span>
-      </a>
-
-      {/* ═══ FLOATING CALL BUTTON (RIGHT) ═══ */}
-      <a
-        href={`tel:${BRAND.phone}`}
-        className="fixed bottom-6 right-4 sm:right-6 z-40 group hidden sm:flex"
-        aria-label={`Call ${BRAND.phone}`}
-      >
-        <span className="absolute inset-0 rounded-full bg-[#2563eb] animate-ping opacity-30 group-hover:opacity-0 transition-opacity" />
-        <span className="relative flex items-center gap-2.5 bg-[#2563eb] hover:bg-[#1e40af] text-white pl-4 pr-5 py-3 rounded-full shadow-xl shadow-blue-900/20 font-bold text-sm transition-all duration-200 hover:-translate-y-0.5">
-          <FaPhone className="text-base" />
-          <span>Call Now</span>
-        </span>
-      </a>
-
       {/* ═══ SCROLL TO TOP BUTTON ═══ */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className={`fixed bottom-20 right-4 sm:right-6 z-40 w-11 h-11 rounded-full bg-[#f8fafc] border border-blue-100 hover:border-[#2563eb] text-[#0f172a] hover:text-[#2563eb] flex items-center justify-center shadow-lg transition-all duration-300 hover:-translate-y-0.5 ${
+        className={`fixed bottom-20 right-4 sm:right-6 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white border border-blue-200 hover:border-[#2563eb] text-[#2563eb] flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 cursor-pointer ${
           showScrollTop ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-4'
         }`}
         aria-label="Scroll to top"
       >
-        <FaArrowUp className="text-sm" />
+        <FaArrowUp className="text-xs sm:text-sm" />
       </button>
     </>
   );
