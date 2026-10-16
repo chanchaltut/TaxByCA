@@ -74,7 +74,7 @@ const AboutSection = () => {
 
             <div className="reveal animation-delay-200">
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-3">
-                TaxByCA is an <strong className="text-[#0f172a]">team of qualified Chartered Accountants & professionals</strong> committed to providing accurate, reliable, and client-focused professional services across India.
+                TaxByCA is a <strong className="text-[#0f172a]">team of qualified tax experts & corporate professionals</strong> committed to providing accurate, reliable, and client-focused compliance services across India.
               </p>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
                 We provide all professional services <strong className="text-[#0f172a]">100% online</strong> — GST registration & returns, income tax filing, company incorporation, TDS compliance, ROC filings, bookkeeping, MSME registration, trademark, FSSAI, and more. Transparent pricing. Fast turnaround. Dedicated WhatsApp support.

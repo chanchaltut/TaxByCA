@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaCalendarAlt, FaUser, FaArrowRight, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 // ─── BLOG ARTICLES ─────────────────────────────────────────────
 // All articles are Income Tax / GST / TDS / Business Registration only
@@ -246,12 +247,35 @@ const Insights = () => {
   return (
     <div className="min-h-screen bg-white pt-[60px]">
       <Helmet>
-        <title>Tax & GST Insights | TaxByCA Knowledge Hub</title>
-        <meta name="description" content="Expert insights on Income Tax, GST, TDS, and Company Registration. Read practical guides and updates written by our qualified professional team for Indian businesses and individuals." />
-        <meta name="keywords" content="Income Tax blog, GST updates, CA advice, Tax saving tips, TDS guidelines, Startup compliance, TaxByCA blog, Tax return guide" />
-        <meta property="og:title" content="Tax & GST Insights | TaxByCA" />
-        <meta property="og:description" content="Expert insights on Income Tax, GST, TDS, and Company Registration in India." />
-        <link rel="canonical" href="https://taxbyca.in/insights" />
+        <title>Tax, GST & Business Insights | TaxByCA Knowledge Hub</title>
+        <meta
+          name="description"
+          content="Practical, in-depth guides and updates on Income Tax filing, GST compliance, TDS rates, and Company Registration written by TaxByCA's qualified professionals."
+        />
+        <meta
+          name="keywords"
+          content="TaxByCA blog, Income Tax guide India, GST updates, ITR filing guide, TDS rules, startup registration India, TaxByCA insights, tax saving tips"
+        />
+        <meta property="og:type" content="blog" />
+        <meta property="og:site_name" content="TaxByCA" />
+        <meta property="og:title" content="Tax, GST & Business Insights | TaxByCA Knowledge Hub" />
+        <meta
+          property="og:description"
+          content="Expert insights and practical guides on Income Tax, GST, TDS, and Company Registration in India by TaxByCA."
+        />
+        <meta property="og:url" content="https://taxbyca.in/blog" />
+        <meta property="og:image" content="https://taxbyca.in/og-image.jpg" />
+        <meta property="og:locale" content="en_IN" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Tax, GST & Business Insights | TaxByCA" />
+        <meta
+          name="twitter:description"
+          content="Expert insights on Income Tax, GST, TDS, and Company Registration in India by TaxByCA."
+        />
+        <meta name="twitter:image" content="https://taxbyca.in/og-image.jpg" />
+
+        <link rel="canonical" href="https://taxbyca.in/blog" />
       </Helmet>
 
 
@@ -394,12 +418,12 @@ const Insights = () => {
                         <div className="mt-8 p-5 bg-[#f8fafc] rounded-xl border border-blue-200">
                           <p className="text-[#0f172a] font-semibold mb-3">Need help with this? Talk to our team.</p>
                           <a
-                            href={`https://wa.me/919424856409?text=Hi! I read your article on "${article.title}" and need help.`}
+                            href={`https://wa.me/919424856409?text=${encodeURIComponent(`Hi TaxByCA! I read your article on "${article.title}" and need expert assistance.`)}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 bg-[#25d366] hover:bg-[#20b858] text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-colors"
+                            className="inline-flex items-center gap-2 bg-[#25d366] hover:bg-[#20b858] text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all shadow-sm"
                           >
-                            <i className="ri-whatsapp-line" /> WhatsApp Us
+                            <i className="ri-whatsapp-line text-lg" /> WhatsApp Us
                           </a>
                         </div>
                       </div>
@@ -416,11 +440,25 @@ const Insights = () => {
               <i className="ri-mail-send-line text-blue-600 text-3xl mb-3 block" />
               <h2 className="text-[#0f172a] text-2xl sm:text-3xl font-bold mb-3">Get Tax Updates in Your Inbox</h2>
               <p className="text-slate-600 mb-6 text-sm sm:text-base">
-                Subscribe for Income Tax & GST updates, deadline reminders, and practical guides.
+                Subscribe for Income Tax &amp; GST updates, deadline reminders, and practical guides.
               </p>
               <form
                 className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-                onSubmit={(e) => { e.preventDefault(); alert('Thank you! We\'ll send you tax updates at TaxByCAinfo@gmail.com'); }}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  Swal.fire({
+                    title: 'Subscribed! 📬',
+                    text: 'Thank you! You will receive regular tax and compliance updates from TaxByCA.',
+                    icon: 'success',
+                    confirmButtonColor: '#2563eb',
+                    confirmButtonText: 'Great!',
+                    customClass: {
+                      popup: 'rounded-2xl shadow-xl',
+                      confirmButton: 'rounded-full font-bold px-6 py-2.5',
+                    }
+                  });
+                  e.target.reset();
+                }}
               >
                 <input
                   type="email"

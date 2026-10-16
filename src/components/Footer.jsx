@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaWhatsapp } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 import { BRAND } from '../utils/constants';
 import TaxByCALogo from '../assets/TaxByCALogo.png';
 
@@ -67,7 +68,17 @@ const Footer = () => {
 
   const handleNewsletter = (e) => {
     e.preventDefault();
-    alert('Thank you for subscribing to TaxByCA tax updates!');
+    Swal.fire({
+      title: 'Subscribed! 📬',
+      text: 'Thank you for subscribing to TaxByCA updates and tax tips!',
+      icon: 'success',
+      confirmButtonColor: '#2563eb',
+      confirmButtonText: 'Great!',
+      customClass: {
+        popup: 'rounded-2xl shadow-xl',
+        confirmButton: 'rounded-full font-bold px-6 py-2.5',
+      }
+    });
     setEmail('');
   };
 
@@ -89,11 +100,11 @@ const Footer = () => {
             </Link>
 
             <p className="text-slate-600 text-sm leading-relaxed mb-5">
-              <span className="text-[#2563eb] font-semibold">team of qualified qualified professionals & professionals</span> providing
+              <span className="text-[#2563eb] font-semibold">Team of qualified professionals</span> providing
               GST, ITR, company registration &amp; all compliance services 100% online across India.
             </p>
 
-            {/* ICAI Badge */}
+            {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-[#2563eb]/10 border border-blue-200 rounded-full px-3 py-1.5 mb-5">
               <i className="ri-award-line text-[#2563eb] text-sm" />
               <span className="text-[#2563eb] text-[10px] font-bold tracking-wider">Qualified Professionals</span>

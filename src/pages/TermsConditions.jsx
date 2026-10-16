@@ -1,175 +1,110 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { SOCIAL_LINKS } from '../utils/constants';
+import { BRAND } from '../utils/constants';
 
 const TermsConditions = () => {
   return (
     <div className="min-h-screen bg-[#f8fafc] pt-24">
       <Helmet>
         <title>Terms & Conditions | TaxByCA</title>
-        <meta name="description" content="Terms and Conditions for using TaxByCA services." />
-        <meta name="robots" content="noindex, follow" />
+        <meta name="description" content="Terms and Conditions for using TaxByCA online taxation, GST, and business compliance services." />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="TaxByCA" />
+        <meta property="og:title" content="Terms & Conditions | TaxByCA" />
+        <meta property="og:description" content="Terms and Conditions for using TaxByCA online taxation, GST, and business compliance services." />
+        <meta property="og:url" content="https://taxbyca.in/terms-conditions" />
+        <meta property="og:image" content="https://taxbyca.in/og-image.jpg" />
         <link rel="canonical" href="https://taxbyca.in/terms-conditions" />
       </Helmet>
+
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-[#1a1a1a] to-[#0f0f0f] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <h1 className="text-[#0f172a] text-[40px] sm:text-[48px] md:text-[56px] lg:text-[64px] font-bold mb-6 leading-tight">
-              Terms & <span className="text-blue-600">Conditions</span>
-            </h1>
-            <p className="text-slate-700 text-lg sm:text-xl max-w-3xl mx-auto">
-              Last Updated: January 2024
-            </p>
-          </div>
+      <section className="bg-white dot-bg py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 border-b border-blue-100">
+        <div className="max-w-[1400px] mx-auto text-center">
+          <h1 className="text-[#0f172a] text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+            Terms &amp; <span className="text-blue-600">Conditions</span>
+          </h1>
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
+            Last Updated: October 2026 • TaxByCA (https://taxbyca.in)
+          </p>
         </div>
       </section>
 
       {/* Main Content */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
         <div className="max-w-4xl mx-auto">
-          
-          <div className="bg-white rounded-[20px] p-8 sm:p-10 md:p-12 space-y-8">
+          <div className="bg-white rounded-2xl p-6 sm:p-10 md:p-12 space-y-8 border border-blue-100 shadow-sm">
             
             <div>
-              <h2 className="text-[#0f172a] text-2xl font-bold mb-4 text-blue-600">
+              <h2 className="text-[#0f172a] text-xl sm:text-2xl font-bold mb-3 text-blue-600">
                 1. Acceptance of Terms
               </h2>
-              <p className="text-slate-700 text-[15px] sm:text-[16px] leading-relaxed">
-                By accessing and using the Juris Associates website, you accept and agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you must not use our website or services.
+              <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                By accessing and using the TaxByCA website (https://taxbyca.in) or availing any of our online taxation, GST, business registration, or compliance services, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not use our platform or services.
               </p>
             </div>
 
             <div>
-              <h2 className="text-[#0f172a] text-2xl font-bold mb-4 text-blue-600">
-                2. Legal Disclaimer
+              <h2 className="text-[#0f172a] text-xl sm:text-2xl font-bold mb-3 text-blue-600">
+                2. Scope of Online Professional Services
               </h2>
-              <div className="space-y-4 text-slate-700 text-[15px] sm:text-[16px] leading-relaxed">
+              <div className="space-y-3 text-slate-700 text-sm sm:text-base leading-relaxed">
                 <p>
-                  <strong className="text-[#0f172a]">2.1 No Legal Advice:</strong> The information provided on this website is for general informational purposes only and does not constitute legal advice. You should not act or refrain from acting based on any information contained on this website without seeking appropriate legal counsel.
+                  <strong className="text-[#0f172a]">2.1 Service Nature:</strong> TaxByCA provides digital assistance, documentation, preparation, and electronic filing for Income Tax, GST, Company Incorporation, Audits, Project Reports, and associated corporate compliances.
                 </p>
                 <p>
-                  <strong className="text-[#0f172a]">2.2 No Attorney-Client Relationship:</strong> Use of this website or communication with Juris Associates through this website does not create an attorney-client relationship. An attorney-client relationship is formed only after a formal engagement agreement is executed.
+                  <strong className="text-[#0f172a]">2.2 Client Responsibility:</strong> Clients are responsible for providing authentic, complete, and accurate records (such as Form 16, bank statements, sales/purchase registers, and identification documents). TaxByCA prepares filings based on client-provided data and cannot be held liable for misstatements or omissions made by the client.
                 </p>
                 <p>
-                  <strong className="text-[#0f172a]">2.3 Bar Council Compliance:</strong> As per the rules of the Bar Council of India, lawyers and law firms are not permitted to solicit work or advertise. By using this website, you acknowledge that you are seeking information of your own accord and there has been no solicitation, invitation, or inducement of any sort by Juris Associates.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-[#0f172a] text-2xl font-bold mb-4 text-blue-600">
-                3. Use of Website
-              </h2>
-              <p className="text-slate-700 text-[15px] sm:text-[16px] leading-relaxed mb-4">
-                You agree to use our website only for lawful purposes and in a way that does not infringe the rights of others or restrict their use of the website. You agree not to:
-              </p>
-              <ul className="list-disc list-inside ml-4 space-y-2 text-slate-700 text-[15px] sm:text-[16px]">
-                <li>Use the website in any way that violates applicable laws or regulations</li>
-                <li>Transmit any malicious code, viruses, or harmful data</li>
-                <li>Attempt to gain unauthorized access to any part of the website</li>
-                <li>Use automated systems to access the website without permission</li>
-                <li>Reproduce, duplicate, or copy any content without authorization</li>
-              </ul>
-            </div>
-
-            <div>
-              <h2 className="text-[#0f172a] text-2xl font-bold mb-4 text-blue-600">
-                4. Intellectual Property
-              </h2>
-              <p className="text-slate-700 text-[15px] sm:text-[16px] leading-relaxed">
-                All content on this website, including text, graphics, logos, images, and software, is the property of Juris Associates or its content suppliers and is protected by Indian and international copyright laws. You may not use, reproduce, or distribute any content from this website without our express written permission.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-[#0f172a] text-2xl font-bold mb-4 text-blue-600">
-                5. Legal Services
-              </h2>
-              <div className="space-y-4 text-slate-700 text-[15px] sm:text-[16px] leading-relaxed">
-                <p>
-                  <strong className="text-[#0f172a]">5.1 Engagement:</strong> Legal services are provided only after a formal engagement agreement is executed between you and Juris Associates. The terms of engagement, including fees and scope of work, will be detailed in the engagement agreement.
-                </p>
-                <p>
-                  <strong className="text-[#0f172a]">5.2 Confidentiality:</strong> We maintain strict confidentiality regarding all client information and matters, in accordance with professional ethics and applicable laws.
-                </p>
-                <p>
-                  <strong className="text-[#0f172a]">5.3 Fees:</strong> Legal fees and charges will be communicated to you before engagement and are subject to the terms agreed upon in the engagement agreement.
+                  <strong className="text-[#0f172a]">2.3 Government Fees:</strong> Quoted service pricing covers professional preparation and filing fees. Any statutory government fees, ROC stamp duty, MCA charges, or late filing penalties levied by government portals are payable at actuals.
                 </p>
               </div>
             </div>
 
             <div>
-              <h2 className="text-[#0f172a] text-2xl font-bold mb-4 text-blue-600">
-                6. Limitation of Liability
+              <h2 className="text-[#0f172a] text-xl sm:text-2xl font-bold mb-3 text-blue-600">
+                3. Confidentiality & Security
               </h2>
-              <p className="text-slate-700 text-[15px] sm:text-[16px] leading-relaxed">
-                To the maximum extent permitted by law, Juris Associates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from your use of this website or our services.
+              <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                We maintain strict confidentiality concerning all financial, personal, and business records shared with us. Information shared via WhatsApp, email, or our web portals is used solely for the preparation and execution of authorized filings.
               </p>
             </div>
 
             <div>
-              <h2 className="text-[#0f172a] text-2xl font-bold mb-4 text-blue-600">
-                7. Indemnification
+              <h2 className="text-[#0f172a] text-xl sm:text-2xl font-bold mb-3 text-blue-600">
+                4. Payments & Invoicing
               </h2>
-              <p className="text-slate-700 text-[15px] sm:text-[16px] leading-relaxed">
-                You agree to indemnify and hold harmless Juris Associates, its partners, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising out of or related to your use of the website or violation of these Terms and Conditions.
+              <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                TaxByCA issues proper GST-compliant tax invoices for all services. Service fees must be settled prior to final electronic submission on government portals. Once government submission is finalized and ARN/acknowledgment is generated, fees are non-refundable as the service has been performed.
               </p>
             </div>
 
             <div>
-              <h2 className="text-[#0f172a] text-2xl font-bold mb-4 text-blue-600">
-                8. Third-Party Links
+              <h2 className="text-[#0f172a] text-xl sm:text-2xl font-bold mb-3 text-blue-600">
+                5. Governing Law
               </h2>
-              <p className="text-slate-700 text-[15px] sm:text-[16px] leading-relaxed">
-                Our website may contain links to third-party websites. We do not endorse or assume responsibility for the content, privacy policies, or practices of any third-party websites. Your use of third-party websites is at your own risk.
+              <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                These Terms and Conditions shall be governed by and construed in accordance with the laws of India.
               </p>
             </div>
 
             <div>
-              <h2 className="text-[#0f172a] text-2xl font-bold mb-4 text-blue-600">
-                9. Modifications to Terms
+              <h2 className="text-[#0f172a] text-xl sm:text-2xl font-bold mb-3 text-blue-600">
+                6. Contact Details
               </h2>
-              <p className="text-slate-700 text-[15px] sm:text-[16px] leading-relaxed">
-                We reserve the right to modify these Terms and Conditions at any time. Changes will be effective immediately upon posting on this website. Your continued use of the website after changes are posted constitutes your acceptance of the modified terms.
+              <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-4">
+                For questions regarding our terms of service, reach us directly:
               </p>
-            </div>
-
-            <div>
-              <h2 className="text-[#0f172a] text-2xl font-bold mb-4 text-blue-600">
-                10. Governing Law and Jurisdiction
-              </h2>
-              <p className="text-slate-700 text-[15px] sm:text-[16px] leading-relaxed">
-                These Terms and Conditions shall be governed by and construed in accordance with the laws of India. Any disputes arising out of or relating to these terms shall be subject to the exclusive jurisdiction of the courts in Kolkata, West Bengal, India.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-[#0f172a] text-2xl font-bold mb-4 text-blue-600">
-                11. Severability
-              </h2>
-              <p className="text-slate-700 text-[15px] sm:text-[16px] leading-relaxed">
-                If any provision of these Terms and Conditions is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-[#0f172a] text-2xl font-bold mb-4 text-blue-600">
-                12. Contact Information
-              </h2>
-              <p className="text-slate-700 text-[15px] sm:text-[16px] leading-relaxed mb-4">
-                If you have any questions about these Terms and Conditions, please contact us:
-              </p>
-              <div className="bg-[#f8fafc] rounded-lg p-6 space-y-2">
-                <p className="text-slate-700"><strong className="text-[#0f172a]">Juris Associates</strong></p>
-                <p className="text-slate-700">Kolkata, West Bengal, India</p>
-                <p className="text-slate-700">Email: <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-blue-600 hover:underline">{SOCIAL_LINKS.email}</a></p>
-                <p className="text-slate-700">Phone: <a href="tel:9211957859" className="text-blue-600 hover:underline">+91 9211957859</a></p>
+              <div className="bg-[#f8fafc] border border-blue-100 rounded-xl p-5 space-y-1.5 text-sm">
+                <p className="text-[#0f172a] font-bold">TaxByCA</p>
+                <p className="text-slate-600">Website: <a href="https://taxbyca.in" className="text-blue-600 hover:underline">https://taxbyca.in</a></p>
+                <p className="text-slate-600">Email: <a href={`mailto:${BRAND.email}`} className="text-blue-600 hover:underline">{BRAND.email}</a></p>
+                <p className="text-slate-600">Phone / WhatsApp: <a href={`tel:${BRAND.phone}`} className="text-blue-600 hover:underline">+91 {BRAND.phone}</a></p>
+                <p className="text-slate-600">Timings: {BRAND.timings}</p>
               </div>
             </div>
 
           </div>
-
         </div>
       </section>
     </div>
@@ -177,4 +112,3 @@ const TermsConditions = () => {
 };
 
 export default TermsConditions;
-

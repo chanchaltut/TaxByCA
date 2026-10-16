@@ -1,12 +1,31 @@
+# robots.txt for TaxByCA (https://taxbyca.in)
 User-agent: *
 Allow: /
 
-# Block admin or private paths (if any)
-Disallow: /api/
-Disallow: /_/
+# Explicitly welcome major search and AI answer engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
 
 # Sitemaps
-Sitemap: https://accunextaxation.com/sitemap.xml
-
-# Crawl-delay for respectful crawlers
-Crawl-delay: 1
+Sitemap: https://taxbyca.in/sitemap.xml

@@ -12,7 +12,7 @@ export const BRAND = {
   tagline: 'One-Stop Solution for Every Business & Professional',
   subTagline: 'Expert Professional Services — Tax, Audit, Project Reports & Certificates',
   description:
-    'TaxByCA is a team of qualified qualified professionals & professionals providing GST, ITR filing, company registration, TDS compliance, ROC filings, Tax Audit, Project Reports, Certificates and all professional services 100% online across India.',
+    'TaxByCA is a team of experienced tax experts and qualified professionals providing GST, ITR filing, company registration, TDS compliance, ROC filings, Tax Audit, Project Reports, Certificates and all professional compliance services 100% online across India.',
   phone: '9424856409',
   whatsapp: '919424856409',
   email: 'TaxByCAinfo@gmail.com',
@@ -463,7 +463,7 @@ export const HERO_SLIDES = [
     heading: 'Book a Free',
     subHeading: 'Tax Consultation Today',
     description:
-      'Talk to our qualified qualified professionals about your GST, income tax, or business registration needs. No obligation, no hidden charges.',
+      'Talk to our qualified professionals about your GST, income tax, or business registration needs. No obligation, no hidden charges.',
     ctaText: 'Book Free Consultation',
     ctaLink: '/contact',
     ctaSecondary: 'Know More',

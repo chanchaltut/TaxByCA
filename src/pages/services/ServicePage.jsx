@@ -21,10 +21,28 @@ const ServicePage = ({ service }) => {
   return (
     <>
       <Helmet>
-        <title>{service.title} — {service.shortDesc.slice(0, 50)} | TaxByCA</title>
-        <meta name="description" content={`${service.shortDesc} qualified qualified professionals & professionals. 100% online across India. Starting ${service.startingPrice}.`} />
+        <title>{service.title} | TaxByCA — 100% Online India</title>
+        <meta
+          name="description"
+          content={`${service.shortDesc} Handled by qualified professionals. 100% online across India starting at ${service.startingPrice}.`}
+        />
+        <meta
+          name="keywords"
+          content={`${service.title}, ${service.shortTitle}, TaxByCA, online tax filing, tax consultant India, business compliance`}
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="TaxByCA" />
         <meta property="og:title" content={`${service.title} | TaxByCA`} />
         <meta property="og:description" content={service.shortDesc} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:image" content="https://taxbyca.in/og-image.jpg" />
+        <meta property="og:locale" content="en_IN" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${service.title} | TaxByCA`} />
+        <meta name="twitter:description" content={service.shortDesc} />
+        <meta name="twitter:image" content="https://taxbyca.in/og-image.jpg" />
+
         <link rel="canonical" href={pageUrl} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -87,7 +105,7 @@ const ServicePage = ({ service }) => {
               { label: 'Starting From', value: service.startingPrice },
               { label: 'Timeline', value: service.timeline },
               { label: 'Mode', value: '100% Online' },
-              { label: 'By', value: 'ICAI CA' },
+              { label: 'By', value: 'Qualified Professional' },
             ].map((stat, i) => (
               <div key={i} className="bg-[#f8fafc] border border-blue-100 rounded-xl px-4 py-2.5 text-center">
                 <p className="text-[#2563eb] font-bold text-sm sm:text-base">{stat.value}</p>

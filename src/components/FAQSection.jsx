@@ -93,12 +93,12 @@ const FAQSection = () => {
         <div className="text-center mt-10 sm:mt-12">
           <p className="text-slate-600 text-sm mb-4">Have more questions? Our professional team is ready to help.</p>
           <a
-            href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I have a question about professional services.`}
+            href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I have a question about TaxByCA services.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-6 py-3.5 rounded-full font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 min-h-[48px]"
+            className="inline-flex items-center gap-2 bg-[#25d366] hover:bg-[#20b858] text-white px-6 py-3.5 rounded-full font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 shadow-sm min-h-[48px]"
           >
-            <i className="ri-whatsapp-line mr-2"></i> Ask on WhatsApp
+            <i className="ri-whatsapp-line text-lg mr-1"></i> Ask on WhatsApp
           </a>
         </div>
       </div>

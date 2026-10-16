@@ -19,11 +19,11 @@ const ExpertCA = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0f172a] mt-3 mb-5 leading-tight">
               Why{' '}
               <span className="text-[#2563eb]">TaxByCA</span>{' '}
-              is India's Trusted Trusted Partner
+              is India's Trusted Compliance Partner
             </h2>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 max-w-lg mx-auto lg:mx-0">
-              We combine ICAI-qualified expertise with a completely online, hassle-free delivery model.
+              We combine professional expertise with a completely online, hassle-free delivery model.
               No office visits. No hidden fees. Just accurate, fast professional services — delivered where you are.
             </p>
 
