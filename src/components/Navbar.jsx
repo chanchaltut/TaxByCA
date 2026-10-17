@@ -96,7 +96,7 @@ const Navbar = () => {
 
       {/* ─── MOBILE BACKDROP ─── */}
       <div
-        className={`fixed inset-0 z-[60] bg-ink-950/60 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 z-[110] bg-ink-950/60 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
           isSidebarOpen ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
         onClick={closeSidebar}
@@ -105,15 +105,17 @@ const Navbar = () => {
 
       {/* ─── MOBILE DRAWER ─── */}
       <div
-        className={`fixed inset-y-0 right-0 z-[70] flex w-[86%] max-w-[360px] flex-col bg-white shadow-float transition-transform duration-500 ease-out-expo lg:hidden ${
-          isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-y-0 left-0 z-[120] flex w-[86%] max-w-[360px] flex-col bg-white shadow-float transition-transform duration-500 ease-out-expo lg:hidden ${
+          isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
       >
-        <div className="flex items-center justify-between border-b border-line px-5 py-4">
-          <img src={TaxByCALogo} alt="TaxByCA" className="h-10 w-auto" />
+        <div className="flex items-center justify-between border-b border-line px-5 py-5">
+          <Link to="/" onClick={closeSidebar} className="flex shrink-0 items-center py-1" aria-label="TaxByCA - Home">
+            <img src={TaxByCALogo} alt="TaxByCA" className="h-11 w-auto" />
+          </Link>
           <button
             onClick={closeSidebar}
             className="flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-surface text-xl text-ink"
@@ -146,7 +148,7 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <div className="space-y-3 border-t border-line p-5 pb-safe">
+        <div className="space-y-3 border-t border-line p-5 pb-[calc(env(safe-area-inset-bottom,0px)+1.75rem)]">
           <a
             href={waLink('Hi! I need professional services from TaxByCA.')}
             target="_blank"
