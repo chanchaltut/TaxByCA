@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Hero from '../components/Hero';
-import Marquee from '../components/Marquee';
 import StatsBar from '../components/StatsBar';
 import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
@@ -33,7 +32,7 @@ const Home = () => {
           content="Get expert tax & business compliance services 100% online across India. GST registration, ITR filing, company registration, audits & project reports with dedicated WhatsApp support. 10,000+ satisfied clients."
         />
         <meta property="og:url" content="https://taxbyca.in/" />
-        <meta property="og:image" content="https://taxbyca.in/og-image-v2.jpg" />
+        <meta property="og:image" content="https://taxbyca.in/og-image-v3.jpg" />
         <meta property="og:locale" content="en_IN" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -42,14 +41,13 @@ const Home = () => {
           name="twitter:description"
           content="Expert tax & compliance services 100% online across India. GST, ITR, company registration, and audit by qualified professionals."
         />
-        <meta name="twitter:image" content="https://taxbyca.in/og-image-v2.jpg" />
+        <meta name="twitter:image" content="https://taxbyca.in/og-image-v3.jpg" />
 
         <link rel="canonical" href="https://taxbyca.in/" />
       </Helmet>
 
       <Hero />
-      <Marquee />
-      <StatsBar />
+      <StatsBar overlap />
       <AboutSection />
       <ServicesSection />
       <ProcessSection />

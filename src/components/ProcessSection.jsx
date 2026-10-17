@@ -1,73 +1,57 @@
 import React from 'react';
+import { PiLightningDuotone } from 'react-icons/pi';
 import { PROCESS_STEPS } from '../utils/constants';
+import useReveal from '../hooks/useReveal';
+import { DarkBackdrop, SectionHeading } from './ui';
 
 const ProcessSection = () => {
+  const sectionRef = useReveal();
+
   return (
-    <section
-      className="bg-[#f8fafc] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
-      aria-label="How it works"
-    >
-      <div className="max-w-5xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12 sm:mb-14">
-          <div className="section-tag">How It Works</div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0f172a] mt-3 mb-4 leading-tight">
-            Get Your Professional Service in{' '}
-            <span className="text-[#2563eb]">4 Simple Steps</span>
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
-            We've made it simple to get professional professional services from anywhere in India.
-          </p>
-        </div>
+    <section ref={sectionRef} className="surface-dark section-y" aria-label="How it works">
+      <DarkBackdrop />
+      <div className="container-x relative">
+        <SectionHeading
+          dark
+          eyebrow="How It Works"
+          title={<>Get Your Professional Service in <span className="accent-serif-light">4 Simple Steps</span></>}
+          description="We've made it simple to get professional services from anywhere in India."
+        />
 
-        {/* Steps — Vertical on mobile, Horizontal on desktop */}
-        <div className="relative">
-          {/* Connecting line (desktop only) */}
-          <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-[#2563eb] via-[#2563eb]/50 to-[#2563eb]" aria-hidden="true" />
+        <div className="relative mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {/* Connector line (desktop) */}
+          <div className="absolute left-[12%] right-[12%] top-[60px] hidden h-px bg-gradient-to-r from-transparent via-sky-glow/50 to-transparent lg:block" aria-hidden="true" />
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
-            {PROCESS_STEPS.map((step, i) => (
+          {PROCESS_STEPS.map((step, i) => {
+            const Icon = step.icon;
+            return (
               <div
-                key={i}
-                className="relative flex flex-col items-center text-center md:items-center"
+                key={step.step}
+                className="reveal ring-gradient group relative rounded-3xl bg-white/[0.04] p-7 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:bg-white/[0.07]"
+                style={{ transitionDelay: `${i * 100}ms` }}
               >
-                {/* Mobile: left border timeline */}
-                <div className="md:hidden absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#2563eb] to-[#2563eb]/20" aria-hidden="true" />
-
-                <div className="md:hidden pl-8 text-left w-full pb-10">
-                  {/* Step number */}
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="absolute left-[-8px] w-4 h-4 bg-[#2563eb] rounded-full flex-shrink-0" aria-hidden="true" />
-                    <span className="text-[#2563eb] font-extrabold text-sm tracking-widest">{step.step}</span>
-                    <i className={`text-2xl text-blue-600 ${step.icon}`}></i>
-                  </div>
-                  <h3 className="text-[#0f172a] font-bold text-lg mb-2">{step.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+                <div className="flex items-center justify-between">
+                  <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-400 to-brand-700 text-[28px] text-white shadow-glow">
+                    <Icon />
+                  </span>
+                  <span className="font-serif text-6xl italic leading-none text-white/10 transition-colors duration-500 group-hover:text-sky-glow/30">
+                    {step.step}
+                  </span>
                 </div>
-
-                {/* Desktop layout */}
-                <div className="hidden md:flex md:flex-col md:items-center">
-                  {/* Icon circle */}
-                  <div className="relative z-10 w-20 h-20 bg-white border-2 border-[#2563eb] rounded-full flex flex-col items-center justify-center mb-5 shadow-lg">
-                    <i className={`text-2xl mb-0.5 text-blue-600 ${step.icon}`}></i>
-                    <span className="text-[#2563eb] font-extrabold text-xs tracking-widest">{step.step}</span>
-                  </div>
-
-                  <h3 className="text-[#0f172a] font-bold text-base sm:text-lg mb-2">{step.title}</h3>
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">{step.desc}</p>
-                </div>
+                <h3 className="mt-8 text-lg font-bold text-white">{step.title}</h3>
+                <p className="mt-2.5 text-[14px] leading-relaxed text-brand-100/65">{step.desc}</p>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
 
-        {/* Bottom note */}
-        <div className="text-center mt-10 sm:mt-12">
-          <div className="inline-flex items-center gap-2 bg-[#2563eb]/10 border border-blue-100 rounded-2xl px-6 py-4">
-            <i className="ri-flashlight-line text-2xl text-[#2563eb]"></i>
-            <p className="text-slate-600 text-sm">
-              <strong className="text-[#0f172a]">Most services completed in 24–72 hours.</strong>{' '}
-              No office visit needed.
+        <div className="mt-14 flex justify-center">
+          <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.05] py-2 pl-2 pr-5 backdrop-blur">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sky-glow/15 text-lg text-sky-glow">
+              <PiLightningDuotone />
+            </span>
+            <p className="text-sm text-brand-100/70">
+              <strong className="font-semibold text-white">Most services completed in 24–72 hours.</strong> No office visit needed.
             </p>
           </div>
         </div>

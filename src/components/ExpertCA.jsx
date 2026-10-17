@@ -1,93 +1,108 @@
 import React from 'react';
-import { FaArrowRight, FaCheckCircle } from 'react-icons/fa';
-import { WHY_CHOOSE_US, BRAND } from '../utils/constants';
+import { Link } from 'react-router-dom';
+import { PiArrowRight, PiTrophyDuotone, PiWhatsappLogo } from 'react-icons/pi';
+import { WHY_CHOOSE_US, waLink } from '../utils/constants';
+import useReveal from '../hooks/useReveal';
 
-const whyFeatures = WHY_CHOOSE_US;
+// First four go in the bento grid; the fifth becomes the dark banner.
+const gridFeatures = WHY_CHOOSE_US.slice(0, 4);
+const bannerFeature = WHY_CHOOSE_US[4];
 
 const ExpertCA = () => {
+  const sectionRef = useReveal();
+
   return (
-    <section
-      className="bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 overflow-hidden"
-      aria-label="Why choose TaxByCA"
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-          {/* LEFT — Content */}
-          <div className="text-center lg:text-left">
-            <div className="section-tag">Why Choose Us</div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0f172a] mt-3 mb-5 leading-tight">
-              Why{' '}
-              <span className="text-[#2563eb]">TaxByCA</span>{' '}
-              is India's Trusted Compliance Partner
+    <section ref={sectionRef} className="section-y bg-white" aria-label="Why choose TaxByCA">
+      <div className="container-x">
+        {/* Header */}
+        <div className="grid items-end gap-8 lg:grid-cols-2 lg:gap-16">
+          <div className="reveal">
+            <div className="eyebrow">Why Choose Us</div>
+            <h2 className="h-section mt-5">
+              Why <span className="accent-serif">TaxByCA</span> is India's Trusted Compliance Partner
             </h2>
-
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 max-w-lg mx-auto lg:mx-0">
+          </div>
+          <div className="reveal lg:pb-2">
+            <p className="lead">
               We combine professional expertise with a completely online, hassle-free delivery model.
               No office visits. No hidden fees. Just accurate, fast professional services — delivered where you are.
             </p>
-
-            {/* Feature cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-              {whyFeatures.map((feature, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-3 bg-[#f8fafc] border border-blue-100 rounded-xl p-3 sm:p-4 text-left hover:border-[#2563eb]/40 transition-colors duration-200"
-                >
-                  <i className={`text-xl sm:text-2xl flex-shrink-0 mt-0.5 text-blue-600 ${feature.icon}`}></i>
-                  <div>
-                    <h4 className="text-[#0f172a] font-semibold text-sm mb-0.5">{feature.title}</h4>
-                    <p className="text-slate-600 text-xs leading-relaxed">{feature.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a
-                href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I want to get started with TaxByCA.`}
+                href={waLink('Hi! I want to get started with TaxByCA.')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-6 py-3.5 rounded-full font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 group min-h-[48px]"
+                className="btn btn-primary btn-shine group"
               >
-                GET STARTED
-                <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform" />
+                Get Started
+                <PiArrowRight className="transition-transform group-hover:translate-x-1" />
               </a>
-              <a
-                href="/about"
-                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-blue-100 hover:border-[#2563eb] text-[#0f172a] hover:text-[#2563eb] px-6 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 min-h-[48px]"
-              >
-                Learn More About Us
-              </a>
+              <Link to="/about" className="btn btn-outline">Learn More About Us</Link>
             </div>
           </div>
+        </div>
 
-          {/* RIGHT — Visual */}
-          <div className="relative">
-            <div className="rounded-3xl overflow-hidden image-zoom-container shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80&auto=format&fit=crop"
-                alt="qualified professional working on tax documents"
-                className="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-cover image-zoom"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-white/60 to-transparent" />
-            </div>
-
-            {/* Floating badge */}
-            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 bg-white/90 backdrop-blur-sm border border-blue-100 rounded-2xl p-4 sm:p-5">
+        {/* Bento */}
+        <div className="mt-14 grid gap-5 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto]">
+          <div className="reveal relative min-h-[360px] overflow-hidden rounded-4xl lg:row-span-3">
+            <img
+              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80&auto=format&fit=crop"
+              alt="Professional working on tax documents"
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent" />
+            <div className="absolute inset-x-5 bottom-5 rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-[#2563eb] rounded-xl flex items-center justify-center flex-shrink-0">
-                  <i className="ri-trophy-line text-2xl text-white"></i>
-                </div>
+                <span className="icon-tile h-12 w-12 text-2xl"><PiTrophyDuotone /></span>
                 <div>
-                  <p className="text-[#0f172a] font-bold text-sm sm:text-base">TaxByCA — Expert Professional Services</p>
-                  <p className="text-slate-600 text-xs mt-0.5">Serving 10000+ clients across India</p>
+                  <p className="font-bold text-white">TaxByCA — Expert Professional Services</p>
+                  <p className="mt-0.5 text-[13px] text-white/70">Serving 10,000+ clients across India</p>
                 </div>
               </div>
             </div>
           </div>
+
+          {gridFeatures.map((feature, i) => {
+            const Icon = feature.icon;
+            return (
+              <div
+                key={feature.title}
+                className="reveal card card-hover group p-7"
+                style={{ transitionDelay: `${(i % 2) * 90}ms` }}
+              >
+                <span className="icon-tile-soft h-12 w-12 text-2xl transition-all duration-500 group-hover:border-brand-600 group-hover:bg-brand-600 group-hover:bg-none group-hover:text-white">
+                  <Icon />
+                </span>
+                <h3 className="mt-6 text-lg font-bold">{feature.title}</h3>
+                <p className="mt-2 text-[14px] leading-relaxed text-ink-soft">{feature.desc}</p>
+              </div>
+            );
+          })}
+
+          {bannerFeature && (
+            <div className="reveal surface-dark relative flex flex-col gap-6 rounded-4xl p-7 sm:flex-row sm:items-center sm:justify-between lg:col-span-2">
+              <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-brand-500/40 blur-3xl" aria-hidden="true" />
+              <div className="relative flex items-start gap-5">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-2xl text-sky-glow">
+                  <bannerFeature.icon />
+                </span>
+                <div>
+                  <h3 className="text-lg font-bold text-white">{bannerFeature.title}</h3>
+                  <p className="mt-1.5 max-w-md text-[14px] leading-relaxed text-brand-100/70">{bannerFeature.desc}</p>
+                </div>
+              </div>
+              <a
+                href={waLink('Hi! I need help from TaxByCA.')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-whatsapp relative shrink-0"
+              >
+                <PiWhatsappLogo className="text-lg" />
+                WhatsApp Us
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </section>

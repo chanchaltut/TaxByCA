@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaPaperPlane } from 'react-icons/fa';
+import { PiPhoneCallDuotone, PiEnvelopeSimpleDuotone, PiMapPinDuotone, PiWhatsappLogoDuotone, PiClockDuotone, PiPaperPlaneTilt, PiWhatsappLogo, PiLightningDuotone, PiLockKey, PiCaretDown } from 'react-icons/pi';
+import { PageHero } from '../components/ui';
 import Swal from 'sweetalert2';
-import { BRAND, SERVICE_CATEGORIES } from '../utils/constants';
+import { BRAND, SERVICE_CATEGORIES, waLink } from '../utils/constants';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ const Contact = () => {
       setIsSubmitting(false);
 
       Swal.fire({
-        title: 'Inquiry Received! 🎉',
+        title: 'Inquiry Received!',
         html: `
           <p style="color: #475569; font-size: 15px; margin-bottom: 12px;">
             Thank you, <strong>${formData.name}</strong>! Your message regarding <strong>${formData.service || 'Professional Services'}</strong> has been sent to the TaxByCA team.
@@ -37,15 +38,15 @@ const Contact = () => {
           </p>
         `,
         icon: 'success',
-        iconColor: '#2563eb',
+        iconColor: '#06529A',
         showCancelButton: true,
-        confirmButtonText: '💬 Continue on WhatsApp',
+        confirmButtonText: 'Continue on WhatsApp',
         cancelButtonText: 'Done',
         confirmButtonColor: '#25d366',
-        cancelButtonColor: '#2563eb',
+        cancelButtonColor: '#0B1B33',
         reverseButtons: true,
         customClass: {
-          popup: 'rounded-2xl shadow-2xl font-sans',
+          popup: 'rounded-3xl font-sans',
           confirmButton: 'rounded-full font-bold px-6 py-3',
           cancelButton: 'rounded-full font-bold px-6 py-3',
         }
@@ -60,11 +61,11 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: <FaMapMarkerAlt />, title: 'Coverage', details: ['100% Online — Pan-India Delivery'] },
-    { icon: <FaPhone />, title: 'Phone Call', details: ['+91 ' + BRAND.phone], link: `tel:${BRAND.phone}` },
-    { icon: <FaEnvelope />, title: 'Email Address', details: [BRAND.email], link: `mailto:${BRAND.email}` },
-    { icon: <FaWhatsapp />, title: 'WhatsApp Support', details: ['+91 ' + BRAND.whatsapp], link: `https://wa.me/${BRAND.whatsapp}?text=Hi! I need a consultation with TaxByCA.` },
-    { icon: <FaClock />, title: 'Working Hours', details: [BRAND.timings] }
+    { icon: PiPhoneCallDuotone, title: 'Phone Call', detail: '+91 ' + BRAND.phone, link: `tel:${BRAND.phone}` },
+    { icon: PiWhatsappLogoDuotone, title: 'WhatsApp Support', detail: '+91 ' + BRAND.phone, link: waLink('Hi! I need a consultation with TaxByCA.') },
+    { icon: PiEnvelopeSimpleDuotone, title: 'Email Address', detail: BRAND.email, link: `mailto:${BRAND.email}` },
+    { icon: PiClockDuotone, title: 'Working Hours', detail: BRAND.timings },
+    { icon: PiMapPinDuotone, title: 'Coverage', detail: '100% Online — Pan-India Delivery' },
   ];
 
   return (
@@ -77,107 +78,95 @@ const Contact = () => {
         <meta property="og:title" content="Contact TaxByCA | Free Online Tax Consultation" />
         <meta property="og:description" content="Need expert tax advice? Contact TaxByCA today. 100% online professional services across India with dedicated WhatsApp support." />
         <meta property="og:url" content="https://taxbyca.in/contact" />
-        <meta property="og:image" content="https://taxbyca.in/og-image-v2.jpg" />
+        <meta property="og:image" content="https://taxbyca.in/og-image-v3.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contact TaxByCA | Free Online Consultation" />
         <meta name="twitter:description" content="Contact TaxByCA for GST, ITR, company registration, and audit services. 100% online across India." />
-        <meta name="twitter:image" content="https://taxbyca.in/og-image-v2.jpg" />
+        <meta name="twitter:image" content="https://taxbyca.in/og-image-v3.jpg" />
         <link rel="canonical" href="https://taxbyca.in/contact" />
       </Helmet>
 
       {/* Hero Section */}
-      <section className="bg-white dot-bg pt-32 pb-16 sm:pt-40 sm:pb-24 border-b border-blue-100">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
-          <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-full px-4 py-1.5 mb-4">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="text-blue-700 text-xs font-semibold uppercase tracking-wider">Fast Response Within 30 Mins</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#0f172a] mb-5 tracking-tight">
-            Contact <span className="text-[#2563eb]">TaxByCA</span>
-          </h1>
-          <p className="text-slate-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Get in touch with our qualified professionals for taxation, GST, company registration, or audit queries. 100% online across India.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Fast Response Within 30 Mins"
+        title={<>Contact <span className="accent-serif-light">TaxByCA</span></>}
+        description="Get in touch with our qualified professionals for taxation, GST, company registration, or audit queries. 100% online across India."
+      />
 
       {/* Main Content */}
-      <section className="bg-white py-14 sm:py-20 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10">
-          
-          {/* Contact Info Cards */}
-          <div className="lg:col-span-1 space-y-4">
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-2xl p-6 shadow-md">
-              <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
-                <i className="ri-flashlight-line text-yellow-300 text-xl" />
-                Quick Assistance
-              </h3>
-              <p className="text-blue-100 text-xs leading-relaxed mb-4">
-                Need urgent assistance with a GST return, ITR filing deadline, or tax notice? Connect directly with our qualified team on WhatsApp.
-              </p>
-              <a
-                href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I have an urgent tax inquiry for TaxByCA.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 bg-[#25d366] hover:bg-[#20b858] text-white py-3 px-4 rounded-full font-bold text-sm transition-all shadow-md active:scale-98"
-              >
-                <FaWhatsapp className="text-lg" />
-                Chat on WhatsApp Now
-              </a>
+      <section className="bg-surface px-4 pb-24 sm:px-6">
+        <div className="relative mx-auto -mt-10 grid max-w-6xl gap-6 lg:grid-cols-12">
+
+          {/* Contact Info */}
+          <div className="space-y-4 lg:col-span-5">
+            <div className="surface-dark rounded-4xl p-7">
+              <div className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-brand-500/50 blur-3xl" aria-hidden="true" />
+              <div className="relative">
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-2xl text-sky-glow"><PiLightningDuotone /></span>
+                <h3 className="mt-5 text-xl font-bold text-white">Quick Assistance</h3>
+                <p className="mt-2 text-[14px] leading-relaxed text-brand-100/70">
+                  Need urgent assistance with a GST return, ITR filing deadline, or tax notice? Connect directly with our qualified team on WhatsApp.
+                </p>
+                <a
+                  href={waLink('Hi! I have an urgent tax inquiry for TaxByCA.')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-whatsapp mt-6 w-full"
+                >
+                  <PiWhatsappLogo className="text-lg" />
+                  Chat on WhatsApp Now
+                </a>
+              </div>
             </div>
 
-            {contactInfo.map((info, i) => (
-              <div key={i} className="bg-[#f8fafc] border border-blue-100 rounded-xl p-4 sm:p-5 hover:border-blue-300 transition-colors">
-                <div className="flex items-start gap-3.5">
-                  <div className="text-[#2563eb] text-lg sm:text-xl mt-0.5 flex-shrink-0">{info.icon}</div>
-                  <div className="min-w-0">
-                    <h3 className="text-[#0f172a] font-bold text-sm sm:text-base mb-0.5">{info.title}</h3>
-                    {info.details.map((detail, idx) => (
-                      <div key={idx}>
-                        {info.link ? (
-                          <a
-                            href={info.link}
-                            target={info.link.includes('wa.me') ? '_blank' : undefined}
-                            rel={info.link.includes('wa.me') ? 'noopener noreferrer' : undefined}
-                            className="text-slate-600 hover:text-[#2563eb] text-xs sm:text-sm transition-colors break-words"
-                          >
-                            {detail}
-                          </a>
-                        ) : (
-                          <p className="text-slate-600 text-xs sm:text-sm">{detail}</p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
+            <div className="card divide-y divide-line">
+              {contactInfo.map(({ icon: Icon, title, detail, link }) => {
+                const content = (
+                  <>
+                    <span className="icon-tile-soft h-11 w-11 text-xl"><Icon /></span>
+                    <div className="min-w-0">
+                      <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-ink-mute">{title}</p>
+                      <p className="mt-0.5 break-words text-[15px] font-semibold text-ink">{detail}</p>
+                    </div>
+                  </>
+                );
+                return link ? (
+                  <a
+                    key={title}
+                    href={link}
+                    target={link.includes('wa.me') ? '_blank' : undefined}
+                    rel={link.includes('wa.me') ? 'noopener noreferrer' : undefined}
+                    className="flex items-center gap-4 p-5 transition-colors first:rounded-t-3xl last:rounded-b-3xl hover:bg-surface"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div key={title} className="flex items-center gap-4 p-5">{content}</div>
+                );
+              })}
+            </div>
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-2 bg-[#f8fafc] border border-blue-100 rounded-2xl p-6 sm:p-10 shadow-sm">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0f172a] mb-2 tracking-tight">Send Us a Message</h2>
-            <p className="text-slate-600 text-xs sm:text-sm mb-6">
+          <div className="card p-7 sm:p-10 lg:col-span-7">
+            <div className="eyebrow">Send a Message</div>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Send Us a <span className="accent-serif">Message</span>
+            </h2>
+            <p className="mt-2 text-[15px] text-ink-soft">
               Fill in your details below and our qualified professionals will reach out to you promptly.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+            <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+              <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="block text-slate-700 text-xs sm:text-sm font-semibold mb-1.5">Full Name *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white border border-blue-100 rounded-xl px-4 py-3 text-[#0f172a] text-sm focus:outline-none focus:border-[#2563eb] focus:ring-2 focus:ring-blue-100 transition-all"
-                    placeholder="e.g. Rahul Sharma"
-                  />
+                  <label htmlFor="c-name" className="field-label">Full Name *</label>
+                  <input id="c-name" type="text" name="name" value={formData.name} onChange={handleChange} required className="field" placeholder="e.g. Rahul Sharma" />
                 </div>
                 <div>
-                  <label className="block text-slate-700 text-xs sm:text-sm font-semibold mb-1.5">Phone Number *</label>
+                  <label htmlFor="c-phone" className="field-label">Phone Number *</label>
                   <input
+                    id="c-phone"
                     type="tel"
                     name="phone"
                     value={formData.phone}
@@ -185,64 +174,52 @@ const Contact = () => {
                     required
                     pattern="[0-9]{10}"
                     title="Please enter a valid 10-digit mobile number"
-                    className="w-full bg-white border border-blue-100 rounded-xl px-4 py-3 text-[#0f172a] text-sm focus:outline-none focus:border-[#2563eb] focus:ring-2 focus:ring-blue-100 transition-all"
+                    className="field"
                     placeholder="10-digit mobile number"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+              <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="block text-slate-700 text-xs sm:text-sm font-semibold mb-1.5">Email Address *</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white border border-blue-100 rounded-xl px-4 py-3 text-[#0f172a] text-sm focus:outline-none focus:border-[#2563eb] focus:ring-2 focus:ring-blue-100 transition-all"
-                    placeholder="your@email.com"
-                  />
+                  <label htmlFor="c-email" className="field-label">Email Address *</label>
+                  <input id="c-email" type="email" name="email" value={formData.email} onChange={handleChange} required className="field" placeholder="your@email.com" />
                 </div>
                 <div>
-                  <label className="block text-slate-700 text-xs sm:text-sm font-semibold mb-1.5">Service Required</label>
-                  <select
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full bg-white border border-blue-100 rounded-xl px-4 py-3 text-[#0f172a] text-sm focus:outline-none focus:border-[#2563eb] focus:ring-2 focus:ring-blue-100 transition-all"
-                  >
+                  <label htmlFor="c-service" className="field-label">Service Required</label>
+                  <div className="relative">
+                  <select id="c-service" name="service" value={formData.service} onChange={handleChange} className="field appearance-none pr-10">
                     <option value="">Select Service Area</option>
-                    {SERVICE_CATEGORIES.map((cat, i) => (
-                      <option key={i} value={cat}>{cat}</option>
+                    {SERVICE_CATEGORIES.filter((cat) => cat !== 'All').map((cat) => (
+                      <option key={cat} value={cat}>{cat}</option>
                     ))}
                   </select>
+                  <PiCaretDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-ink-mute" />
+                  </div>
                 </div>
               </div>
 
               <div>
-                <label className="block text-slate-700 text-xs sm:text-sm font-semibold mb-1.5">Message / Requirements *</label>
+                <label htmlFor="c-message" className="field-label">Message / Requirements *</label>
                 <textarea
+                  id="c-message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows="4"
-                  className="w-full bg-white border border-blue-100 rounded-xl px-4 py-3 text-[#0f172a] text-sm focus:outline-none focus:border-[#2563eb] focus:ring-2 focus:ring-blue-100 transition-all resize-none"
+                  rows="5"
+                  className="field resize-none"
                   placeholder="Tell us what you need assistance with..."
                 />
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full sm:w-auto bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-8 py-3.5 rounded-full font-bold text-sm transition-all duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow disabled:opacity-70 active:scale-98 min-h-[46px]"
-                >
-                  {isSubmitting ? 'Submitting...' : <><FaPaperPlane className="text-xs" /> Submit Inquiry</>}
+              <div className="flex flex-col items-center gap-4 pt-2 sm:flex-row">
+                <button type="submit" disabled={isSubmitting} className="btn btn-primary btn-shine btn-lg w-full disabled:opacity-70 sm:w-auto">
+                  {isSubmitting ? 'Submitting...' : <><PiPaperPlaneTilt className="text-lg" /> Submit Inquiry</>}
                 </button>
-                <span className="text-slate-600 text-xs text-center sm:text-left">
-                  🔒 Your documents &amp; information are 100% confidential.
+                <span className="flex items-center gap-1.5 text-[13px] text-ink-mute">
+                  <PiLockKey className="text-base" />
+                  Your documents &amp; information are 100% confidential.
                 </span>
               </div>
             </form>

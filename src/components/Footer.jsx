@@ -1,67 +1,63 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaWhatsapp } from 'react-icons/fa';
+import {
+  PiFacebookLogo, PiInstagramLogo, PiLinkedinLogo, PiWhatsappLogo,
+  PiPhoneCall, PiEnvelopeSimple, PiMapPin, PiClock, PiPaperPlaneTilt, PiArrowUpRight,
+} from 'react-icons/pi';
 import Swal from 'sweetalert2';
 import { BRAND } from '../utils/constants';
-import TaxByCALogo from '../assets/TaxByCALogo.png';
+import TaxByCALogoLight from '../assets/TaxByCALogo-light.webp';
 
 // ── All hrefs verified against App.jsx routes ──
 const quickLinks = [
-  { name: 'Home',              href: '/' },
-  { name: 'Services',          href: '/#services' },
-  { name: 'About Us',          href: '/about' },
-  { name: 'Blog',              href: '/blog' },
-  { name: 'Contact Us',        href: '/contact' },
-  { name: 'Privacy Policy',    href: '/privacy-policy' },
+  { name: 'Home',               href: '/' },
+  { name: 'Services',           href: '/#services' },
+  { name: 'About Us',           href: '/about' },
+  { name: 'Blog',               href: '/blog' },
+  { name: 'Contact Us',         href: '/contact' },
+  { name: 'Privacy Policy',     href: '/privacy-policy' },
   { name: 'Terms & Conditions', href: '/terms-conditions' },
 ];
 
 const serviceLinks = [
-  { name: 'Income Tax Return Filing',    href: '/services/income-tax' },
-  { name: 'GST Registration & Returns',  href: '/services/gst-services' },
-  { name: 'Tax Audit & Statutory Audit', href: '/services/tax-audit' },
-  { name: 'TDS Return & Compliance',     href: '/services/tds-compliance' },
-  { name: 'Business Registration',       href: '/services/business-registration' },
-  { name: 'ROC / Corporate Compliance',  href: '/services/roc-compliance' },
-  { name: 'Project Reports & CMA Data',  href: '/services/project-reports' },
+  { name: 'Income Tax Return Filing',   href: '/services/income-tax' },
+  { name: 'GST Registration & Returns', href: '/services/gst-services' },
+  { name: 'Audit',                      href: '/services/tax-audit' },
+  { name: 'TDS Return & Compliance',    href: '/services/tds-compliance' },
+  { name: 'Business Registration',      href: '/services/business-registration' },
+  { name: 'ROC / Corporate Compliance', href: '/services/roc-compliance' },
+  { name: 'Project Reports & CMA Data', href: '/services/project-reports' },
   { name: 'Certificates',               href: '/services/ca-certificates' },
-  { name: 'Loan Documentation',          href: '/services/loan-documentation' },
-  { name: 'F&O / Capital Gain Tax',      href: '/services/fno-capital-gain' },
+  { name: 'Loan Documentation',         href: '/services/loan-documentation' },
+  { name: 'F&O / Capital Gain Tax',     href: '/services/fno-capital-gain' },
 ];
 
 const socialLinks = [
-  { icon: FaFacebookF,  href: BRAND.social.facebook,  label: 'Facebook'  },
-  { icon: FaWhatsapp,   href: BRAND.social.whatsapp,  label: 'WhatsApp'  },
-  { icon: FaInstagram,  href: BRAND.social.instagram, label: 'Instagram' },
-  { icon: FaLinkedinIn, href: BRAND.social.linkedin,  label: 'LinkedIn'  },
+  { icon: PiFacebookLogo,  href: BRAND.social.facebook,  label: 'Facebook'  },
+  { icon: PiWhatsappLogo,  href: BRAND.social.whatsapp,  label: 'WhatsApp'  },
+  { icon: PiInstagramLogo, href: BRAND.social.instagram, label: 'Instagram' },
+  { icon: PiLinkedinLogo,  href: BRAND.social.linkedin,  label: 'LinkedIn'  },
 ];
 
 const contactItems = [
-  {
-    icon: <FaMapMarkerAlt className="text-[#2563eb] text-base flex-shrink-0 mt-0.5" />,
-    content: <span className="text-slate-600 text-sm leading-relaxed">{BRAND.address}</span>,
-  },
-  {
-    icon: <i className="ri-time-line text-[#2563eb] text-base flex-shrink-0 mt-0.5" />,
-    content: <span className="text-slate-600 text-sm leading-relaxed">{BRAND.timings}</span>,
-  },
-  {
-    icon: <FaPhone className="text-[#2563eb] text-sm flex-shrink-0 mt-0.5" />,
-    content: (
-      <a href={`tel:${BRAND.phone}`} className="footer-link text-slate-600 text-sm hover:text-[#2563eb] transition-colors">
-        +91 {BRAND.phone}
-      </a>
-    ),
-  },
-  {
-    icon: <FaEnvelope className="text-[#2563eb] text-sm flex-shrink-0 mt-0.5" />,
-    content: (
-      <a href={`mailto:${BRAND.email}`} className="footer-link text-slate-600 text-sm hover:text-[#2563eb] transition-colors break-all">
-        {BRAND.email}
-      </a>
-    ),
-  },
+  { icon: PiMapPin,         text: BRAND.address },
+  { icon: PiClock,          text: BRAND.timings },
+  { icon: PiPhoneCall,      text: `+91 ${BRAND.phone}`, href: `tel:${BRAND.phone}` },
+  { icon: PiEnvelopeSimple, text: BRAND.email,          href: `mailto:${BRAND.email}` },
 ];
+
+const FooterHeading = ({ children }) => (
+  <h3 className="mb-6 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-200/60">{children}</h3>
+);
+
+const FooterLink = ({ to, children }) => (
+  <li>
+    <Link to={to} className="group inline-flex items-center gap-1.5 py-1 text-[14px] text-white/70 transition-colors hover:text-white">
+      {children}
+      <PiArrowUpRight className="-translate-x-1 text-xs opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+    </Link>
+  </li>
+);
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -69,181 +65,124 @@ const Footer = () => {
   const handleNewsletter = (e) => {
     e.preventDefault();
     Swal.fire({
-      title: 'Subscribed! 📬',
+      title: 'Subscribed!',
       text: 'Thank you for subscribing to TaxByCA updates and tax tips!',
       icon: 'success',
-      confirmButtonColor: '#2563eb',
+      iconColor: '#06529A',
+      confirmButtonColor: '#06529A',
       confirmButtonText: 'Great!',
-      customClass: {
-        popup: 'rounded-2xl shadow-xl',
-        confirmButton: 'rounded-full font-bold px-6 py-2.5',
-      }
+      customClass: { popup: 'rounded-3xl', confirmButton: 'rounded-full font-bold px-6 py-2.5' },
     });
     setEmail('');
   };
 
   return (
-    <footer id="contact" className="bg-[#f8fafc] border-t border-blue-100">
+    <footer className="relative isolate overflow-hidden bg-ink-950 text-white">
+      <div className="pointer-events-none absolute -top-40 left-1/2 -z-10 h-80 w-[60rem] -translate-x-1/2 rounded-full bg-brand-600/25 blur-[120px]" aria-hidden="true" />
+      <div className="noise pointer-events-none absolute inset-0 -z-10" aria-hidden="true" />
 
-      {/* Main Footer Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-12 sm:py-14 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+      <div className="container-x pb-10 pt-20 sm:pt-24">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
 
-          {/* ── Col 1: Brand ── */}
-          <div className="sm:col-span-2 lg:col-span-1">
-            <Link to="/" className="inline-block mb-5" aria-label="TaxByCA Home">
-              <img
-                src={TaxByCALogo}
-                alt="TaxByCA"
-                className="h-12 w-auto object-contain"
-              />
+          {/* Brand */}
+          <div className="sm:col-span-2 lg:col-span-4">
+            <Link to="/" className="inline-block" aria-label="TaxByCA Home">
+              <img src={TaxByCALogoLight} alt="TaxByCA" className="h-14 w-auto" loading="lazy" />
             </Link>
-
-            <p className="text-slate-600 text-sm leading-relaxed mb-5">
-              <span className="text-[#2563eb] font-semibold">Team of qualified professionals</span> providing
+            <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-white/60">
+              <span className="font-semibold text-white">Team of qualified professionals</span> providing
               GST, ITR, company registration &amp; all compliance services 100% online across India.
             </p>
 
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#2563eb]/10 border border-blue-200 rounded-full px-3 py-1.5 mb-5">
-              <i className="ri-award-line text-[#2563eb] text-sm" />
-              <span className="text-[#2563eb] text-[10px] font-bold tracking-wider">Qualified Professionals</span>
-            </div>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-3">
-              {socialLinks.map((s, i) => (
+            <div className="mt-7 flex items-center gap-2.5">
+              {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
-                  key={i}
-                  href={s.href}
+                  key={label}
+                  href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="w-9 h-9 rounded-full bg-[#f8fafc] border border-blue-100 flex items-center justify-center text-slate-600 hover:bg-[#2563eb] hover:text-[#0f172a] hover:border-[#2563eb] transition-all duration-200"
+                  aria-label={label}
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-lg text-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-400 hover:bg-brand-600 hover:text-white"
                 >
-                  <s.icon className="text-xs" />
+                  <Icon />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* ── Col 2: Quick Links ── */}
-          <div>
-            <h3 className="text-[#0f172a] font-bold text-sm uppercase tracking-wider mb-5 flex items-center gap-2">
-              <i className="ri-links-line text-[#2563eb]" />
-              Quick Links
-            </h3>
-            <ul className="space-y-2.5">
-              {quickLinks.map((link, i) => (
-                <li key={i}>
-                  <Link
-                    to={link.href}
-                    className="flex items-center gap-2 text-slate-600 text-sm hover:text-[#2563eb] transition-colors group"
-                  >
-                    <i className="ri-arrow-right-s-line text-[#2563eb] opacity-0 group-hover:opacity-100 transition-opacity -ml-1 flex-shrink-0" />
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+          {/* Quick Links */}
+          <div className="lg:col-span-2">
+            <FooterHeading>Quick Links</FooterHeading>
+            <ul className="space-y-1.5">
+              {quickLinks.map((l) => <FooterLink key={l.name} to={l.href}>{l.name}</FooterLink>)}
             </ul>
           </div>
 
-          {/* ── Col 3: Services ── */}
-          <div>
-            <h3 className="text-[#0f172a] font-bold text-sm uppercase tracking-wider mb-5 flex items-center gap-2">
-              <i className="ri-briefcase-4-line text-[#2563eb]" />
-              Our Services
-            </h3>
-            <ul className="space-y-2.5">
-              {serviceLinks.map((link, i) => (
-                <li key={i}>
-                  <Link
-                    to={link.href}
-                    className="flex items-center gap-2 text-slate-600 text-sm hover:text-[#2563eb] transition-colors group"
-                  >
-                    <i className="ri-arrow-right-s-line text-[#2563eb] opacity-0 group-hover:opacity-100 transition-opacity -ml-1 flex-shrink-0" />
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+          {/* Services */}
+          <div className="lg:col-span-3">
+            <FooterHeading>Our Services</FooterHeading>
+            <ul className="space-y-1.5">
+              {serviceLinks.map((l) => <FooterLink key={l.name} to={l.href}>{l.name}</FooterLink>)}
             </ul>
           </div>
 
-          {/* ── Col 4: Contact + Newsletter ── */}
-          <div>
-            <h3 className="text-[#0f172a] font-bold text-sm uppercase tracking-wider mb-5 flex items-center gap-2">
-              <i className="ri-contacts-line text-[#2563eb]" />
-              Contact Us
-            </h3>
-
-            <ul className="space-y-3.5 mb-7">
-              {contactItems.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  {item.icon}
-                  {item.content}
+          {/* Contact + Newsletter */}
+          <div className="sm:col-span-2 lg:col-span-3">
+            <FooterHeading>Contact Us</FooterHeading>
+            <ul className="space-y-4">
+              {contactItems.map(({ icon: Icon, text, href }) => (
+                <li key={text} className="flex items-start gap-3 text-[14px] text-white/70">
+                  <Icon className="mt-0.5 shrink-0 text-lg text-sky-glow" />
+                  {href
+                    ? <a href={href} className="break-all transition-colors hover:text-white">{text}</a>
+                    : <span>{text}</span>}
                 </li>
               ))}
             </ul>
 
-            {/* Newsletter */}
-            <div className="bg-[#f8fafc] border border-blue-100 rounded-2xl p-4">
-              <h4 className="text-[#0f172a] font-semibold text-sm mb-3 flex items-center gap-2">
-                <i className="ri-mail-send-line text-[#2563eb]" />
-                Tax Updates Newsletter
-              </h4>
-              <form onSubmit={handleNewsletter} className="flex flex-col gap-2">
+            <form onSubmit={handleNewsletter} className="mt-8">
+              <label htmlFor="footer-newsletter" className="text-[13px] font-semibold text-white">Tax Updates Newsletter</label>
+              <div className="mt-3 flex items-center rounded-full border border-white/10 bg-white/[0.05] p-1.5 focus-within:border-brand-400">
                 <input
+                  id="footer-newsletter"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
                   required
-                  className="bg-white border border-blue-100 focus:border-[#2563eb] rounded-lg px-3 py-2.5 text-[#0f172a] text-sm focus:outline-none transition-colors placeholder-[#475569]"
+                  className="min-w-0 flex-1 bg-transparent px-4 text-sm text-white placeholder:text-white/35 focus:outline-none"
                 />
-                <button
-                  type="submit"
-                  className="flex items-center justify-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-4 py-2.5 rounded-lg font-bold text-sm transition-colors"
-                >
-                  <FaPaperPlane className="text-xs" />
-                  Subscribe
+                <button type="submit" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-500 text-white transition-colors hover:bg-brand-400" aria-label="Subscribe">
+                  <PiPaperPlaneTilt />
                 </button>
-              </form>
-            </div>
+              </div>
+            </form>
           </div>
-
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-blue-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
-          <p className="text-slate-500 text-center md:text-left">
-            © {new Date().getFullYear()} TaxByCA. All Rights Reserved. | We Issue Proper GST Invoice for Every Service
-          </p>
-          <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center text-slate-500">
-            <Link to="/privacy-policy" className="hover:text-[#2563eb] transition-colors">
-              Privacy Policy
-            </Link>
-            <span className="text-slate-300">|</span>
-            <Link to="/terms-conditions" className="hover:text-[#2563eb] transition-colors">
-              Terms &amp; Conditions
-            </Link>
-            <span className="text-slate-300">|</span>
-            <span className="text-slate-400">
+        {/* Oversized wordmark */}
+        <p
+          className="pointer-events-none mt-20 select-none bg-gradient-to-b from-white/[0.12] to-transparent bg-clip-text text-center text-[22vw] font-extrabold leading-[0.8] tracking-[-0.06em] text-transparent lg:text-[15rem]"
+          aria-hidden="true"
+        >
+          TaxByCA
+        </p>
+
+        {/* Bottom bar */}
+        <div className="mt-4 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-[13px] text-white/45 md:flex-row">
+          <p>© {new Date().getFullYear()} TaxByCA. All Rights Reserved.</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <Link to="/privacy-policy" className="transition-colors hover:text-white">Privacy Policy</Link>
+            <Link to="/terms-conditions" className="transition-colors hover:text-white">Terms &amp; Conditions</Link>
+            <span>
               Developed by{' '}
-              <a
-                href="https://codehyphen.in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-500 hover:text-[#2563eb] font-medium transition-colors"
-              >
+              <a href="https://codehyphen.in" target="_blank" rel="noopener noreferrer" className="font-semibold text-white/70 transition-colors hover:text-white">
                 Code Hyphen
               </a>
             </span>
           </div>
         </div>
       </div>
-
     </footer>
   );
 };

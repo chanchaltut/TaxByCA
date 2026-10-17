@@ -1,57 +1,40 @@
 import React from 'react';
-import { FaPhone, FaWhatsapp } from 'react-icons/fa';
-import { BRAND } from '../utils/constants';
+import { PiPhoneCall, PiWhatsappLogo } from 'react-icons/pi';
+import { BRAND, waLink } from '../utils/constants';
 
-const FloatingActionButtons = () => {
-  return (
-    <>
-      {/* ─── LEFT FLOATING BUTTON: WHATSAPP (Expands to the right on desktop hover) ─── */}
-      <aside
-        className="fixed bottom-5 left-4 sm:left-6 z-40 flex items-center select-none"
-        aria-label="WhatsApp Contact"
+const FloatingActionButtons = () => (
+  <>
+    {/* WhatsApp — bottom left, label slides out on desktop hover */}
+    <aside className="fixed bottom-5 left-4 z-40 sm:left-6" aria-label="WhatsApp Contact">
+      <a
+        href={waLink('Hi! I need professional services from TaxByCA.')}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn-whatsapp group relative flex items-center rounded-full p-3.5 text-white transition-all duration-500 ease-out-expo active:scale-95"
+        aria-label="Chat with TaxByCA on WhatsApp"
       >
-        <a
-          href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need professional services from TaxByCA.`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex items-center bg-[#25d366] hover:bg-[#20b858] text-white p-3 sm:p-3.5 rounded-full shadow-lg hover:shadow-2xl hover:shadow-green-600/40 transition-all duration-300 ease-out cursor-pointer active:scale-95"
-          aria-label="Chat with TaxByCA on WhatsApp"
-        >
-          {/* Subtle pulse ring on idle */}
-          <span className="relative flex items-center justify-center">
-            <FaWhatsapp className="text-2xl sm:text-2xl flex-shrink-0" />
-          </span>
+        <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-[#25C766]/30 [animation-duration:2.5s]" aria-hidden="true" />
+        <PiWhatsappLogo className="shrink-0 text-[26px]" />
+        <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-bold opacity-0 transition-all duration-500 ease-out-expo sm:group-hover:ml-2 sm:group-hover:mr-1.5 sm:group-hover:max-w-[140px] sm:group-hover:opacity-100">
+          WhatsApp Us
+        </span>
+      </a>
+    </aside>
 
-          {/* Text sliding out from left to right on desktop */}
-          <span className="max-w-0 opacity-0 sm:group-hover:max-w-[150px] sm:group-hover:opacity-100 sm:group-hover:ml-2.5 sm:group-hover:mr-1 overflow-hidden whitespace-nowrap transition-all duration-300 ease-out font-bold text-sm text-white">
-            WhatsApp Us
-          </span>
-        </a>
-      </aside>
-
-      {/* ─── RIGHT FLOATING BUTTON: CALL (Expands to the left on desktop hover) ─── */}
-      <aside
-        className="fixed bottom-5 right-4 sm:right-6 z-40 flex items-center justify-end select-none"
-        aria-label="Phone Contact"
+    {/* Call — bottom right */}
+    <aside className="fixed bottom-5 right-4 z-40 sm:right-6" aria-label="Phone Contact">
+      <a
+        href={`tel:${BRAND.phone}`}
+        className="btn-primary group flex flex-row-reverse items-center rounded-full p-3.5 text-white transition-all duration-500 ease-out-expo active:scale-95"
+        aria-label={`Call TaxByCA at ${BRAND.phone}`}
       >
-        <a
-          href={`tel:${BRAND.phone}`}
-          className="group flex items-center flex-row-reverse bg-[#2563eb] hover:bg-[#1d4ed8] text-white p-3 sm:p-3.5 rounded-full shadow-lg hover:shadow-2xl hover:shadow-blue-600/40 transition-all duration-300 ease-out cursor-pointer active:scale-95"
-          aria-label={`Call TaxByCA at ${BRAND.phone}`}
-        >
-          {/* Phone Icon */}
-          <span className="relative flex items-center justify-center">
-            <FaPhone className="text-lg sm:text-xl flex-shrink-0" />
-          </span>
-
-          {/* Text sliding out from right to left on desktop */}
-          <span className="max-w-0 opacity-0 sm:group-hover:max-w-[150px] sm:group-hover:opacity-100 sm:group-hover:mr-2.5 sm:group-hover:ml-1 overflow-hidden whitespace-nowrap transition-all duration-300 ease-out font-bold text-sm text-white">
-            Call Now
-          </span>
-        </a>
-      </aside>
-    </>
-  );
-};
+        <PiPhoneCall className="shrink-0 text-[26px]" />
+        <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-bold opacity-0 transition-all duration-500 ease-out-expo sm:group-hover:ml-1.5 sm:group-hover:mr-2 sm:group-hover:max-w-[140px] sm:group-hover:opacity-100">
+          Call Now
+        </span>
+      </a>
+    </aside>
+  </>
+);
 
 export default FloatingActionButtons;

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { FaCalendarAlt, FaUser, FaArrowRight, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { PiCalendarBlank, PiUser, PiArrowRight, PiCaretUp, PiWhatsappLogo, PiEnvelopeSimpleDuotone, PiClock } from 'react-icons/pi';
+import { PageHero } from '../components/ui';
+import { waLink } from '../utils/constants';
 import Swal from 'sweetalert2';
 
 // ─── BLOG ARTICLES ─────────────────────────────────────────────
@@ -238,14 +240,14 @@ const Insights = () => {
   };
 
   const categoryColors = {
-    'Income Tax': 'bg-[#1d4ed8] text-white',
-    'GST':        'bg-[#0369a1] text-white',
-    'TDS':        'bg-[#0f766e] text-white',
-    'Business Registration': 'bg-[#7c3aed] text-white',
+    'Income Tax': 'bg-brand-600 text-white',
+    'GST':        'bg-sky-600 text-white',
+    'TDS':        'bg-teal-600 text-white',
+    'Business Registration': 'bg-indigo-600 text-white',
   };
 
   return (
-    <div className="min-h-screen bg-white pt-[60px]">
+    <div className="min-h-screen bg-surface">
       <Helmet>
         <title>Tax, GST & Business Insights | TaxByCA Knowledge Hub</title>
         <meta
@@ -264,7 +266,7 @@ const Insights = () => {
           content="Expert insights and practical guides on Income Tax, GST, TDS, and Company Registration in India by TaxByCA."
         />
         <meta property="og:url" content="https://taxbyca.in/blog" />
-        <meta property="og:image" content="https://taxbyca.in/og-image-v2.jpg" />
+        <meta property="og:image" content="https://taxbyca.in/og-image-v3.jpg" />
         <meta property="og:locale" content="en_IN" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -273,47 +275,38 @@ const Insights = () => {
           name="twitter:description"
           content="Expert insights on Income Tax, GST, TDS, and Company Registration in India by TaxByCA."
         />
-        <meta name="twitter:image" content="https://taxbyca.in/og-image-v2.jpg" />
+        <meta name="twitter:image" content="https://taxbyca.in/og-image-v3.jpg" />
 
         <link rel="canonical" href="https://taxbyca.in/blog" />
       </Helmet>
 
 
       {/* Hero */}
-      <section className="bg-gradient-to-b from-[#f0f9ff] to-white py-16 sm:py-20 px-4 sm:px-6 border-b border-blue-100">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-full px-4 py-1.5 mb-5">
-            <i className="ri-article-line text-blue-600 text-sm" />
-            <span className="text-blue-600 text-xs font-semibold tracking-wider uppercase">Tax Knowledge Hub</span>
-          </div>
-          <h1 className="text-[#0f172a] text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
-            Tax & GST <span className="text-blue-600">Insights</span>
-          </h1>
-          <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Plain-English guides on Income Tax, GST, TDS, and Business Registration — written to answer the questions real taxpayers are searching for.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Tax Knowledge Hub"
+        title={<>Tax &amp; GST <span className="accent-serif-light">Insights</span></>}
+        description="Plain-English guides on Income Tax, GST, TDS, and Business Registration — written to answer the questions real taxpayers are searching for."
+      />
 
       {/* Main Content */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto">
+      <section className="px-4 pb-24 pt-12 sm:px-6 sm:pt-16">
+        <div className="mx-auto max-w-5xl">
 
           {/* Category Filter */}
-          <div className="mb-10 flex flex-wrap gap-2.5 justify-center">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => { setSelectedCategory(cat); setExpandedId(null); }}
-                className={`px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 min-h-[40px] ${
-                  selectedCategory === cat
-                    ? 'bg-[#2563eb] text-white shadow-lg shadow-[#2563eb]/30'
-                    : 'bg-[#f8fafc] text-slate-600 border border-blue-100 hover:border-blue-300 hover:text-[#0f172a]'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+          <div className="mb-12 flex justify-center">
+            <div className="scrollbar-none flex max-w-full gap-1 overflow-x-auto rounded-full border border-line bg-white p-1.5 shadow-soft">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => { setSelectedCategory(cat); setExpandedId(null); }}
+                  className={`min-h-[42px] shrink-0 whitespace-nowrap rounded-full px-3.5 text-[12.5px] font-bold transition-all duration-300 xs:px-5 sm:text-sm ${
+                    selectedCategory === cat ? 'bg-ink text-white shadow-soft' : 'text-ink-soft hover:bg-surface hover:text-ink'
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Articles */}
@@ -324,11 +317,8 @@ const Insights = () => {
                 <article
                   id={`article-${article.id}`}
                   key={article.id}
-                  className={`bg-[#f8fafc] rounded-2xl overflow-hidden border transition-all duration-300 ${
-                    isExpanded ? 'border-blue-300' : 'border-blue-100 hover:border-blue-200'
-                  }`}
+                  className={`card group overflow-hidden ${isExpanded ? 'border-brand-200 shadow-lift' : 'card-hover'}`}
                 >
-                  {/* Card Header (always visible) */}
                   <div
                     className="cursor-pointer"
                     onClick={() => toggleArticle(article.id)}
@@ -337,93 +327,72 @@ const Insights = () => {
                     onKeyDown={(e) => e.key === 'Enter' && toggleArticle(article.id)}
                     aria-expanded={isExpanded}
                   >
-                    <div className="flex flex-col sm:flex-row gap-0">
-                      {/* Image */}
-                      <div className="sm:w-52 h-44 sm:h-auto flex-shrink-0 overflow-hidden">
+                    <div className="flex flex-col sm:flex-row">
+                      <div className="h-52 shrink-0 overflow-hidden sm:h-auto sm:w-64">
                         <img
                           src={article.image}
                           alt={article.title}
-                          className={`w-full h-full object-cover transition-transform duration-500 ${isExpanded ? 'scale-105' : 'scale-100'}`}
+                          className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out-expo group-hover:scale-105"
                           loading="lazy"
                         />
                       </div>
 
-                      {/* Info */}
-                      <div className="flex-1 p-5 sm:p-6 flex flex-col justify-between">
+                      <div className="flex flex-1 flex-col justify-between p-6 sm:p-8">
                         <div>
-                          <div className="flex items-center gap-3 mb-3 flex-wrap">
-                            <span className={`px-2.5 py-1 rounded-full text-[11px] font-bold ${categoryColors[article.category] || 'bg-blue-50 text-slate-600'}`}>
+                          <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[12.5px] text-ink-mute">
+                            <span className={`rounded-full px-3 py-1 text-[11px] font-bold ${categoryColors[article.category] || 'bg-brand-50 text-brand-600'}`}>
                               {article.category}
                             </span>
-                            <span className="text-slate-500 text-xs flex items-center gap-1">
-                              <FaCalendarAlt className="text-[10px]" /> {article.date}
-                            </span>
-                            <span className="text-slate-500 text-xs flex items-center gap-1">
-                              <FaUser className="text-[10px]" /> {article.author}
-                            </span>
-                            <span className="text-slate-500 text-xs ml-auto hidden sm:block">{article.readTime}</span>
+                            <span className="flex items-center gap-1.5"><PiCalendarBlank /> {article.date}</span>
+                            <span className="flex items-center gap-1.5"><PiUser /> {article.author}</span>
+                            <span className="flex items-center gap-1.5"><PiClock /> {article.readTime}</span>
                           </div>
-                          <h2 className={`text-[#0f172a] font-bold text-lg sm:text-xl leading-snug mb-2 transition-colors ${isExpanded ? 'text-blue-600' : 'group-hover:text-blue-600'}`}>
+                          <h2 className={`text-xl font-extrabold leading-snug tracking-tight transition-colors sm:text-2xl ${isExpanded ? 'text-brand-600' : 'group-hover:text-brand-600'}`}>
                             {article.title}
                           </h2>
-                          <p className="text-slate-600 text-sm leading-relaxed line-clamp-2">
-                            {article.excerpt}
-                          </p>
+                          <p className="mt-3 line-clamp-2 text-[15px] leading-relaxed text-ink-soft">{article.excerpt}</p>
                         </div>
-                        <div className="flex items-center justify-between mt-4">
-                          <span className="text-slate-500 text-xs sm:hidden">{article.readTime}</span>
-                          <button className={`flex items-center gap-2 font-semibold text-sm transition-all ${isExpanded ? 'text-blue-600' : 'text-[#2563eb] hover:text-blue-600'}`}>
-                            {isExpanded ? (
-                              <><FaChevronUp className="text-xs" /> Read Less</>
-                            ) : (
-                              <><FaArrowRight className="text-xs" /> Read Full Article</>
-                            )}
-                          </button>
-                        </div>
+                        <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-brand-600">
+                          {isExpanded
+                            ? <><PiCaretUp /> Read Less</>
+                            : <>Read Full Article <PiArrowRight className="transition-transform group-hover:translate-x-1" /></>}
+                        </span>
                       </div>
                     </div>
                   </div>
 
-                  {/* Full Article Content (expandable) */}
                   {isExpanded && (
-                    <div className="border-t border-blue-100 px-5 sm:px-8 py-6 bg-slate-50">
-                      <div className="max-w-3xl mx-auto prose prose-invert prose-sm sm:prose-base">
-                        {article.content.map((para, i) => {
-                          const lines = para.split('\n');
-                          return (
-                            <div key={i} className="mb-5">
-                              {lines.map((line, j) => {
-                                if (line.startsWith('**') && line.endsWith('**')) {
-                                  return <h3 key={j} className="text-[#0f172a] font-bold text-base mb-2 mt-3">{line.replace(/\*\*/g, '')}</h3>;
-                                }
-                                if (line.startsWith('**') && line.includes('**')) {
-                                  const parts = line.split('**');
-                                  return (
-                                    <p key={j} className="text-slate-700 leading-relaxed mb-2 text-sm sm:text-[15px]">
-                                      {parts.map((part, k) =>
-                                        k % 2 === 1 ? <strong key={k} className="text-[#0f172a] font-semibold">{part}</strong> : part
-                                      )}
-                                    </p>
-                                  );
-                                }
-                                return line ? (
-                                  <p key={j} className="text-slate-700 leading-relaxed mb-2 text-sm sm:text-[15px]">{line}</p>
-                                ) : null;
-                              })}
-                            </div>
-                          );
-                        })}
+                    <div className="border-t border-line bg-surface/60 px-6 py-10 sm:px-10">
+                      <div className="mx-auto max-w-3xl">
+                        {article.content.map((para, i) => (
+                          <div key={i} className="mb-6">
+                            {para.split('\n').map((line, j) => {
+                              if (line.startsWith('**') && line.endsWith('**')) {
+                                return <h3 key={j} className="mb-2 mt-4 text-lg font-extrabold tracking-tight">{line.replace(/\*\*/g, '')}</h3>;
+                              }
+                              if (line.includes('**')) {
+                                return (
+                                  <p key={j} className="mb-2 text-[15.5px] leading-[1.8] text-ink-soft">
+                                    {line.split('**').map((part, k) =>
+                                      k % 2 === 1 ? <strong key={k} className="font-semibold text-ink">{part}</strong> : part
+                                    )}
+                                  </p>
+                                );
+                              }
+                              return line ? <p key={j} className="mb-2 text-[15.5px] leading-[1.8] text-ink-soft">{line}</p> : null;
+                            })}
+                          </div>
+                        ))}
 
-                        {/* CTA at end of article */}
-                        <div className="mt-8 p-5 bg-[#f8fafc] rounded-xl border border-blue-200">
-                          <p className="text-[#0f172a] font-semibold mb-3">Need help with this? Talk to our team.</p>
+                        <div className="mt-10 flex flex-col items-start justify-between gap-4 rounded-3xl border border-brand-100 bg-white p-6 sm:flex-row sm:items-center">
+                          <p className="font-bold text-ink">Need help with this? Talk to our team.</p>
                           <a
-                            href={`https://wa.me/919424856409?text=${encodeURIComponent(`Hi TaxByCA! I read your article on "${article.title}" and need expert assistance.`)}`}
+                            href={waLink(`Hi TaxByCA! I read your article on "${article.title}" and need expert assistance.`)}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 bg-[#25d366] hover:bg-[#20b858] text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all shadow-sm"
+                            className="btn btn-whatsapp btn-sm"
                           >
-                            <i className="ri-whatsapp-line text-lg" /> WhatsApp Us
+                            <PiWhatsappLogo className="text-lg" /> WhatsApp Us
                           </a>
                         </div>
                       </div>
@@ -435,27 +404,29 @@ const Insights = () => {
           </div>
 
           {/* Newsletter */}
-          <div className="mt-14 bg-[#f8fafc] rounded-2xl p-8 sm:p-10 border border-blue-100">
-            <div className="max-w-xl mx-auto text-center">
-              <i className="ri-mail-send-line text-blue-600 text-3xl mb-3 block" />
-              <h2 className="text-[#0f172a] text-2xl sm:text-3xl font-bold mb-3">Get Tax Updates in Your Inbox</h2>
-              <p className="text-slate-600 mb-6 text-sm sm:text-base">
+          <div className="surface-dark mt-16 rounded-[2.25rem] px-6 py-14 sm:px-12">
+            <div className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-brand-500/40 blur-3xl" aria-hidden="true" />
+            <div className="grid-lines pointer-events-none absolute inset-0" aria-hidden="true" />
+            <div className="relative mx-auto max-w-xl text-center">
+              <PiEnvelopeSimpleDuotone className="mx-auto text-4xl text-sky-glow" />
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                Get Tax Updates in <span className="accent-serif-light">Your Inbox</span>
+              </h2>
+              <p className="mt-3 text-[15px] text-brand-100/70">
                 Subscribe for Income Tax &amp; GST updates, deadline reminders, and practical guides.
               </p>
               <form
-                className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+                className="mx-auto mt-8 flex max-w-md items-center rounded-full border border-white/15 bg-white/[0.06] p-1.5 focus-within:border-brand-400"
                 onSubmit={(e) => {
                   e.preventDefault();
                   Swal.fire({
-                    title: 'Subscribed! 📬',
+                    title: 'Subscribed!',
                     text: 'Thank you! You will receive regular tax and compliance updates from TaxByCA.',
                     icon: 'success',
-                    confirmButtonColor: '#2563eb',
+                    iconColor: '#06529A',
+                    confirmButtonColor: '#06529A',
                     confirmButtonText: 'Great!',
-                    customClass: {
-                      popup: 'rounded-2xl shadow-xl',
-                      confirmButton: 'rounded-full font-bold px-6 py-2.5',
-                    }
+                    customClass: { popup: 'rounded-3xl', confirmButton: 'rounded-full font-bold px-6 py-2.5' },
                   });
                   e.target.reset();
                 }}
@@ -463,15 +434,11 @@ const Insights = () => {
                 <input
                   type="email"
                   placeholder="your@email.com"
+                  aria-label="Email address"
                   required
-                  className="flex-1 bg-white border border-blue-100 focus:border-[#2563eb] rounded-lg px-4 py-3 text-[#0f172a] text-sm focus:outline-none transition-colors placeholder-[#475569]"
+                  className="min-w-0 flex-1 bg-transparent px-4 text-sm text-white placeholder:text-white/40 focus:outline-none"
                 />
-                <button
-                  type="submit"
-                  className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-6 py-3 rounded-lg font-bold text-sm transition-colors whitespace-nowrap"
-                >
-                  Subscribe
-                </button>
+                <button type="submit" className="btn btn-primary btn-sm">Subscribe</button>
               </form>
             </div>
           </div>

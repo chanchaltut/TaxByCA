@@ -1,129 +1,102 @@
 import React, { useState } from 'react';
-import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa';
+import { PiCaretLeft, PiCaretRight, PiStarFill, PiQuotesFill } from 'react-icons/pi';
 import { TESTIMONIALS } from '../utils/constants';
+import { SectionHeading } from './ui';
+
+const Stars = ({ count }) => (
+  <div className="flex gap-0.5 text-amber-400" aria-label={`${count} out of 5 stars`}>
+    {[...Array(count)].map((_, i) => <PiStarFill key={i} />)}
+  </div>
+);
+
+const TestimonialCard = ({ t, highlighted }) => (
+  <figure
+    className={`card flex h-full flex-col p-7 sm:p-8 ${highlighted ? 'border-brand-200 shadow-lift' : ''}`}
+  >
+    <div className="flex items-center justify-between">
+      <Stars count={t.rating} />
+      <PiQuotesFill className="text-4xl text-brand-100" aria-hidden="true" />
+    </div>
+    <blockquote className="mt-5 flex-1 text-[15.5px] leading-relaxed text-ink">“{t.text}”</blockquote>
+    <figcaption className="mt-7 flex items-center gap-3 border-t border-line pt-5">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-400 to-brand-700 text-base font-bold text-white shadow-glow">
+        {t.name[0]}
+      </span>
+      <div>
+        <p className="text-sm font-bold text-ink">{t.name}</p>
+        <p className="text-[13px] text-ink-mute">{t.role} · {t.city}</p>
+      </div>
+    </figcaption>
+  </figure>
+);
+
+const NavButton = ({ onClick, label, children }) => (
+  <button
+    onClick={onClick}
+    className="flex h-12 w-12 items-center justify-center rounded-full border border-line bg-white text-ink shadow-soft transition-all hover:-translate-y-0.5 hover:border-brand-600 hover:bg-brand-600 hover:text-white"
+    aria-label={label}
+  >
+    {children}
+  </button>
+);
 
 const TestimonialsSection = () => {
   const [current, setCurrent] = useState(0);
   const total = TESTIMONIALS.length;
-
   const prev = () => setCurrent((c) => (c - 1 + total) % total);
   const next = () => setCurrent((c) => (c + 1) % total);
 
-  // Show 3 on desktop, 1 on mobile
-  const getVisible = () => {
-    const result = [];
-    for (let i = 0; i < 3; i++) {
-      result.push(TESTIMONIALS[(current + i) % total]);
-    }
-    return result;
-  };
+  const visible = [0, 1, 2].map((i) => TESTIMONIALS[(current + i) % total]);
 
   return (
-    <section
-      className="bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
-      aria-label="Client testimonials"
-    >
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-10 sm:mb-12">
-          <div className="section-tag">Testimonials</div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0f172a] mt-3 mb-4 leading-tight">
-            What Our <span className="text-[#2563eb]">Clients Say</span>
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base">
-            500+ satisfied clients across India trust TaxByCA for all their CA needs.
-          </p>
-        </div>
+    <section className="section-y bg-white" aria-label="Client testimonials">
+      <div className="container-x">
+        <SectionHeading
+          eyebrow="Testimonials"
+          title={<>What Our <span className="accent-serif">Clients Say</span></>}
+          description="Clients across India trust TaxByCA for their tax and compliance needs."
+        />
 
-        {/* Mobile: Single card */}
-        <div className="md:hidden">
-          <div className="bg-[#f8fafc] border border-blue-100 rounded-2xl p-6">
-            <div className="flex gap-1 mb-3">
-              {[...Array(TESTIMONIALS[current].rating)].map((_, i) => (
-                <FaStar key={i} className="text-[#2563eb] text-sm" />
-              ))}
-            </div>
-            <p className="text-slate-600 text-sm leading-relaxed mb-5 italic">
-              "{TESTIMONIALS[current].text}"
-            </p>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#2563eb] rounded-full flex items-center justify-center text-[#0f172a] font-extrabold text-lg flex-shrink-0">
-                {TESTIMONIALS[current].name[0]}
-              </div>
-              <div>
-                <p className="text-[#0f172a] font-semibold text-sm">{TESTIMONIALS[current].name}</p>
-                <p className="text-slate-600 text-xs">{TESTIMONIALS[current].role} · {TESTIMONIALS[current].city}</p>
-              </div>
-            </div>
-          </div>
-          {/* Mobile nav */}
-          <div className="flex items-center justify-center gap-4 mt-5">
-            <button onClick={prev} className="w-10 h-10 rounded-full bg-[#f8fafc] border border-blue-100 text-[#0f172a] hover:border-[#2563eb] hover:text-[#2563eb] flex items-center justify-center transition-colors" aria-label="Previous">
-              <FaChevronLeft />
-            </button>
-            <span className="text-slate-600 text-sm">{current + 1} / {total}</span>
-            <button onClick={next} className="w-10 h-10 rounded-full bg-[#f8fafc] border border-blue-100 text-[#0f172a] hover:border-[#2563eb] hover:text-[#2563eb] flex items-center justify-center transition-colors" aria-label="Next">
-              <FaChevronRight />
-            </button>
+        {/* Mobile: single card */}
+        <div className="mt-12 md:hidden">
+          <div key={current} className="animate-fade-in-up">
+            <TestimonialCard t={TESTIMONIALS[current]} highlighted />
           </div>
         </div>
 
-        {/* Desktop: 3 cards */}
-        <div className="hidden md:block">
-          <div className="grid grid-cols-3 gap-6">
-            {getVisible().map((testimonial, i) => (
-              <div
-                key={`${testimonial.id}-${i}`}
-                className={`bg-[#f8fafc] border rounded-2xl p-6 transition-all duration-300 ${
-                  i === 0 ? 'border-[#2563eb]/40 shadow-lg' : 'border-blue-100'
-                }`}
+        {/* Desktop: three cards */}
+        <div key={current} className="mt-14 hidden gap-6 md:grid md:grid-cols-3">
+          {visible.map((t, i) => (
+            <div key={`${t.id}-${i}`} className="animate-fade-in-up" style={{ animationDelay: `${i * 80}ms` }}>
+              <TestimonialCard t={t} highlighted={i === 0} />
+            </div>
+          ))}
+        </div>
+
+        {/* Controls */}
+        <div className="mt-10 flex items-center justify-center gap-5">
+          <NavButton onClick={prev} label="Previous testimonial"><PiCaretLeft /></NavButton>
+          <div className="flex gap-2">
+            {TESTIMONIALS.map((t, i) => (
+              <button
+                key={t.id}
+                onClick={() => setCurrent(i)}
+                className="flex h-6 items-center"
+                aria-label={`Go to testimonial ${i + 1}`}
               >
-                <div className="flex gap-1 mb-3">
-                  {[...Array(testimonial.rating)].map((_, j) => (
-                    <FaStar key={j} className="text-[#2563eb] text-sm" />
-                  ))}
-                </div>
-                <p className="text-slate-600 text-sm leading-relaxed mb-5 italic">
-                  "{testimonial.text}"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#2563eb] rounded-full flex items-center justify-center text-[#0f172a] font-extrabold text-lg flex-shrink-0">
-                    {testimonial.name[0]}
-                  </div>
-                  <div>
-                    <p className="text-[#0f172a] font-semibold text-sm">{testimonial.name}</p>
-                    <p className="text-slate-600 text-xs">{testimonial.role} · {testimonial.city}</p>
-                  </div>
-                </div>
-              </div>
+                <span className={`block h-1.5 rounded-full transition-all duration-500 ${i === current ? 'w-8 bg-brand-600' : 'w-1.5 bg-brand-200 hover:bg-brand-300'}`} />
+              </button>
             ))}
           </div>
-          {/* Desktop nav */}
-          <div className="flex items-center justify-center gap-4 mt-8">
-            <button onClick={prev} className="w-11 h-11 rounded-full bg-[#f8fafc] border border-blue-100 text-[#0f172a] hover:border-[#2563eb] hover:text-[#2563eb] flex items-center justify-center transition-colors" aria-label="Previous testimonials">
-              <FaChevronLeft />
-            </button>
-            <div className="flex gap-2">
-              {TESTIMONIALS.map((_, i) => (
-                <button key={i} onClick={() => setCurrent(i)} className={`h-2 rounded-full transition-all duration-300 ${i === current ? 'bg-[#2563eb] w-8' : 'bg-blue-50 w-2 hover:bg-[#94a3b8]'}`} aria-label={`Go to testimonial ${i + 1}`} />
-              ))}
-            </div>
-            <button onClick={next} className="w-11 h-11 rounded-full bg-[#f8fafc] border border-blue-100 text-[#0f172a] hover:border-[#2563eb] hover:text-[#2563eb] flex items-center justify-center transition-colors" aria-label="Next testimonials">
-              <FaChevronRight />
-            </button>
-          </div>
+          <NavButton onClick={next} label="Next testimonial"><PiCaretRight /></NavButton>
         </div>
 
         {/* Rating summary */}
-        <div className="mt-10 text-center">
-          <div className="inline-flex items-center gap-3 bg-[#f8fafc] border border-blue-100 rounded-full px-6 py-3">
-            <div className="flex gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <FaStar key={i} className="text-[#2563eb] text-sm" />
-              ))}
-            </div>
-            <span className="text-[#0f172a] font-bold">4.9/5</span>
-            <span className="text-slate-600 text-sm">from 10000+ clients</span>
+        <div className="mt-10 flex justify-center">
+          <div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-line bg-surface px-6 py-3">
+            <Stars count={5} />
+            <span className="font-extrabold text-ink">4.9/5</span>
+            <span className="text-sm text-ink-soft">from 10,000+ clients</span>
           </div>
         </div>
       </div>

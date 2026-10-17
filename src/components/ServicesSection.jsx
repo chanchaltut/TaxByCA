@@ -1,162 +1,155 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { SERVICES, SERVICE_CATEGORIES, BRAND } from '../utils/constants';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { PiArrowUpRight, PiCheckBold, PiFireFill, PiWhatsappLogo, PiChatCircleDots } from 'react-icons/pi';
+import { SERVICES, SERVICE_CATEGORIES, waLink } from '../utils/constants';
+import useReveal from '../hooks/useReveal';
+import { SectionHeading } from './ui';
 
 const ServicesSection = () => {
   const [activeCategory, setActiveCategory] = useState('All');
-  const sectionRef = useRef(null);
-  const touchStartX = useRef(null);
-  const scrollRef = useRef(null);
+  const sectionRef = useReveal([activeCategory]);
 
   const filtered = activeCategory === 'All'
     ? SERVICES
     : SERVICES.filter((s) => s.category === activeCategory);
 
-  // Touch swipe for category tabs
-  const onTabTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
-  const onTabTouchEnd = (e) => { touchStartX.current = null; };
-
-  // Scroll reveal
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const cards = sectionRef.current?.querySelectorAll('.reveal');
-    cards?.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, [activeCategory]);
+  // The help card fills whatever is left of the last row in the 3-column grid
+  const helpSpan = { 0: 'lg:col-span-3', 1: 'lg:col-span-2', 2: 'lg:col-span-1' }[filtered.length % 3];
 
   return (
-    <section
-      id="services"
-      ref={sectionRef}
-      className="bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
-      aria-label="Professional Services"
-    >
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-10 sm:mb-12 md:mb-14">
-          <div className="section-tag">Our Services</div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0f172a] mt-3 mb-4 leading-tight">
-            Complete Professional Services
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            All tax compliance services delivered 100% online across India.
-            qualified Chartered Accountants. Transparent pricing. Fast turnaround.
-          </p>
-        </div>
+    <section id="services" ref={sectionRef} className="section-y relative bg-surface" aria-label="Professional Services">
+      <div className="grid-lines-light pointer-events-none absolute inset-x-0 top-0 h-[480px]" aria-hidden="true" />
 
-        {/* Category Filter Tabs */}
-        <div
-          ref={scrollRef}
-          className="flex gap-2 sm:gap-3 mb-8 sm:mb-10 overflow-x-auto pb-2 scrollbar-none"
-          onTouchStart={onTabTouchStart}
-          onTouchEnd={onTabTouchEnd}
-          role="tablist"
-          aria-label="Service categories"
-        >
-          {SERVICE_CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              role="tab"
-              aria-selected={activeCategory === cat}
-              className={`flex-shrink-0 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap min-h-[40px] ${
-                activeCategory === cat
-                  ? 'bg-[#2563eb] text-white shadow-md'
-                  : 'bg-[#f8fafc] text-[#0f172a] border border-blue-100 hover:border-[#2563eb] hover:text-[#2563eb]'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+      <div className="container-x relative">
+        <SectionHeading
+          eyebrow="Our Services"
+          title={<>Complete <span className="accent-serif">Professional Services</span></>}
+          description="All tax compliance services delivered 100% online across India. Qualified professionals. Transparent pricing. Fast turnaround."
+        />
+
+        {/* Category segmented control */}
+        <div className="mt-12 flex justify-center">
+          <div
+            className="scrollbar-none flex max-w-full gap-1 overflow-x-auto rounded-full border border-line bg-white p-1.5 shadow-soft"
+            role="tablist"
+            aria-label="Service categories"
+          >
+            {SERVICE_CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                role="tab"
+                aria-selected={activeCategory === cat}
+                className={`min-h-[42px] shrink-0 whitespace-nowrap rounded-full px-3.5 text-[12.5px] font-bold transition-all duration-300 xs:px-5 sm:px-6 sm:text-sm ${
+                  activeCategory === cat
+                    ? 'bg-ink text-white shadow-soft'
+                    : 'text-ink-soft hover:bg-surface hover:text-ink'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-          {filtered.map((service, index) => (
-            <article
-              key={service.id}
-              className="reveal service-card flex flex-col"
-              style={{ transitionDelay: `${(index % 6) * 0.07}s` }}
-              aria-label={service.title}
-            >
-              {/* Card Header */}
-              <div className="p-5 sm:p-6 flex-1">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl sm:text-4xl leading-none" aria-hidden="true">
-                      <i className={service.iconEmoji}></i>
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          {filtered.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <article
+                key={service.id}
+                className="reveal card card-hover group flex flex-col overflow-hidden"
+                style={{ transitionDelay: `${(index % 3) * 80}ms` }}
+                aria-label={service.title}
+              >
+                <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-brand-100/0 blur-2xl transition-colors duration-700 group-hover:bg-brand-100/80" aria-hidden="true" />
+
+                <div className="relative flex flex-1 flex-col p-6 sm:p-7">
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="icon-tile h-14 w-14 text-[28px] transition-transform duration-500 ease-out-expo group-hover:-rotate-6 group-hover:scale-105">
+                      <Icon />
                     </span>
-                    <div>
-                      <h3 className="text-[#0f172a] font-bold text-base sm:text-lg leading-tight">
-                        {service.title}
-                      </h3>
-                      {service.isPopular && (
-                        <span className="inline-block mt-1 bg-[#2563eb]/15 text-[#2563eb] border border-blue-200 text-[10px] font-bold px-2 py-0.5 rounded-full">
-                          <><i className="ri-fire-line mr-1"></i> {service.badge}</>
-                        </span>
-                      )}
-                    </div>
+                    {service.isPopular && (
+                      <span className="inline-flex items-center gap-1 rounded-full border border-brand-100 bg-brand-50 px-2.5 py-1 text-[11px] font-bold text-brand-600">
+                        <PiFireFill className="text-amber-500" />
+                        {service.badge}
+                      </span>
+                    )}
+                  </div>
+
+                  <h3 className="mt-6 text-xl font-extrabold leading-snug tracking-tight">
+                    <Link to={`/services/${service.slug}`} className="transition-colors hover:text-brand-600">
+                      {service.title}
+                    </Link>
+                  </h3>
+                  <p className="mt-2.5 text-[14px] leading-relaxed text-ink-soft">{service.shortDesc}</p>
+
+                  {service.services.length > 0 && (
+                    <ul className="mt-5 space-y-2.5">
+                      {service.services.slice(0, 4).map((item) => (
+                        <li key={item} className="flex items-start gap-2.5 text-[13.5px] font-medium text-ink/80">
+                          <PiCheckBold className="mt-1 shrink-0 text-[11px] text-brand-500" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+
+                <div className="relative mt-auto flex items-center justify-between gap-3 border-t border-line bg-surface/50 px-6 py-5 sm:px-7">
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-ink-mute">Starting from</p>
+                    <p className="mt-0.5 text-lg font-extrabold tracking-tight text-ink">{service.startingPrice}</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <a
+                      href={waLink(service.whatsappMsg)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary btn-sm"
+                      aria-label={`Get ${service.title} via WhatsApp`}
+                    >
+                      <PiWhatsappLogo className="text-base" />
+                      Get Service
+                    </a>
+                    <Link
+                      to={`/services/${service.slug}`}
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white text-ink transition-all duration-300 hover:border-brand-600 hover:bg-brand-600 hover:text-white"
+                      aria-label={`View ${service.title} details`}
+                    >
+                      <PiArrowUpRight />
+                    </Link>
                   </div>
                 </div>
+              </article>
+            );
+          })}
 
-                {/* Short Description */}
-                <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                  {service.shortDesc}
-                </p>
-
-                {/* Service List (first 4) */}
-                <ul className="space-y-1.5 mb-4">
-                  {service.services.slice(0, 4).map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-slate-600 text-xs sm:text-sm">
-                      <i className="ri-checkbox-circle-fill text-[#2563eb] flex-shrink-0 text-base mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Card Footer */}
-              <div className="px-5 sm:px-6 pb-5 sm:pb-6 border-t border-blue-100 pt-4 flex items-center justify-between gap-3">
-                <div>
-                  <p className="text-slate-600 text-[10px] uppercase tracking-wide font-semibold">Starting from</p>
-                  <p className="text-[#2563eb] font-extrabold text-base sm:text-lg">{service.startingPrice}</p>
-                </div>
-                <a
-                  href={`https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent(service.whatsappMsg)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-4 py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all duration-200 whitespace-nowrap min-h-[40px]"
-                  aria-label={`Get ${service.title} via WhatsApp`}
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 flex-shrink-0">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                  </svg>
-                  Get Service
-                </a>
-              </div>
-            </article>
-          ))}
+          {/* Help card */}
+          <div className={`reveal surface-dark flex flex-col justify-between gap-8 rounded-3xl p-7 sm:col-span-2 sm:p-9 ${helpSpan}`}>
+            <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-brand-500/45 blur-3xl" aria-hidden="true" />
+            <div className="grid-lines pointer-events-none absolute inset-0" aria-hidden="true" />
+            <div className="relative">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-2xl text-sky-glow">
+                <PiChatCircleDots />
+              </span>
+              <h3 className="mt-6 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+                Not sure which service <span className="accent-serif-light">you need?</span>
+              </h3>
+            </div>
+            <a
+              href={waLink('Hi! I need help choosing the right professional service from TaxByCA.')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-whatsapp relative self-start"
+            >
+              <PiWhatsappLogo className="text-lg" />
+              Ask Our Tax Expert
+            </a>
+          </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-10 sm:mt-12">
-          <p className="text-slate-600 text-sm mb-4">Not sure which service you need?</p>
-          <a
-            href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I need help choosing the right professional service from TaxByCA.`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#f8fafc] hover:bg-blue-50 border border-[#2563eb]/40 text-[#2563eb] px-6 py-3 rounded-full font-semibold text-sm transition-all duration-200 min-h-[48px]"
-          >
-            <i className="ri-chat-3-line mr-2"></i> Ask Our Tax Expert
-          </a>
-        </div>
       </div>
     </section>
   );

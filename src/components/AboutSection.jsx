@@ -1,113 +1,94 @@
-import React, { useEffect, useRef } from 'react';
-import { FaCheckCircle } from 'react-icons/fa';
-import { ABOUT, BRAND, STATS } from '../utils/constants';
+import React from 'react';
+import { PiCheckBold, PiWhatsappLogo, PiPhoneCall, PiGlobeHemisphereEastDuotone } from 'react-icons/pi';
+import { ABOUT, BRAND, waLink } from '../utils/constants';
+import useReveal from '../hooks/useReveal';
 
-const AboutSection = () => {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-      },
-      { threshold: 0.1 }
-    );
-    const els = sectionRef.current?.querySelectorAll('.reveal');
-    els?.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
-  const statsThree = STATS.slice(0, 3);
+// `showHeading` is turned off on the About page, whose hero already carries the title.
+const AboutSection = ({ showHeading = true }) => {
+  const sectionRef = useReveal();
 
   return (
-    <section
-      id="about"
-      ref={sectionRef}
-      className="bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
-      aria-label="About TaxByCA"
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+    <section id="about" ref={sectionRef} className="section-y overflow-hidden bg-white" aria-label="About TaxByCA">
+      <div className="container-x grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
 
-          {/* LEFT — Image */}
-          <div className="reveal order-2 lg:order-1">
-            <div className="relative">
-              {/* Main image */}
-              <div className="rounded-3xl overflow-hidden image-zoom-container card-hover shadow-2xl">
-                <img
-                  src={ABOUT.image}
-                  alt="TaxByCA Professional Team at work"
-                  className="w-full h-[300px] sm:h-[380px] md:h-[420px] lg:h-[460px] object-cover image-zoom"
-                  loading="lazy"
-                />
-              </div>
+        {/* LEFT — Image composition */}
+        <div className="reveal relative order-2 lg:order-1">
+          <div className="absolute -left-6 -top-6 h-40 w-40 rounded-4xl bg-brand-50 sm:-left-10 sm:-top-10 sm:h-56 sm:w-56" aria-hidden="true" />
+          <div className="grid-lines-light absolute -bottom-10 -right-10 h-64 w-64" aria-hidden="true" />
 
-              {/* Stats overlay card */}
-              <div className="relative lg:absolute lg:bottom-[-24px] lg:left-0 lg:right-0 mt-4 lg:mt-0 mx-0 lg:mx-4 bg-[#2563eb] rounded-2xl p-5 sm:p-6 shadow-xl">
-                <div className="grid grid-cols-3 gap-4 divide-x divide-slate-200">
-                  {statsThree.map((stat, i) => (
-                    <div key={i} className="text-center px-2">
-                      <div className="text-[#0f172a] font-extrabold text-2xl sm:text-3xl leading-none">
-                        {stat.number}{stat.suffix}
-                      </div>
-                      <div className="text-[#0f172a]/70 text-[10px] sm:text-xs font-semibold mt-1 leading-tight">
-                        {stat.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+          <div className="relative overflow-hidden rounded-[2rem] shadow-float">
+            <img
+              src={ABOUT.image}
+              alt="TaxByCA professional team at work"
+              className="h-[340px] w-full object-cover transition-transform duration-[1200ms] ease-out-expo hover:scale-[1.04] sm:h-[460px] lg:h-[540px]"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink-950/50 via-transparent to-transparent" />
+          </div>
+
+          {/* Experience card */}
+          <div className="absolute -bottom-8 left-4 rounded-3xl border border-line bg-white/95 p-5 shadow-lift backdrop-blur sm:-bottom-10 sm:left-8 sm:p-6">
+            <div className="flex items-center gap-4">
+              <span className="font-serif text-6xl italic leading-none text-gradient-brand sm:text-7xl">10+</span>
+              <p className="text-sm font-bold leading-snug text-ink">Years of<br />Experience</p>
             </div>
           </div>
 
-          {/* RIGHT — Content */}
-          <div className="order-1 lg:order-2 text-center lg:text-left">
+          {/* Online chip */}
+          <div className="absolute -right-2 top-8 hidden animate-float items-center gap-3 rounded-2xl border border-line bg-white/95 px-4 py-3 shadow-lift backdrop-blur sm:flex lg:-right-6">
+            <span className="icon-tile h-10 w-10 text-xl"><PiGlobeHemisphereEastDuotone /></span>
+            <div>
+              <p className="text-sm font-bold text-ink">100% Online</p>
+              <p className="text-xs text-ink-mute">Pan-India delivery</p>
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT — Content */}
+        <div className="order-1 lg:order-2">
+          {showHeading && (
             <div className="reveal">
-              <div className="section-tag">About Us</div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0f172a] mt-3 mb-5 leading-tight">
-                About TaxByCA{' '}
-                <span className="text-[#2563eb]">Taxation Services</span>
+              <div className="eyebrow">About Us</div>
+              <h2 className="h-section mt-5">
+                About TaxByCA <span className="accent-serif">Taxation Services</span>
               </h2>
             </div>
+          )}
 
-            <div className="reveal animation-delay-200">
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-3">
-                TaxByCA is a <strong className="text-[#0f172a]">team of qualified tax experts & corporate professionals</strong> committed to providing accurate, reliable, and client-focused compliance services across India.
-              </p>
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
-                We provide all professional services <strong className="text-[#0f172a]">100% online</strong> — GST registration & returns, income tax filing, company incorporation, TDS compliance, ROC filings, bookkeeping, MSME registration, trademark, FSSAI, and more. Transparent pricing. Fast turnaround. Dedicated WhatsApp support.
-              </p>
-            </div>
+          <div className="reveal mt-7 space-y-4">
+            <p className="lead">
+              TaxByCA is a <strong className="font-semibold text-ink">team of qualified tax experts &amp; corporate professionals</strong> committed to providing accurate, reliable, and client-focused compliance services across India.
+            </p>
+            <p className="text-[15px] leading-relaxed text-ink-soft">
+              We provide all professional services <strong className="font-semibold text-ink">100% online</strong> — GST registration &amp; returns, income tax filing, company incorporation, TDS compliance, ROC filings, bookkeeping, MSME registration, trademark, FSSAI, and more. Transparent pricing. Fast turnaround. Dedicated WhatsApp support.
+            </p>
+          </div>
 
-            {/* Highlights */}
-            <ul className="reveal animation-delay-300 space-y-3 mb-8 text-left max-w-md mx-auto lg:mx-0">
-              {ABOUT.highlights.map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-[#0f172a] text-sm sm:text-base">
-                  <FaCheckCircle className="text-[#2563eb] flex-shrink-0 text-lg" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+          <ul className="reveal mt-9 grid gap-3 sm:grid-cols-2">
+            {ABOUT.highlights.map((item) => (
+              <li key={item} className="flex items-start gap-3 rounded-2xl border border-line bg-surface/60 p-4 text-[14px] font-semibold leading-snug text-ink">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-600 text-[11px] text-white">
+                  <PiCheckBold />
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
 
-            {/* CTAs */}
-            <div className="reveal animation-delay-400 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-              <a
-                href={`https://wa.me/${BRAND.whatsapp}?text=Hi! I want to book a free consultation with TaxByCA.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-6 py-3.5 rounded-full font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 min-h-[48px]"
-              >
-                Book Free Consultation →
-              </a>
-              <a
-                href={`tel:${BRAND.phone}`}
-                className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-blue-100 hover:border-[#2563eb] text-[#0f172a] hover:text-[#2563eb] px-6 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 min-h-[48px]"
-              >
-                <><i className="ri-phone-line mr-2"></i> Call Us</>
-              </a>
-            </div>
+          <div className="reveal mt-10 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={waLink('Hi! I want to book a free consultation with TaxByCA.')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary btn-shine"
+            >
+              <PiWhatsappLogo className="text-lg" />
+              Book Free Consultation
+            </a>
+            <a href={`tel:${BRAND.phone}`} className="btn btn-outline">
+              <PiPhoneCall className="text-lg text-brand-600" />
+              Call Us
+            </a>
           </div>
         </div>
       </div>

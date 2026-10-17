@@ -1,49 +1,39 @@
 import React, { useEffect, useRef } from 'react';
 import { STATS } from '../utils/constants';
 
-const StatsBar = () => {
+const formatValue = (value, isDecimal) =>
+  isDecimal ? value.toFixed(1) : Math.floor(value).toLocaleString('en-IN');
+
+// `overlap` lifts the card over the bottom edge of a dark hero above it.
+const StatsBar = ({ overlap = false }) => {
   const sectionRef = useRef(null);
   const countersRef = useRef([]);
   const hasAnimated = useRef(false);
 
-  const animateCounter = (el, target, isDecimal = false) => {
-    const duration = 2000;
-    const startTime = performance.now();
-
-    const update = (currentTime) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const current = isDecimal
-        ? (eased * target).toFixed(1)
-        : Math.floor(eased * target);
-      if (el) el.textContent = current;
-      if (progress < 1) requestAnimationFrame(update);
-      else if (el) el.textContent = isDecimal ? target.toFixed(1) : target;
+  useEffect(() => {
+    const animateCounter = (el, target, isDecimal) => {
+      const duration = 2200;
+      const startTime = performance.now();
+      const update = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 4);
+        el.textContent = formatValue(eased * target, isDecimal);
+        if (progress < 1) requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
     };
 
-    requestAnimationFrame(update);
-  };
-
-  useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated.current) {
-            hasAnimated.current = true;
-            countersRef.current.forEach((el, i) => {
-              if (el && STATS[i]) {
-                const isDecimal = STATS[i].number % 1 !== 0;
-                animateCounter(el, STATS[i].number, isDecimal);
-              }
-            });
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          countersRef.current.forEach((el, i) => {
+            if (el) animateCounter(el, STATS[i].number, STATS[i].number % 1 !== 0);
+          });
+        }
       },
       { threshold: 0.3 }
     );
-
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
@@ -51,34 +41,31 @@ const StatsBar = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#2563eb] py-8 sm:py-10 md:py-12"
+      className={`relative z-10 px-4 sm:px-6 lg:px-8 ${overlap ? '-mt-20 sm:-mt-24' : 'bg-surface py-16 sm:py-20'}`}
       aria-label="Company statistics"
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-4">
-          {STATS.map((stat, i) => (
-            <div
-              key={i}
-              className={`text-center px-2 ${
-                i < STATS.length - 1 ? 'md:border-r md:border-[#0a1628]/20' : ''
-              }`}
-            >
-              <div className="flex items-baseline justify-center gap-0.5">
-                <span
-                  ref={(el) => (countersRef.current[i] = el)}
-                  className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0f172a] tabular-nums"
-                >
-                  0
+      <div className="mx-auto max-w-6xl">
+        <div className="grid grid-cols-2 overflow-hidden rounded-4xl border border-line bg-white shadow-float lg:grid-cols-4">
+          {STATS.map((stat, i) => {
+            const Icon = stat.icon;
+            return (
+              <div
+                key={stat.label}
+                className={`group relative flex flex-col gap-4 p-6 sm:p-8 ${i % 2 === 0 ? 'border-r border-line' : ''} ${i < 2 ? 'border-b border-line lg:border-b-0' : ''} ${i === 1 ? 'lg:border-r' : ''}`}
+              >
+                <span className="icon-tile-soft h-11 w-11 text-[22px] transition-transform duration-500 group-hover:-translate-y-0.5">
+                  <Icon />
                 </span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0f172a]">
-                  {stat.suffix}
-                </span>
+                <div>
+                  <div className="flex items-baseline gap-0.5 text-[2.1rem] font-extrabold leading-none tracking-[-0.04em] text-ink sm:text-5xl">
+                    <span ref={(el) => (countersRef.current[i] = el)} className="tabular-nums">0</span>
+                    <span className="text-gradient-brand">{stat.suffix}</span>
+                  </div>
+                  <p className="mt-2 text-[13px] font-semibold text-ink-soft sm:text-sm">{stat.label}</p>
+                </div>
               </div>
-              <p className="text-[#0f172a]/80 text-xs sm:text-sm font-semibold mt-1 leading-tight">
-                {stat.label}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -3,6 +3,13 @@
 //  All content, services, FAQs, team, stats defined here.
 //  Edit this file to update any content site-wide.
 // ═══════════════════════════════════════════════════════════
+import {
+  PiUsersThreeDuotone, PiFilesDuotone, PiTrophyDuotone, PiStarDuotone,
+  PiGlobeHemisphereEastDuotone, PiCurrencyInrDuotone, PiLightningDuotone, PiHeadsetDuotone,
+  PiChatsCircleDuotone, PiFolderOpenDuotone, PiRocketLaunchDuotone, PiSealCheckDuotone,
+  PiReceiptDuotone, PiStampDuotone, PiPercentDuotone, PiBuildingsDuotone, PiBankDuotone,
+  PiChartLineUpDuotone, PiCertificateDuotone, PiClipboardTextDuotone, PiTrendUpDuotone,
+} from 'react-icons/pi';
 
 // ─── BRAND CONFIG ───────────────────────────────────────────
 export const BRAND = {
@@ -12,7 +19,7 @@ export const BRAND = {
   tagline: 'One-Stop Solution for Every Business & Professional',
   subTagline: 'Expert Professional Services — Tax, Audit, Project Reports & Certificates',
   description:
-    'TaxByCA is a team of experienced tax experts and qualified professionals providing GST, ITR filing, company registration, TDS compliance, ROC filings, Tax Audit, Project Reports, Certificates and all professional compliance services 100% online across India.',
+    'TaxByCA is a team of experienced tax experts and qualified professionals providing GST, ITR filing, company registration, TDS compliance, ROC filings, Audit, Project Reports, Certificates and all professional compliance services 100% online across India.',
   phone: '9424856409',
   whatsapp: '919424856409',
   email: 'TaxByCAinfo@gmail.com',
@@ -32,6 +39,9 @@ export const BRAND = {
   }
 }
 
+// Pre-filled WhatsApp link helper
+export const waLink = (text) => `https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent(text)}`;
+
 // ─── SOCIAL LINKS (backward-compat alias) ───────────────────
 export const SOCIAL_LINKS = {
   phone: BRAND.phone,
@@ -47,30 +57,29 @@ export const SOCIAL_LINKS = {
 
 // ─── STATS (animated counters) ──────────────────────────────
 export const STATS = [
-  { number: 10000,   suffix: '+',  label: 'Happy Clients',      icon: 'ri-group-line' },
-  { number: 10000, suffix: '+',  label: 'Returns Filed',      icon: 'ri-file-paper-2-line' },
-  { number: 10,    suffix: '+',  label: 'Years Experience',   icon: 'ri-trophy-line' },
-  { number: 4.9,   suffix: '★', label: 'Client Rating',      icon: 'ri-star-smile-line' },
+  { number: 10000, suffix: '+', label: 'Happy Clients',    icon: PiUsersThreeDuotone },
+  { number: 10000, suffix: '+', label: 'Returns Filed',    icon: PiFilesDuotone },
+  { number: 10,    suffix: '+', label: 'Years Experience', icon: PiTrophyDuotone },
+  { number: 4.9,   suffix: '★', label: 'Client Rating',    icon: PiStarDuotone },
 ]
 
 // ─── NAV ITEMS ───────────────────────────────────────────────
 export const NAV_ITEMS = [
-  { name: 'Home',     href: '/',         icon: 'fa-house' },
-  { name: 'Services', href: '/#services', icon: 'fa-briefcase' },
-  { name: 'About Us', href: '/about',    icon: 'fa-info-circle' },
-  { name: 'Blog',     href: '/blog',     icon: 'fa-newspaper' },
-  { name: 'Contact',  href: '/contact',  icon: 'fa-phone' },
+  { name: 'Home',     href: '/' },
+  { name: 'Services', href: '/#services' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Blog',     href: '/blog' },
+  { name: 'Contact',  href: '/contact' },
 ]
 
-// ─── SERVICES (14 professional services) ───────────────────────────────
+// ─── SERVICES ───────────────────────────────────────────────
 export const SERVICES = [
   {
     "id": 1,
     "slug": "income-tax",
     "title": "Income Tax Return Filing & Tax Planning",
     "shortTitle": "Income Tax & Planning",
-    "icon": "fa-file-invoice-dollar",
-    "iconEmoji": "💰",
+    "icon": PiReceiptDuotone,
     "category": "Tax Filing",
     "isPopular": true,
     "badge": "Most Popular",
@@ -96,8 +105,7 @@ export const SERVICES = [
     "slug": "gst-services",
     "title": "GST Registration & GST Return Filing",
     "shortTitle": "GST Services",
-    "icon": "fa-receipt",
-    "iconEmoji": "🧾",
+    "icon": PiStampDuotone,
     "category": "Tax Filing",
     "isPopular": true,
     "badge": "Most Popular",
@@ -120,27 +128,18 @@ export const SERVICES = [
   {
     "id": 3,
     "slug": "tax-audit",
-    "title": "Tax Audit & Statutory Audit",
-    "shortTitle": "Tax Audit",
-    "icon": "fa-file-signature",
-    "iconEmoji": "📝",
+    "title": "Audit",
+    "shortTitle": "Audit",
+    "icon": PiClipboardTextDuotone,
     "category": "Compliance",
     "isPopular": false,
     "badge": "",
-    "shortDesc": "Comprehensive Tax & Statutory Audit services for businesses and corporations.",
-    "overview": "Ensure full regulatory compliance with our audit services. TaxByCA conducts Tax Audits u/s 44AB and Statutory Audits to verify your financial statements are accurate and comply with the latest tax laws.",
-    "services": [
-      "Tax Audit u/s 44AB",
-      "Statutory Audit of Companies",
-      "NGO, Trust & Society Audit",
-      "ADT-1 — Auditor Appointment",
-      "Form 3CA/3CB & 3CD",
-      "Internal Audit",
-      "Audit Report Preparation"
-    ],
+    "shortDesc": "Audit services for businesses and corporations.",
+    "overview": "Audit services for businesses and corporations.",
+    "services": [],
     "startingPrice": "Consult for Pricing",
     "timeline": "Case-specific",
-    "whatsappMsg": "Hi! I need Tax Audit services from TaxByCA.",
+    "whatsappMsg": "Hi! I need Audit services from TaxByCA.",
     "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80&auto=format&fit=crop"
   },
   {
@@ -148,8 +147,7 @@ export const SERVICES = [
     "slug": "tds-compliance",
     "title": "TDS Return & Compliance",
     "shortTitle": "TDS Compliance",
-    "icon": "fa-percent",
-    "iconEmoji": "📊",
+    "icon": PiPercentDuotone,
     "category": "Tax Filing",
     "isPopular": false,
     "badge": "",
@@ -172,8 +170,7 @@ export const SERVICES = [
     "slug": "business-registration",
     "title": "Business Registration & Setup",
     "shortTitle": "Business Setup",
-    "icon": "fa-building",
-    "iconEmoji": "🏢",
+    "icon": PiBuildingsDuotone,
     "category": "Business",
     "isPopular": true,
     "badge": "High Demand",
@@ -199,8 +196,7 @@ export const SERVICES = [
     "slug": "roc-compliance",
     "title": "ROC / Corporate Compliance",
     "shortTitle": "ROC Compliance",
-    "icon": "fa-landmark",
-    "iconEmoji": "🏛️",
+    "icon": PiBankDuotone,
     "category": "Compliance",
     "isPopular": false,
     "badge": "",
@@ -224,8 +220,7 @@ export const SERVICES = [
     "slug": "project-reports",
     "title": "Project Reports & CMA Data",
     "shortTitle": "Project Reports",
-    "icon": "fa-chart-line",
-    "iconEmoji": "📈",
+    "icon": PiChartLineUpDuotone,
     "category": "Compliance",
     "isPopular": false,
     "badge": "",
@@ -249,17 +244,15 @@ export const SERVICES = [
     "slug": "ca-certificates",
     "title": "Certificates",
     "shortTitle": "Certificates",
-    "icon": "fa-certificate",
-    "iconEmoji": "ri-award-line",
+    "icon": PiCertificateDuotone,
     "category": "Compliance",
     "isPopular": false,
     "badge": "",
-    "shortDesc": "Net worth, turnover, and foreign remittance certificates — issued promptly.",
-    "overview": "TaxByCA issues various certifications required for visa applications, bank loans, government schemes, and statutory authorities. We provide Net Worth, Turnover, Form 15CA/15CB, and all required certificates with proper GST invoice.",
+    "shortDesc": "Net worth, turnover and other certificates — issued promptly.",
+    "overview": "TaxByCA issues various certifications required for visa applications, bank loans, government schemes, and statutory authorities. We provide Net Worth, Turnover, and all required certificates.",
     "services": [
       "Net Worth Certificate",
       "Turnover Certificate",
-      "Form 15CA/15CB for Remittances",
       "Visa / Immigration Certificates",
       "Utilization Certificates"
     ],
@@ -273,8 +266,7 @@ export const SERVICES = [
     "slug": "loan-documentation",
     "title": "Loan Documentation & Financial Statements",
     "shortTitle": "Loan Docs & Financials",
-    "icon": "fa-file-invoice",
-    "iconEmoji": "📁",
+    "icon": PiFolderOpenDuotone,
     "category": "Compliance",
     "isPopular": false,
     "badge": "",
@@ -297,8 +289,7 @@ export const SERVICES = [
     "slug": "fno-capital-gain",
     "title": "F&O / Capital Gain Taxation",
     "shortTitle": "F&O / Capital Gains",
-    "icon": "fa-arrow-trend-up",
-    "iconEmoji": "💹",
+    "icon": PiTrendUpDuotone,
     "category": "Tax Filing",
     "isPopular": true,
     "badge": "Trending",
@@ -325,11 +316,9 @@ export const SERVICE_CATEGORIES = ['All', 'Tax Filing', 'Business', 'Compliance'
 export const TEAM = [
   {
     id: 1,
-    name: 'TaxByCA Founder',
-    role: 'Qualified Chartered Accountant',
-    illustration: true,
+    name: 'Nirali Bafna',
+    role: 'Qualified Professional',
     expertise: 'GST, Income Tax, Company Law & ROC Compliance',
-    qualification: 'Qualified Chartered Accountant',
     experience: '10+ years',
     phone: BRAND.phone,
     email: BRAND.email,
@@ -387,45 +376,44 @@ export const FAQS = [
   {
     id: 10,
     q: 'What are the fees for online professional services at TaxByCA?',
-    a: 'Starting prices: GST Registration ₹999 | ITR Filing ₹499 | Company Registration ₹6,999 | TDS Return ₹1,499/qtr | Bookkeeping ₹2,499/mo | ROC Compliance ₹3,999/yr | MSME Registration ₹499. Government fees (MCA, stamp duty, etc.) are shown separately at actuals. We issue GST-compliant tax invoices.',
+    a: 'Starting prices: GST Registration ₹999 | ITR Filing ₹499 | Company Registration ₹6,999 | TDS Return ₹1,499/qtr | Bookkeeping ₹2,499/mo | ROC Compliance ₹3,999/yr | MSME Registration ₹499. Government fees (MCA, stamp duty, etc.) are shown separately at actuals.',
   },
 ]
 
 // ─── WHY CHOOSE US ────────────────────────────────────────────
 export const WHY_CHOOSE_US = [
-  { icon: 'ri-group-line', title: 'Qualified qualified professionals & Professionals', desc: 'Our team of qualified Chartered Accountants and professionals has been serving businesses and individuals for 10+ years.' },
-  { icon: 'ri-global-line', title: 'Pan-India Services', desc: '100% online — we serve clients in all 28 states and 8 UTs of India, without you needing to visit any office.' },
-  { icon: 'ri-money-dollar-circle-line', title: 'Transparent Pricing', desc: 'Fixed professional fees quoted upfront. Government fees shown separately at actuals. No hidden charges.' },
-  { icon: 'ri-flashlight-line', title: 'Fast Turnaround', desc: 'ITR in 24 hours. GST registration in 3 days. Timely filing — always before due dates.' },
-  { icon: 'ri-file-text-line', title: 'Proper GST Invoice', desc: 'We issue a proper GST-compliant tax invoice for every service. You always have documentation for your records.' },
-  { icon: 'ri-phone-line', title: 'Dedicated Support', desc: 'Dedicated relationship manager reachable on WhatsApp for real-time updates and document guidance.' },
+  { icon: PiSealCheckDuotone, title: 'Qualified Professionals', desc: 'Our team of qualified professionals has been serving businesses and individuals for over 10 years.' },
+  { icon: PiGlobeHemisphereEastDuotone, title: 'Pan-India Services', desc: '100% online — we serve clients in all 28 states and 8 UTs of India, without you needing to visit any office.' },
+  { icon: PiCurrencyInrDuotone, title: 'Transparent Pricing', desc: 'Fixed professional fees quoted upfront. Government fees shown separately at actuals. No hidden charges.' },
+  { icon: PiLightningDuotone, title: 'Fast Turnaround', desc: 'ITR in 24 hours. GST registration in 3 days. Timely filing — always before due dates.' },
+  { icon: PiHeadsetDuotone, title: 'Dedicated Support', desc: 'Dedicated relationship manager reachable on WhatsApp for real-time updates and document guidance.' },
 ]
 
 // ─── PROCESS STEPS ───────────────────────────────────────────
 export const PROCESS_STEPS = [
   {
     step: '01',
-    icon: 'ri-phone-line',
+    icon: PiChatsCircleDuotone,
     title: 'Contact Us',
     desc: 'Reach out via WhatsApp, call, or our online form. Tell us your requirement.',
   },
   {
     step: '02',
-    icon: 'ri-file-paper-2-line',
+    icon: PiFolderOpenDuotone,
     title: 'Share Documents',
     desc: 'We send a personalised checklist. You share documents via WhatsApp or email.',
   },
   {
     step: '03',
-    icon: 'ri-flashlight-line',
+    icon: PiRocketLaunchDuotone,
     title: 'We Handle Everything',
     desc: 'Our professional prepares, verifies, and files on your behalf on government portals.',
   },
   {
     step: '04',
-    icon: 'ri-checkbox-circle-line',
+    icon: PiSealCheckDuotone,
     title: 'Done — Acknowledgment',
-    desc: 'Receive your certificate / acknowledgment along with a proper GST invoice.',
+    desc: 'Receive your certificate / acknowledgment directly on WhatsApp or email.',
   },
 ]
 
@@ -436,21 +424,19 @@ export const HERO_SLIDES = [
     badge: 'One-Stop Professional Services — 10+ Years',
     heading: 'Expert Professional Services',
     subHeading: 'Across India — Online & Fast',
-    description:
-      'GST, ITR filing, company registration, Tax Audit, Project Reports & Certificates — all delivered 100% online. 10,000+ clients served.',
+    description: 'All delivered 100% online. 10,000+ clients served.',
     ctaText: 'WhatsApp Us Now',
-    ctaLink: `https://wa.me/${BRAND.whatsapp}?text=Hi! I need professional services from TaxByCA.`,
+    ctaLink: waLink('Hi! I need professional services from TaxByCA.'),
     ctaSecondary: 'Explore Services',
     ctaSecondaryLink: '/#services',
     backgroundImage: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1920&q=80&auto=format&fit=crop',
   },
   {
     id: 2,
-    badge: 'GST • ITR • Audit • Certificates',
+    badge: '',
     heading: 'All Professional Services',
     subHeading: 'One Firm. Every Need.',
-    description:
-      'From GST returns to company registration, TDS compliance to project reports — complete solutions for every business & professional.',
+    description: 'Complete solutions for every business & professional.',
     ctaText: 'View Our Services',
     ctaLink: '/#services',
     ctaSecondary: 'Call Now',
@@ -459,11 +445,10 @@ export const HERO_SLIDES = [
   },
   {
     id: 3,
-    badge: 'Free Consultation — No Obligation',
+    badge: 'Free Consultation',
     heading: 'Book a Free',
     subHeading: 'Tax Consultation Today',
-    description:
-      'Talk to our qualified professionals about your GST, income tax, or business registration needs. No obligation, no hidden charges.',
+    description: 'Talk to our qualified professionals.',
     ctaText: 'Book Free Consultation',
     ctaLink: '/contact',
     ctaSecondary: 'Know More',
@@ -477,7 +462,7 @@ export const MARQUEE_ITEMS = [
   'GST Registration', 'ITR Filing', 'Company Registration', 'TDS Returns',
   'Bookkeeping', 'ROC Compliance', 'MSME Registration', 'Tax Notices',
   'IEC Registration', 'Digital Signature', 'Trademark Registration', 'FSSAI License',
-  'Startup India', 'Project Reports', 'Tax Audit', 'GST Annual Return',
+  'Startup India', 'Project Reports', 'Audit', 'GST Annual Return',
   'Income Tax Planning', 'CMA Data', 'DPIIT Recognition', 'PF & ESIC',
 ]
 
@@ -537,16 +522,13 @@ export const TESTIMONIALS = [
 export const ABOUT = {
   title: 'About TaxByCA',
   subtitle: 'One-Stop Solution for Every Business & Professional',
-  description: `TaxByCA is a team of qualified Chartered Accountants and professionals, serving businesses and individuals across India for 10+ years. We provide expert services in Taxation, Audit, Project Reports, and Certificates — all 100% online.
+  description: `TaxByCA is a team of qualified professionals, serving businesses and individuals across India for 10+ years. We provide expert services in Taxation, Audit, Project Reports, and Certificates — all 100% online.
 
-We have proudly served 10,000+ clients across every business category — from sole proprietors and salaried employees to private limited companies, NGOs, traders, exporters, and startups. Our approach is simple: honest advice, transparent pricing, and fast turnaround — delivered right to your WhatsApp.
-
-We issue a proper GST-compliant tax invoice for every service.`,
+We have proudly served 10,000+ clients across every business category — from sole proprietors and salaried employees to private limited companies, NGOs, traders, exporters, and startups. Our approach is simple: honest advice, transparent pricing, and fast turnaround — delivered right to your WhatsApp.`,
   highlights: [
-    'Qualified qualified professionals & Professionals — 10+ Years',
+    'Qualified Professionals — 10+ Years',
     '100% Online Services — Pan-India',
     'Transparent, Fixed Pricing — No Hidden Charges',
-    'We Issue Proper GST Invoice for Every Service',
     '10,000+ Happy Clients Served',
     'Dedicated WhatsApp Support',
   ],
@@ -556,5 +538,5 @@ We issue a proper GST-compliant tax invoice for every service.`,
     'Startups & New Businesses', 'Private Limited Companies',
     'NGOs, Trusts & Societies', 'Real Estate & Builders',
   ],
-  image: 'https://images.pexels.com/photos/7693730/pexels-photo-7693730.jpeg?auto=compress&cs=tinysrgb&w=800',
+  image: 'https://images.pexels.com/photos/7693730/pexels-photo-7693730.jpeg?auto=compress&cs=tinysrgb&w=1000',
 }
