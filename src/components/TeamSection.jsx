@@ -21,22 +21,15 @@ const TeamSection = () => {
 
         <article className="reveal mx-auto mt-14 grid max-w-5xl overflow-hidden rounded-[2.25rem] border border-line bg-white shadow-float md:grid-cols-[0.95fr_1.05fr]">
           {/* Portrait */}
-          <div className="relative isolate min-h-[400px] overflow-hidden bg-gradient-to-br from-brand-500 via-brand-600 to-brand-900 sm:min-h-[460px]">
-            <div className="absolute inset-0 -z-10" aria-hidden="true">
-              <div className="absolute left-1/2 top-[18%] h-72 w-72 -translate-x-1/2 rounded-full bg-sky-glow/40 blur-3xl" />
-              <div className="absolute left-1/2 top-[10%] h-[340px] w-[340px] -translate-x-1/2 rounded-full border border-white/15" />
-              <div className="absolute left-1/2 top-[4%] h-[420px] w-[420px] -translate-x-1/2 rounded-full border border-white/10" />
-              <div className="noise absolute inset-0" />
-            </div>
+          <div className="relative aspect-square overflow-hidden bg-surface md:aspect-auto">
             <img
               src={founderImg}
               alt={`${founder.name}, Founder of TaxByCA`}
-              width="800"
-              height="1042"
+              width="1254"
+              height="1254"
               loading="lazy"
-              className="absolute bottom-0 left-1/2 h-[94%] w-auto max-w-none -translate-x-1/2 object-contain object-bottom drop-shadow-[0_20px_40px_rgba(4,26,51,0.45)]"
+              className="h-full w-full object-cover object-top md:absolute md:inset-0"
             />
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brand-900/60 to-transparent" />
           </div>
 
           {/* Info */}
