@@ -57,7 +57,7 @@ const ExpertCA = () => {
                 <span className="icon-tile h-12 w-12 text-2xl"><PiTrophyDuotone /></span>
                 <div>
                   <p className="font-bold text-white">TaxByCA — Expert Professional Services</p>
-                  <p className="mt-0.5 text-[13px] text-white/70">Serving 10,000+ clients across India</p>
+                  <p className="mt-0.5 text-[13px] text-white/70">Serving 6,211+ clients across India</p>
                 </div>
               </div>
             </div>

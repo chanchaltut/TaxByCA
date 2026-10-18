@@ -14,7 +14,7 @@ const AboutUs = () => {
         <title>About Us | TaxByCA — Trusted Online Tax & Compliance Firm</title>
         <meta
           name="description"
-          content="Learn about TaxByCA (https://taxbyca.in). We are a dedicated team of tax consultants and qualified professionals serving over 10,000+ clients across India with 100% online tax and compliance services."
+          content="Learn about TaxByCA (https://taxbyca.in). We are a dedicated team of tax consultants and qualified professionals serving over 6,211+ clients across India with 100% online tax and compliance services."
         />
         <meta
           name="keywords"
@@ -44,7 +44,7 @@ const AboutUs = () => {
 
       {/* Hero Section */}
       <PageHero
-        eyebrow="Established in 2019 • 10,000+ Returns Filed"
+        eyebrow="Established in 2019 • 15,000+ Returns Filed"
         title={<>About <span className="accent-serif-light">TaxByCA</span></>}
         description="We are an experienced team of qualified professionals and tax specialists dedicated to making taxation, compliance, and corporate registrations seamless, 100% online, and accessible across India."
       />

@@ -1,1 +1,0 @@
-import{t as o,j as s}from"./index-COxKC5fU.js";import"./router-8H30XJJE.js";import{S as r}from"./ServicePage-Cib5Qe8v.js";import"./vendor-DEQ385Nk.js";import"./seo-B3HPo2F4.js";import"./icons-COrbLGlB.js";const t=()=>{const t=o.find(o=>"loan-documentation"===o.slug);return s.jsx(r,{service:t})};export{t as default};

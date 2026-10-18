@@ -29,7 +29,7 @@ const Home = () => {
         <meta property="og:title" content="TaxByCA | Expert Tax, GST & Business Compliance Services Online" />
         <meta
           property="og:description"
-          content="Get expert tax & business compliance services 100% online across India. GST registration, ITR filing, company registration, audits & project reports with dedicated WhatsApp support. 10,000+ satisfied clients."
+          content="Get expert tax & business compliance services 100% online across India. GST registration, ITR filing, company registration, audits & project reports with dedicated WhatsApp support. 6,211+ satisfied clients."
         />
         <meta property="og:url" content="https://taxbyca.in/" />
         <meta property="og:image" content="https://taxbyca.in/og-image-v3.jpg" />

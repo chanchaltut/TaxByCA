@@ -11,7 +11,7 @@ const SLIDE_MS = 6500;
 
 const trustBadges = [
   { icon: PiSealCheckDuotone, text: 'Qualified Professionals' },
-  { icon: PiUsersThreeDuotone, text: '10,000+ Clients' },
+  { icon: PiUsersThreeDuotone, text: '6,211+ Clients' },
   { icon: PiTrophyDuotone, text: '10+ Years' },
   { icon: PiGlobeHemisphereEastDuotone, text: '100% Online' },
 ];
@@ -157,7 +157,7 @@ const Hero = () => {
                 <div className="flex items-center gap-1 text-amber-300">
                   {[...Array(5)].map((_, i) => <PiStarFill key={i} className="text-xs" />)}
                 </div>
-                <p className="mt-1 text-sm font-bold text-white">4.9 / 5 <span className="font-medium text-white/60">client rating</span></p>
+                <p className="mt-1 text-sm font-bold text-white">4.8 / 5 <span className="font-medium text-white/60">client rating</span></p>
               </div>
               <div className="ring-gradient absolute bottom-[12%] right-[-6%] animate-float-slow rounded-2xl bg-ink-900/70 px-4 py-3 backdrop-blur-xl">
                 <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-sky-glow">Since</p>

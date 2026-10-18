@@ -57,10 +57,10 @@ export const SOCIAL_LINKS = {
 
 // ─── STATS (animated counters) ──────────────────────────────
 export const STATS = [
-  { number: 10000, suffix: '+', label: 'Happy Clients',    icon: PiUsersThreeDuotone },
-  { number: 10000, suffix: '+', label: 'Returns Filed',    icon: PiFilesDuotone },
+  { number: 6211,  suffix: '+', label: 'Happy Clients',    icon: PiUsersThreeDuotone },
+  { number: 15000, suffix: '+', label: 'Returns Filed',    icon: PiFilesDuotone },
   { number: 10,    suffix: '+', label: 'Years Experience', icon: PiTrophyDuotone },
-  { number: 4.9,   suffix: '★', label: 'Client Rating',    icon: PiStarDuotone },
+  { number: 4.8,   suffix: '★', label: 'Client Rating',    icon: PiStarDuotone },
 ]
 
 // ─── NAV ITEMS ───────────────────────────────────────────────
@@ -424,7 +424,7 @@ export const HERO_SLIDES = [
     badge: 'One-Stop Professional Services — 10+ Years',
     heading: 'Expert Professional Services',
     subHeading: 'Across India — Online & Fast',
-    description: 'All delivered 100% online. 10,000+ clients served.',
+    description: 'All delivered 100% online. 6,211+ clients served.',
     ctaText: 'WhatsApp Us Now',
     ctaLink: waLink('Hi! I need professional services from TaxByCA.'),
     ctaSecondary: 'Explore Services',
@@ -524,12 +524,12 @@ export const ABOUT = {
   subtitle: 'One-Stop Solution for Every Business & Professional',
   description: `TaxByCA is a team of qualified professionals, serving businesses and individuals across India for 10+ years. We provide expert services in Taxation, Audit, Project Reports, and Certificates — all 100% online.
 
-We have proudly served 10,000+ clients across every business category — from sole proprietors and salaried employees to private limited companies, NGOs, traders, exporters, and startups. Our approach is simple: honest advice, transparent pricing, and fast turnaround — delivered right to your WhatsApp.`,
+We have proudly served 6,211+ clients across every business category — from sole proprietors and salaried employees to private limited companies, NGOs, traders, exporters, and startups. Our approach is simple: honest advice, transparent pricing, and fast turnaround — delivered right to your WhatsApp.`,
   highlights: [
     'Qualified Professionals — 10+ Years',
     '100% Online Services — Pan-India',
     'Transparent, Fixed Pricing — No Hidden Charges',
-    '10,000+ Happy Clients Served',
+    '6,211+ Happy Clients Served',
     'Dedicated WhatsApp Support',
   ],
   clientCategories: [

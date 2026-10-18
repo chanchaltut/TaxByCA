@@ -95,8 +95,8 @@ const TestimonialsSection = () => {
         <div className="mt-10 flex justify-center">
           <div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-line bg-surface px-6 py-3">
             <Stars count={5} />
-            <span className="font-extrabold text-ink">4.9/5</span>
-            <span className="text-sm text-ink-soft">from 10,000+ clients</span>
+            <span className="font-extrabold text-ink">4.8/5</span>
+            <span className="text-sm text-ink-soft">from 6,211+ clients</span>
           </div>
         </div>
       </div>
