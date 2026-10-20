@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   PiFacebookLogo, PiInstagramLogo, PiLinkedinLogo, PiWhatsappLogo,
-  PiPhoneCall, PiEnvelopeSimple, PiMapPin, PiClock, PiPaperPlaneTilt, PiArrowUpRight,
+  PiPhoneCall, PiEnvelopeSimple, PiMapPin, PiClock, PiArrowUpRight,
 } from 'react-icons/pi';
-import Swal from 'sweetalert2';
 import { BRAND } from '../utils/constants';
 import TaxByCALogoLight from '../assets/TaxByCALogo-light.webp';
 
@@ -60,22 +59,6 @@ const FooterLink = ({ to, children }) => (
 );
 
 const Footer = () => {
-  const [email, setEmail] = useState('');
-
-  const handleNewsletter = (e) => {
-    e.preventDefault();
-    Swal.fire({
-      title: 'Subscribed!',
-      text: 'Thank you for subscribing to TaxByCA updates and tax tips!',
-      icon: 'success',
-      iconColor: '#06529A',
-      confirmButtonColor: '#06529A',
-      confirmButtonText: 'Great!',
-      customClass: { popup: 'rounded-3xl', confirmButton: 'rounded-full font-bold px-6 py-2.5' },
-    });
-    setEmail('');
-  };
-
   return (
     <footer className="relative isolate overflow-hidden bg-ink-950 text-white">
       <div className="pointer-events-none absolute -top-40 left-1/2 -z-10 h-80 w-[60rem] -translate-x-1/2 rounded-full bg-brand-600/25 blur-[120px]" aria-hidden="true" />
@@ -126,7 +109,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact + Newsletter */}
+          {/* Contact */}
           <div className="sm:col-span-2 lg:col-span-3">
             <FooterHeading>Contact Us</FooterHeading>
             <ul className="space-y-4">
@@ -140,23 +123,6 @@ const Footer = () => {
               ))}
             </ul>
 
-            <form onSubmit={handleNewsletter} className="mt-8">
-              <label htmlFor="footer-newsletter" className="text-[13px] font-semibold text-white">Tax Updates Newsletter</label>
-              <div className="mt-3 flex items-center rounded-full border border-white/10 bg-white/[0.05] p-1.5 focus-within:border-brand-400">
-                <input
-                  id="footer-newsletter"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="your@email.com"
-                  required
-                  className="min-w-0 flex-1 bg-transparent px-4 text-sm text-white placeholder:text-white/35 focus:outline-none"
-                />
-                <button type="submit" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-500 text-white transition-colors hover:bg-brand-400" aria-label="Subscribe">
-                  <PiPaperPlaneTilt />
-                </button>
-              </div>
-            </form>
           </div>
         </div>
 

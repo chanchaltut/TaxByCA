@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { PiCalendarBlank, PiUser, PiArrowRight, PiCaretUp, PiWhatsappLogo, PiEnvelopeSimpleDuotone, PiClock } from 'react-icons/pi';
+import { PiCalendarBlank, PiUser, PiArrowRight, PiCaretUp, PiWhatsappLogo, PiClock } from 'react-icons/pi';
 import { PageHero } from '../components/ui';
 import { waLink } from '../utils/constants';
-import Swal from 'sweetalert2';
 
 // ─── BLOG ARTICLES ─────────────────────────────────────────────
 // All articles are Income Tax / GST / TDS / Business Registration only
@@ -402,47 +401,6 @@ const Insights = () => {
               );
             })}
           </div>
-
-          {/* Newsletter */}
-          <div className="surface-dark mt-16 rounded-[2.25rem] px-6 py-14 sm:px-12">
-            <div className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-brand-500/40 blur-3xl" aria-hidden="true" />
-            <div className="grid-lines pointer-events-none absolute inset-0" aria-hidden="true" />
-            <div className="relative mx-auto max-w-xl text-center">
-              <PiEnvelopeSimpleDuotone className="mx-auto text-4xl text-sky-glow" />
-              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                Get Tax Updates in <span className="accent-serif-light">Your Inbox</span>
-              </h2>
-              <p className="mt-3 text-[15px] text-brand-100/70">
-                Subscribe for Income Tax &amp; GST updates, deadline reminders, and practical guides.
-              </p>
-              <form
-                className="mx-auto mt-8 flex max-w-md items-center rounded-full border border-white/15 bg-white/[0.06] p-1.5 focus-within:border-brand-400"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  Swal.fire({
-                    title: 'Subscribed!',
-                    text: 'Thank you! You will receive regular tax and compliance updates from TaxByCA.',
-                    icon: 'success',
-                    iconColor: '#06529A',
-                    confirmButtonColor: '#06529A',
-                    confirmButtonText: 'Great!',
-                    customClass: { popup: 'rounded-3xl', confirmButton: 'rounded-full font-bold px-6 py-2.5' },
-                  });
-                  e.target.reset();
-                }}
-              >
-                <input
-                  type="email"
-                  placeholder="your@email.com"
-                  aria-label="Email address"
-                  required
-                  className="min-w-0 flex-1 bg-transparent px-4 text-sm text-white placeholder:text-white/40 focus:outline-none"
-                />
-                <button type="submit" className="btn btn-primary btn-sm">Subscribe</button>
-              </form>
-            </div>
-          </div>
-
         </div>
       </section>
     </div>

@@ -5,6 +5,13 @@ import { PageHero } from '../components/ui';
 import Swal from 'sweetalert2';
 import { BRAND, SERVICE_CATEGORIES, waLink } from '../utils/constants';
 
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+const escapeHtml = (str) =>
+  String(str).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '', email: '', phone: '', service: '', message: ''
@@ -15,8 +22,9 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
     setIsSubmitting(true);
 
     const waText = encodeURIComponent(
@@ -24,24 +32,35 @@ const Contact = () => {
     );
     const waUrl = `https://wa.me/${BRAND.whatsapp}?text=${waText}`;
 
-    setTimeout(() => {
+    try {
+      if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+        throw new Error('EmailJS environment variables are not configured');
+      }
+      const { default: emailjs } = await import('@emailjs/browser');
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          to_email: BRAND.email,
+          from_name: formData.name,
+          reply_to: formData.email,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service || 'General Inquiry',
+          message: formData.message,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+    } catch (err) {
+      console.error('Contact form email failed:', err);
       setIsSubmitting(false);
-
       Swal.fire({
-        title: 'Inquiry Received!',
-        html: `
-          <p style="color: #475569; font-size: 15px; margin-bottom: 12px;">
-            Thank you, <strong>${formData.name}</strong>! Your message regarding <strong>${formData.service || 'Professional Services'}</strong> has been sent to the TaxByCA team.
-          </p>
-          <p style="color: #64748b; font-size: 13px;">
-            For an instant response, you can also continue directly on WhatsApp.
-          </p>
-        `,
-        icon: 'success',
-        iconColor: '#06529A',
+        title: 'Could not send your message',
+        text: `Something went wrong while sending your inquiry. Please reach us on WhatsApp or email us at ${BRAND.email}.`,
+        icon: 'error',
         showCancelButton: true,
-        confirmButtonText: 'Continue on WhatsApp',
-        cancelButtonText: 'Done',
+        confirmButtonText: 'Send on WhatsApp',
+        cancelButtonText: 'Close',
         confirmButtonColor: '#25d366',
         cancelButtonColor: '#0B1B33',
         reverseButtons: true,
@@ -55,9 +74,41 @@ const Contact = () => {
           window.open(waUrl, '_blank');
         }
       });
+      return;
+    }
 
-      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-    }, 600);
+    setIsSubmitting(false);
+
+    Swal.fire({
+      title: 'Inquiry Received!',
+      html: `
+        <p style="color: #475569; font-size: 15px; margin-bottom: 12px;">
+          Thank you, <strong>${escapeHtml(formData.name)}</strong>! Your message regarding <strong>${escapeHtml(formData.service || 'Professional Services')}</strong> has been sent to the TaxByCA team.
+        </p>
+        <p style="color: #64748b; font-size: 13px;">
+          For an instant response, you can also continue directly on WhatsApp.
+        </p>
+      `,
+      icon: 'success',
+      iconColor: '#06529A',
+      showCancelButton: true,
+      confirmButtonText: 'Continue on WhatsApp',
+      cancelButtonText: 'Done',
+      confirmButtonColor: '#25d366',
+      cancelButtonColor: '#0B1B33',
+      reverseButtons: true,
+      customClass: {
+        popup: 'rounded-3xl font-sans',
+        confirmButton: 'rounded-full font-bold px-6 py-3',
+        cancelButton: 'rounded-full font-bold px-6 py-3',
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.open(waUrl, '_blank');
+      }
+    });
+
+    setFormData({ name: '', email: '', phone: '', service: '', message: '' });
   };
 
   const contactInfo = [
